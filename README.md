@@ -1,18 +1,18 @@
 ## codingclass   
 ## 자바스크립트   
-https://KwonHyehyeon.github.io/codingclass/javascript/index.html   
-https://KwonHyehyeon.github.io/codingclass/javascript/javascript01.html   
-https://KwonHyehyeon.github.io/codingclass/javascript/javascript02.html   
-https://KwonHyehyeon.github.io/codingclass/javascript/javascript03.html   
-https://KwonHyehyeon.github.io/codingclass/javascript/javascript04.html   
-https://KwonHyehyeon.github.io/codingclass/javascript/javascript05.html   
-https://KwonHyehyeon.github.io/codingclass/javascript/javascript06.html   
-https://KwonHyehyeon.github.io/codingclass/javascript/javascript07.html   
-https://KwonHyehyeon.github.io/codingclass/javascript/javascript08.html   
-https://KwonHyehyeon.github.io/codingclass/javascript/javascript09.html   
-https://KwonHyehyeon.github.io/codingclass/javascript/javascript10.html   
-https://KwonHyehyeon.github.io/codingclass/javascript/javascript11.html   
-https://KwonHyehyeon.github.io/codingclass/javascript/javascript12.html   
+https://kwonhyehyeon.github.io/codingclass/javascript/index.html   
+https://kwonhyehyeon.github.io/codingclass/javascript/javascript01.html   
+https://kwonhyehyeon.github.io/codingclass/javascript/javascript02.html   
+https://kwonhyehyeon.github.io/codingclass/javascript/javascript03.html   
+https://kwonhyehyeon.github.io/codingclass/javascript/javascript04.html   
+https://kwonhyehyeon.github.io/codingclass/javascript/javascript05.html   
+https://kwonhyehyeon.github.io/codingclass/javascript/javascript06.html   
+https://kwonhyehyeon.github.io/codingclass/javascript/javascript07.html   
+https://kwonhyehyeon.github.io/codingclass/javascript/javascript08.html   
+https://kwonhyehyeon.github.io/codingclass/javascript/javascript09.html   
+https://kwonhyehyeon.github.io/codingclass/javascript/javascript10.html   
+https://kwonhyehyeon.github.io/codingclass/javascript/javascript11.html   
+https://kwonhyehyeon.github.io/codingclass/javascript/javascript12.html   
    
 ## HTML   
 https://KwonHyehyeon.github.io/codingclass/html/alphabet.html  
