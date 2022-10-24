@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>패럴랙스 이펙트 04</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="document">
+        <h2 class="t_tit">🔮 패럴랙스 이펙트 - 이질감 효과</h2>
+        <p class="t_desc">
+            📌 이번 이펙트는 스크롤할 때 이미지, 글, 번호를 오차를 통해 이질감을 부여하는 이펙트입니다. <br>
+        </p>
+        <!-- <h3 class="t_tit2">패럴랙스 이펙트를 피그마를 활용하여 설명</h3> -->
+        <!-- <div class="iframe">
+        </div> -->
+        <h3 class="t_tit2">➰ HTML</h3>
+        <p class="t_desc2">
+            스크롤값도 나오게 해줄 것이므로 parallax__info도 만들어줍니다.
+        </p>
+        <div class="t_code">
+<pre><code class="language-js">&lt;header id="header"&gt;
+    &lt;h1&gt;&lt;a href="parallaxEffect.html"&gt; Javascript parallax sliderEffect05&lt;/a&gt;&lt;/h1&gt;
+    &lt;p&gt;패럴랙스 이펙트 - 이질감 효과&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="parallaxEffect01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="parallaxEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="parallaxEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="active"&gt;&lt;a href="parallaxEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="parallaxEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="parallaxEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="parallaxEffect07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/header&gt;
+&lt;!-- //header --&gt;
+
+&lt;main id="parallax__cont"&gt;
+    &lt;div id="contents"&gt;
+        &lt;section id="section1" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;01&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section1&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;오늘 할 수 있는 일에 전력을 다하라. 그러면 내일에는 한걸음 더 진보한다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section1 --&gt;
+        &lt;section id="section2" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;02&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section2&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;게으르지 않음은 영원한 삶의 집이요, 게으름은 죽음의 집이다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section2--&gt;
+        &lt;section id="section3" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;03&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section3&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;우리는 행복하기 때문에 웃는게 아니라, 웃기 때문에 행복하다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section3 --&gt;
+        &lt;section id="section4" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;04&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section4&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;인생은 가까이서 보면 비극, 멀리서 보면 희극이다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section4 --&gt;
+        &lt;section id="section5" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;05&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section5&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;승자는 시간을 관리하며 살고 패자는 시간에 끌려 산다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section5 --&gt;
+        &lt;section id="section6" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;06&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section6&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;아무것도 하지 않으면 아무 일도 일어나지 않는다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section6 --&gt;
+        &lt;section id="section7" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;07&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section7&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;일단 시작해라. 나중에 완벽해지면 된다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section7 --&gt;
+        &lt;section id="section8" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;08&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section8&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;모든 이의 마음을 얻으려고 계산된 글은 그 누구의 마음도 얻지 못한다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section8 --&gt;
+        &lt;section id="section9" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;09&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section9&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;우리 자신에게 실패를 허락하는 것이 성공을 허락하는 것이다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section9 --&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+&lt;!-- //main --&gt;
+&lt;aside id="parallax__info"&gt;
+    &lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt;px&lt;/div&gt;
+&lt;/aside&gt;
+</code></pre>
+        </div>
+        <hr>
+    <h3 class="t_tit2">➰ CSS</h3>
+    <p class="t_desc2">
+        html틀을 구성해 준 다음, 그에 맞는 스타일을 줍니다.
+    </p>
+    <div class="t_code">
+<pre><code class="language-js">/* parallax__nav */
+#parallax__nav {
+    position: fixed;
+    right: 20px;
+    top: -200px;
+    z-index: 2000;
+    background-color: rgba(0,0,0,0.4);
+    padding: 20px 30px;
+    border-radius: 50px;
+    transition: top .4s ease;
+}
+#parallax__nav li {
+    display: inline;
+    margin: 0 5px;
+}
+#parallax__nav li a{
+    /* background-color: #ffee00; */
+    display: inline-block;
+    height: 30px;
+    padding: 5px 20px;
+    text-align: center;
+    line-height: 30px;
+}
+#parallax__nav li.active a {
+    background: #fff;
+    color: #000;
+    border-radius: 20px;
+    box-sizing: content-box;
+}
+#parallax__cont {
+    max-width: 1600px;
+    width: 98%;
+    margin: 0 auto;
+    /* background-color: rgba(255,255,255,0.1); */
+}
+.content__item {
+    width: 1000px;
+    max-width: 70vw;
+    margin: 30vw auto;
+    /* background-color: rgba(255,255,255,0.3); */
+    text-align: left;
+    margin-right: 0;
+    position: relative;
+    padding-top: 7vw;
+}
+.content__item:nth-child(2n){
+    /* 2n even 짝수 / 곱하기도 쓰기 가능 */
+    margin-left: 0;
+    text-align: right;
+}
+.content__item__num {
+    font-size: 35vw;
+    font-family: 'Lato';
+    font-weight: 100;
+    position: absolute;
+    left: -5vw;
+    top: -16vw;
+    opacity: 0.07;
+    z-index: -2;
+}
+.content__item:nth-child(even) .content__item__num {
+    /* left초기화 기준점 right로 바뀜*/
+    left: auto;
+    right: -5vw;
+}
+.content__item__title {
+    font-weight: 400;
+    text-transform: capitalize;
+}
+.content__item__imgWrap {
+    width: 100%;
+    /* 이미지 영역 만들어주기 패딩으로 */
+    padding-bottom: 56.25%;
+    background: #000;
+    position: relative;
+    /* 사진 넘치는 거 가리기 */
+    overflow: hidden;
+    z-index: -1;
+}
+.content__item__img {
+    position: absolute;
+    background-image: url(../assets/img/effect_bg05.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+     /* 사진안짤리게 */
+    background-size: cover;
+    width: 110%;
+    height: 110%;
+    left: -5%;
+    top: -5%;
+    /* 흑백효과 */
+    filter: saturate(0%);
+    /* transition: all 1s; */
+}
+.content__item:nth-child(1) .content__item__img {
+    background-image: url(../assets/img/effect_bg01.jpg);
+}
+.content__item:nth-child(2) .content__item__img {
+    background-image: url(../assets/img/effect_bg02.jpg);
+}
+.content__item:nth-child(3) .content__item__img {
+    background-image: url(../assets/img/effect_bg03.jpg);
+}
+.content__item:nth-child(4) .content__item__img {
+    background-image: url(../assets/img/effect_bg04.jpg);
+}
+.content__item:nth-child(5) .content__item__img {
+    background-image: url(../assets/img/effect_bg05.jpg);
+}
+.content__item:nth-child(6) .content__item__img {
+    background-image: url(../assets/img/effect_bg06.jpg);
+}
+.content__item:nth-child(7) .content__item__img {
+    background-image: url(../assets/img/effect_bg07.jpg);
+}
+.content__item:nth-child(8) .content__item__img {
+    background-image: url(../assets/img/effect_bg08.jpg);
+}
+.content__item:nth-child(9) .content__item__img {
+    background-image: url(../assets/img/effect_bg09.jpg);
+}
+.content__item__desc {
+    font-size: 4vw;
+    line-height: 1.4;
+    margin-top: -5vw;
+    margin-left: -4vw;
+    word-break: keep-all;
+}
+
+/* 홀수는 odd랍니다. */
+.content__item:nth-child(even) .content__item__desc {
+    margin-left: auto;
+    margin-right: -4vw;
+}
+@media(max-width:800px){
+    #parallax__cont {
+        margin-top: 70vw;
+    }
+    #parallax__nav {
+        padding: 10px;
+        right: auto;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 5px;
+        background-color: rgb(0,0,0,0.8);
+    }
+    #parallax__nav li {
+        display: block;
+        margin: 5px;
+    }
+    #parallax__nav li a{
+        font-size: 14px;
+        padding: 5px;
+        border-radius: 5px;
+        height: auto;
+        line-height: 1;
+    }
+    #parallax__nav li.active a {
+        border-radius: 5px;
+    }
+}
+#parallax__info {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 2000;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+#parallax__info li .scrollTop{
+    line-height: 1.4;
+}
+</code></pre>
+    </div>
+            <hr>
+        <h3 class="t_tit2">➰ 자바스크립트 활용</h3>
+        <p class="t_desc2">
+            주석을 참고해주세요!
+        </p>
+        <div class="t_code">
+<pre><code class="language-js">// 재귀함수 사용
+function scroll(){
+let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+//Math.ceil 은 소수값이 존재할 때 값을 올리는 역활을 하는 함수
+//스르롤할 때 스크롤값을 출력한다는 것(소수점이 있을 때는 올려서)
+document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
+
+document.querySelectorAll(".content__item").forEach(item =>{
+    //content__item에 속해있는 컨텐츠들(section들)을 모두 선택(querySelectorAll)하여 forEach문 실행!
+    //target1,2,3 을 만들어주어 content__item 속의 content__item__img,content__item__desc,content__item__num 부분에 약간의 차이를 두어 이질감 느끼도록!
+   const target1 = item.querySelector(".content__item__img");
+   const target2 = item.querySelector(".content__item__desc");
+   const target3 = item.querySelector(".content__item__num");
+    
+   //현재 스크롤값 - 아이템 박스의 오프셋탑값
+   //사진을 보고 있는 상태에서는 scrollTop = offsetTop
+   let offset1 = (scrollTop - item.offsetTop) * 0.1; //그러면 이론상 offset값은 0이 나옴 그래서 0.1을 곱해줌 (오차생김)
+   let offset2 = (scrollTop - item.offsetTop) * 0.15;
+   let offset3 = (scrollTop - item.offsetTop) * 0.2; //곱하는 값이 크면 클수록 더욱 이질감 많이 생김(많이 움직여지기 때문)
+    // target1.style.transform = `translateY(${offset}px)`;
+    // target2.style.transform = `translateX(${offset}px)`;
+    
+    //gsap.to(target, {duration: 시간, 속성 : 값}) ==> target 에게 시간동안 속성의 값을 서서히 변화시키는 애니메이션 
+    //duration : 애니메이션 지속 시간 : 기본값 0.5초
+    //효과를 y축 방향으로 나타나도록!
+    //ease: 애니메이션 변경 속도를 설정 : 기본 값 "power1.out" : power을 클수록 속도↑ 
+    //ease 중 expo는 시작(easein)과 끝(easeout)에서 강력한 방식으로 부드럽게 하는것
+    //expo.out은 빠르게 시작한 다음 감속하면서 강함이 완화되는 효과 <-> expo.in
+    gsap.to(target1, {duration: .3, y: offset1, ease: "power4.out"})
+    gsap.to(target2, {duration: .3, y: offset2})
+    gsap.to(target3, {duration: .3, y: offset3, ease: "expo.out"})
+});
+//재귀 함수 : 자기 실행문 유
+//requestAnimationFrame : 자바스크립트 애니메이션 실행문 : 1초에 60프레임 호출
+//setInterval보다 부드러움
+requestAnimationFrame(scroll);
+}
+scroll();
+</code></pre>
+    </div>
+    <div class="t_iframe" style="min-height: 1080px; padding-top: 0;">
+        <iframe src="https://kwonhyehyeon.github.io/coding/javascript/effect/parallaxEffect05.html" frameborder="0"></iframe>
+    </div>
+    <div class="t_link">
+        <a href="https://kwonhyehyeon.github.io/coding/javascript/effect/parallaxEffect05.html" target="_blank"
+        >실제 사이트보기</a>
+        <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/effect/parallaxEffect05.html" target="_blank"
+        >원본 소스보기</a>
+    </div>  
+    <!-- document -->
+
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

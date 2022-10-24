@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서치이펙트06</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="document">
+        <h2 class="t_tit">🗒 서치이펙트 06</h2>
+        <p class="t_desc">
+            📌 <i>sort(), reverse()</i>를 이용하여 정렬하기<br>
+            📌 여러방법으로 요소들을 정렬하는 법을 익히기 위한 이펙트입니다.
+        </p>
+        <hr>
+        <h3 class="t_tit2">CSS 속성 검색창 만들기!</h3>
+        <div class="t_iframe" style="min-height: 1080px; padding-top: 0;">
+            <iframe src="https://kwonhyehyeon.github.io/coding/javascript/effect/searchEffect06.html" frameborder="0"></iframe>
+        </div>
+        <div class="t_link">
+            <a href="https://kwonhyehyeon.github.io/coding/javascript/effect/searchEffect06.html" target="_blank"
+            >실제 사이트보기</a>
+            <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/effect/searchEffect06.html" target="_blank"
+            >원본 소스보기</a>
+            <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/assets/css/search.css" target="_blank"
+            >CSS 소스보기</a>
+        </div>  
+        <h3 class="t_tit2">HTML</h3>
+        <p class="t_desc2">
+            코드 보기를 펼쳐 봐주세요 :)<br>
+            헤더 부분은 이전 것과 동일하여 메인부분만 넣었습니다!
+        </p>
+        <div class="result">
+            <details>
+                <summary>코드 보기</summary>
+                <div class="t_code">
+<pre><code class="language-js">lt;main id="main"&gt;
+    &lt;div class="search__wrap"&gt;
+        &lt;span&gt;sort(), reverse를 이용하여 정렬하기&lt;/span&gt;
+        &lt;h1&gt;CSS 속성 검색하기&lt;/h1&gt;
+
+        &lt;div class="search__click"&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#" class="btn1"&gt;반대로 정렬하기&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#" class="btn2"&gt;오름차순 정렬하기&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#" class="btn3"&gt;내림차순 정렬하기&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#" class="btn4"&gt;알파벳순(a~z)&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#" class="btn5"&gt;알파벳순(z~a)&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#" class="btn6"&gt;랜덤 정렬하기&lt;/a&gt;&lt;/li&gt;
+                &lt;li &gt;&lt;a href="#" class="btn7"&gt;카테고리 정렬하기&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;ul style="display: none;"&gt;
+                &lt;li data-category="0"&gt;&lt;a href="#" class="ct1"&gt;animation&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-category="1"&gt;&lt;a href="#" class="ct2"&gt;background&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-category="2"&gt;&lt;a href="#" class="ct3"&gt;border&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-category="3"&gt;&lt;a href="#" class="ct4"&gt;clip&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-category="4"&gt;&lt;a href="#" class="ct5"&gt;flex&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-category="5"&gt;&lt;a href="#" class="ct6"&gt;font&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-category="6"&gt;&lt;a href="#" class="ct8"&gt;grid&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-category="7"&gt;&lt;a href="#" class="ct9"&gt;image&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-category="8"&gt;&lt;a href="#" class="ct10"&gt;inset&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-category="9"&gt;&lt;a href="#" class="ct11"&gt;margin&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-category="10"&gt;&lt;a href="#" class="ct12"&gt;mask&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-category="11"&gt;&lt;a href="#" class="ct13"&gt;offset&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-category="12"&gt;&lt;a href="#" class="ct14"&gt;overflow&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-category="13"&gt;&lt;a href="#" class="ct15"&gt;scroll&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-category="14"&gt;&lt;a href="#" class="ct16"&gt;padding&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-category="15"&gt;&lt;a href="#" class="ct17"&gt;text&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-category="16"&gt;&lt;a href="#" class="ct18"&gt;transform&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-category="17"&gt;&lt;a href="#" class="ct19"&gt;transition&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-category="18"&gt;&lt;a href="#" class="ct20"&gt;etc&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div class="search__info"&gt;
+            &lt;div&gt;전체 속성 갯수 : &lt;span class="num"&gt;0&lt;/span&gt;&lt;/div&gt;
+            &lt;div&gt;찾은 속성 갯수 : &lt;span class="num2"&gt;0&lt;/span&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="search__list"&gt;
+            &lt;ul class="line"&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+&lt;!-- main --&gt;
+</code></pre>
+                </div>
+            </details>
+        </div>
+
+    <h3 class="t_tit2">CSS</h3>
+    <p class="t_desc2">
+        기존과 동일하므로 생략하겠습니다.
+    </p>
+    <h3 class="t_tit2">Javascript !!미완성!!</h3>
+    <p class="t_desc2">
+        여러가지 정렬 방법을 스크립트로 구현해주었으며<br>
+        카테고리별로 클릭했을 때 해당 카테고리의 요소들이 나오도록 구현했습니다.
+    </p>
+    <div class="result">
+    <details>
+    <summary>코드 보기</summary>
+    <div class="t_code">
+<pre><code class="language-js">const cssList = document.querySelector(".search__list .line");
+// 데이터 출력하기
+const updateList = () =&gt; {
+    let listCSS = "";
+    cssProperty.forEach((data, index) =&gt; {
+        listCSS += `&lt;li&gt;${data.num}. ${data.name} : ${data.desc} &lt;em&gt;${data.category}&lt;/em&gt;&lt;/li&gt;`;
+    });
+        
+    cssList.innerHTML = listCSS;
+
+    // 다른 방법
+
+    // for of 문
+    // for(let i of cssProperty){
+    //     // 배열이기때문에 push를 사용해야 함
+    //     listCSS.push(`&lt;li&gt;${i.num}. ${i.name} : ${i.desc}&lt;/li&gt;`);
+    // }
+    // document.querySelector(".search__list .line").innerHTML = listCSS.join('');
+
+    // map
+    // cssProperty.map((data, index) =&gt; {
+    //     cssProp.push(`&lt;li&gt;${data.num}. ${data.name} : ${data.desc} &lt;em&gt;${data.category}&lt;/em&gt;&lt;/li&gt;`);
+    //     cssList.innerHTML += cssProp[index];
+    // });
+}
+updateList();
+
+// 반대로 정렬 클릭
+document.querySelector(".btn1").addEventListener("click", (e) =&gt; {
+    e.preventDefault();
+    cssProperty.reverse();
+    updateList();
+    searchClick2.style.display = "none";
+    searchNumSec.style.display = "none";
+});
+// 오름차순 정렬 클릭
+document.querySelector(".btn2").addEventListener("click", (e) =&gt; {
+    e.preventDefault();
+    cssProperty.sort((a,b) =&gt; {
+        return a.num - b.num;
+    });
+    updateList();
+    searchClick2.style.display = "none";
+    searchNumSec.style.display = "none";
+});
+// 내림차순 정렬 클릭
+document.querySelector(".btn3").addEventListener("click", (e) =&gt; {
+    e.preventDefault();
+    cssProperty.sort((a,b) =&gt; {
+        return b.num - a.num;
+    });
+    updateList();
+    searchClick2.style.display = "none";
+    searchNumSec.style.display = "none";
+});
+// 알파벳 정렬(a~z) 클릭
+document.querySelector(".btn4").addEventListener("click", (e) =&gt; {
+    e.preventDefault();
+    cssProperty.sort((a, b) =&gt; {
+        let x = a.name;
+        let y = b.name;
+        return x.localeCompare(y);
+    });
+    updateList();
+    searchClick2.style.display = "none";
+    searchNumSec.style.display = "none";
+});
+// 알파벳 정렬(z~a) 클릭
+document.querySelector(".btn5").addEventListener("click", (e) =&gt; {
+    e.preventDefault();
+    cssProperty.sort((a, b) =&gt; {
+        let x = a.name;
+        let y = b.name;
+        return y.localeCompare(x);
+    });
+    updateList();
+    searchClick2.style.display = "none";
+    searchNumSec.style.display = "none";
+});
+// 랜덤 정렬
+document.querySelector(".btn6").addEventListener("click", (e) =&gt; {
+    e.preventDefault();
+    for(let i=cssProperty.length-1; i&gt;=0; i--){
+        const randomIndex = Math.floor(Math.random() * (i+1));
+        [cssProperty[i], cssProperty[randomIndex]] = [cssProperty[randomIndex], cssProperty[i]];
+        cssProperty.innerHTML += cssProperty[i]
+    }
+    updateList();
+    searchClick2.style.display = "none";
+    searchNumSec.style.display = "none";
+});
+// 랜덤정렬 다른 방법
+// 피셔 에이츠 알고리즘 //매개함수
+// function shuffle(data){
+//     //큰수부터 작업했으니깐 --
+//     for( let i=data.length-1; i&gt;=0; i--){
+//         const randomIndex = Math.floor(Math.random() * (i + 1));
+//         //console.log(randomIndex)  //배당분해구조할당
+//         //숫자가 중복되지 않고 랜덤으로 나오도록 하기
+//         [data[i], data[randomIndex]] = [data[randomIndex], data[i]];
+//         cssList.innerHTML += data[i];
+//     }
+// }
+
+// document.querySelector(".btn6").addEventListener("click", () =&gt; {
+//     //클릭하면 위로 올라가는 것 방지
+//     e.preventDefault();
+//     //안에 있던 것 비우기
+//     cssList.innerHTML = "";
+//     shuffle(cssProp);
+// });
+
+// 카테고리 정렬
+// document.querySelector(".btn7").addEventListener("click", (e) =&gt; {
+//     e.preventDefault();
+//     cssProperty.sort((a, b) =&gt; {
+//             let x = a.category;
+//             let y = b.category;
+//             return x.localeCompare(y);
+//         });
+//         updateList();
+// });
+    
+// 카테고리 정렬(다른 방법) 
+document.querySelector(".btn7").addEventListener("click", (e) =&gt; {
+    e.preventDefault();
+    cssProperty.sort((a, b) =&gt; {
+        return a.category &lt; b.category ? -1 : a.category &gt; b.category ? 1 : 0;
+    });
+    updateList();
+});
+
+// 카테고리 클릭시 해당 데이터 나오게 처리
+
+const searchClick2 = document.querySelector(".search__click ul:nth-child(2)");
+const searchClickC = document.querySelectorAll(".search__click ul:nth-child(2) li");
+    
+document.querySelector(".ct1").addEventListener("click" , () =&gt; {
+    let listCSS = "";
+    cssProperty.forEach((data, index) =&gt; {
+        if(cssProperty[index].category === 'animation')  {
+            listCSS += `&lt;li&gt;${data.num}. ${data.name} : ${data.desc} &lt;em&gt;animation&lt;/em&gt;&lt;/li&gt;`;
+        };
+        cssList.innerText = listCSS;
+    })
+});
+document.querySelector(".ct2").addEventListener("click" , () =&gt; {
+    let listCSS = "";
+    cssProperty.forEach((data, index) =&gt; {
+        if(cssProperty[index].category === 'background')  {
+            listCSS += `&lt;li&gt;${data.num}. ${data.name} : ${data.desc} &lt;em&gt;background&lt;/em&gt;&lt;/li&gt;`;
+        };
+        cssList.innerText = listCSS;
+    })
+});
+document.querySelector(".ct3").addEventListener("click" , () =&gt; {
+    let listCSS = "";
+    cssProperty.forEach((data, index) =&gt; {
+        if(cssProperty[index].category === 'border')  {
+            listCSS += `&lt;li&gt;${data.num}. ${data.name} : ${data.desc} &lt;em&gt;border&lt;/em&gt;&lt;/li&gt;`;
+        };
+        cssList.innerText = listCSS;
+    })
+});
+document.querySelector(".ct4").addEventListener("click" , () =&gt; {
+    let listCSS = "";
+    cssProperty.forEach((data, index) =&gt; {
+        if(cssProperty[index].category === 'clip')  {
+            listCSS += `&lt;li&gt;${data.num}. ${data.name} : ${data.desc} &lt;em&gt;clip&lt;/em&gt;&lt;/li&gt;`;
+        };
+        cssList.innerText = listCSS;
+    })
+});
+document.querySelector(".ct5").addEventListener("click" , () =&gt; {
+    let listCSS = "";
+    cssProperty.forEach((data, index) =&gt; {
+        if(cssProperty[index].category === 'flex')  {
+            listCSS += `&lt;li&gt;${data.num}. ${data.name} : ${data.desc} &lt;em&gt;flex&lt;/em&gt;&lt;/li&gt;`;
+        };
+        cssList.innerText = listCSS;
+    })
+});
+document.querySelector(".ct6").addEventListener("click" , () =&gt; {
+    let listCSS = "";
+    cssProperty.forEach((data, index) =&gt; {
+        if(cssProperty[index].category === 'font')  {
+            listCSS += `&lt;li&gt;${data.num}. ${data.name} : ${data.desc} &lt;em&gt;font&lt;/em&gt;&lt;/li&gt;`;
+        };
+        cssList.innerText = listCSS;
+    })
+});
+document.querySelector(".ct7").addEventListener("click" , () =&gt; {
+    let listCSS = "";
+    cssProperty.forEach((data, index) =&gt; {
+        if(cssProperty[index].category === 'grid')  {
+            listCSS += `&lt;li&gt;${data.num}. ${data.name} : ${data.desc} &lt;em&gt;grid&lt;/em&gt;&lt;/li&gt;`;
+        };
+        cssList.innerText = listCSS;
+    })
+});
+document.querySelector(".ct8").addEventListener("click" , () =&gt; {
+    let listCSS = "";
+    cssProperty.forEach((data, index) =&gt; {
+        if(cssProperty[index].category === 'image')  {
+            listCSS += `&lt;li&gt;${data.num}. ${data.name} : ${data.desc} &lt;em&gt;image&lt;/em&gt;&lt;/li&gt;`;
+        };
+        cssList.innerText = listCSS;
+    })
+});
+document.querySelector(".ct9").addEventListener("click" , () =&gt; {
+    let listCSS = "";
+    cssProperty.forEach((data, index) =&gt; {
+        if(cssProperty[index].category === 'inset')  {
+            listCSS += `&lt;li&gt;${data.num}. ${data.name} : ${data.desc} &lt;em&gt;inset&lt;/em&gt;&lt;/li&gt;`;
+        };
+        cssList.innerText = listCSS;
+    })
+});
+document.querySelector(".ct10").addEventListener("click" , () =&gt; {
+    let listCSS = "";
+    cssProperty.forEach((data, index) =&gt; {
+        if(cssProperty[index].category === 'margin')  {
+            listCSS += `&lt;li&gt;${data.num}. ${data.name} : ${data.desc} &lt;em&gt;margin&lt;/em&gt;&lt;/li&gt;`;
+        };
+        cssList.innerText = listCSS;
+    })
+});
+document.querySelector(".ct11").addEventListener("click" , () =&gt; {
+    let listCSS = "";
+    cssProperty.forEach((data, index) =&gt; {
+        if(cssProperty[index].category === 'mask')  {
+            listCSS += `&lt;li&gt;${data.num}. ${data.name} : ${data.desc} &lt;em&gt;mask&lt;/em&gt;&lt;/li&gt;`;
+        };
+        cssList.innerText = listCSS;
+    })
+});
+document.querySelector(".ct12").addEventListener("click" , () =&gt; {
+    let listCSS = "";
+    cssProperty.forEach((data, index) =&gt; {
+        if(cssProperty[index].category === 'offset')  {
+            listCSS += `&lt;li&gt;${data.num}. ${data.name} : ${data.desc} &lt;em&gt;offset&lt;/em&gt;&lt;/li&gt;`;
+        };
+        cssList.innerText = listCSS;
+    })
+});
+document.querySelector(".ct13").addEventListener("click" , () =&gt; {
+    let listCSS = "";
+    cssProperty.forEach((data, index) =&gt; {
+        if(cssProperty[index].category === 'overflow')  {
+            listCSS += `&lt;li&gt;${data.num}. ${data.name} : ${data.desc} &lt;em&gt;overflow&lt;/em&gt;&lt;/li&gt;`;
+        };
+        cssList.innerText = listCSS;
+    })
+});
+document.querySelector(".ct14").addEventListener("click" , () =&gt; {
+    let listCSS = "";
+    cssProperty.forEach((data, index) =&gt; {
+        if(cssProperty[index].category === 'scroll')  {
+            listCSS += `&lt;li&gt;${data.num}. ${data.name} : ${data.desc} &lt;em&gt;scroll&lt;/em&gt;&lt;/li&gt;`;
+        };
+        cssList.innerText = listCSS;
+    })
+});
+document.querySelector(".ct15").addEventListener("click" , () =&gt; {
+    let listCSS = "";
+    cssProperty.forEach((data, index) =&gt; {
+        if(cssProperty[index].category === 'padding')  {
+            listCSS += `&lt;li&gt;${data.num}. ${data.name} : ${data.desc} &lt;em&gt;padding&lt;/em&gt;&lt;/li&gt;`;
+        };
+        cssList.innerText = listCSS;
+    })
+});
+document.querySelector(".ct16").addEventListener("click" , () =&gt; {
+    let listCSS = "";
+    cssProperty.forEach((data, index) =&gt; {
+        if(cssProperty[index].category === 'text')  {
+            listCSS += `&lt;li&gt;${data.num}. ${data.name} : ${data.desc} &lt;em&gt;text&lt;/em&gt;&lt;/li&gt;`;
+        };
+        cssList.innerText = listCSS;
+    })
+});
+document.querySelector(".ct17").addEventListener("click" , () =&gt; {
+    let listCSS = "";
+    cssProperty.forEach((data, index) =&gt; {
+        if(cssProperty[index].category === 'transform')  {
+            listCSS += `&lt;li&gt;${data.num}. ${data.name} : ${data.desc} &lt;em&gt;transform&lt;/em&gt;&lt;/li&gt;`;
+        };
+        cssList.innerText = listCSS;
+    })
+});
+document.querySelector(".ct18").addEventListener("click" , () =&gt; {
+    let listCSS = "";
+    cssProperty.forEach((data, index) =&gt; {
+        if(cssProperty[index].category === 'transition')  {
+            listCSS += `&lt;li&gt;${data.num}. ${data.name} : ${data.desc} &lt;em&gt;transition&lt;/em&gt;&lt;/li&gt;`;
+        };
+        cssList.innerText = listCSS;
+    })
+});
+document.querySelector(".ct19").addEventListener("click" , () =&gt; {
+    let listCSS = "";
+    cssProperty.forEach((data, index) =&gt; {
+        if(cssProperty[index].category === 'etc')  {
+            listCSS += `&lt;li&gt;${data.num}. ${data.name} : ${data.desc} &lt;em&gt;etc&lt;/em&gt;&lt;/li&gt;`;
+        };
+        cssList.innerText = listCSS;
+    })
+});
+
+
+// 카테고리 정렬 클릭시 카테고리 버튼 나오게.
+document.querySelector(".btn7").addEventListener("click", () =&gt; {
+    searchClick2.style.display = "block";
+    searchNumSec.style.display = "block";
+});
+
+
+// 전체속성갯수 구하기
+const searchNum = document.querySelector(".search__info .num");
+const searchNum2 = document.querySelector(".search__info .num2");
+const searchNumSec = document.querySelector(".search__info div:nth-child(2)");
+cssProperty.map((element, index) =&gt; {
+    // searchNum에 index 넣어주기
+    //searchNum.innerText = cssProperty.length;
+    searchNum.innerText = index + 1;
+    searchNumSec.style.display = "none";
+});
+</code></pre>
+            </div>
+        </details>
+    </div>
+    <!-- document -->
+
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 제작하기 : 카드 유형02</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 제작하기 : 카드 유형02</h2>
+            <p class="t_box">
+                이번 카드 유형은 8개의 카드를 위 아래 4개씩 배치하는 것입니다.<br>
+                네모 안 화살표를 오른쪽에 배치하는 부분이 카드 유형01과는 다른 특징입니다.
+            </p>
+            <h3 class="t_tit2">오늘 만들 사이트 형식</h3>
+            <div class="iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FaeLa26s8XLtAsZiKx2CAMx%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D504%253A3" allowfullscreen></iframe>
+            </div>
+            <hr>
+            <h3 class="t_tit2">사이트 제작 방법</h3>
+            <h4 class="t_tit3">1. Figma 사용해서 레이아웃 설정</h4>
+            <p class="t_desc">
+                사이트를 만들기 위해서는 먼저 사이트 레이아웃을 설정해야 합니다. <br>
+                밑의 이미지와 같이 figma를 이용하여 레이아웃을 설정해줄 수 있습니다. 
+            </p>
+            <div class="t_box">
+                layout을 grid가 아닌 columns로 설정 후 count 12, margin 380을 주어 아래와 같은 형식을 만들어줍니다.
+            </div>
+            <figure>
+                <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8%EB%A7%8C%EB%93%A4%EA%B8%B002_02.jpg?raw=true" alt="웹레이아웃02_01">
+            </figure>
+            <div class="t_box">
+                " shift + R " 로 자 기능을 활용하여 레이아웃을 만들어줍니다. <br>
+                ※ 이 때, 칸이나 줄이 확실하게 맞아야 하며 오차없이 레이아웃을 설정해주는 것이 중요합니다.
+            </div>
+            <figure>
+                <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8%EB%A7%8C%EB%93%A4%EA%B8%B002_01.jpg?raw=true" alt="웹레이아웃02_02">
+            </figure>
+            <h4 class="t_tit3">2. vscode를 통해 코딩해주기! : <i>HTML편</i></h4>
+            <p class="t_desc">
+                레이아웃을 다 설정해줬다면 코딩을 해봅시다! <br>
+                html의 body 부분에 레이아웃 구역을 정해줍니다.<br>
+                이 때 카드 유형01과는 다르게 구역을 card__inner container를 통해 위와 아래 두 개의 구역으로 나눠주는 것이 중요합니다.
+            </p>
+            <div class="t_code">
+<pre><code>&lt;body&gt;
+    &lt;section id="cardType" class="card_wrap gmarketsans section"&gt;
+        &lt;h2&gt;배우고 싶은 운동&lt;/h2&gt;
+        &lt;p&gt;
+            건강한 몸과 정신 수련을 위해 배우고 싶은 운동들입니다. &lt;br&gt;
+            기회가 되면 꼭 배우고 싶습니다.
+        &lt;/p&gt;
+        &lt;div class="card__inner container"&gt;
+            &lt;article class="card"&gt;
+                &lt;figure class="card__header"&gt;
+                    &lt;img src="img/사이트02_01.jpg" alt="수영"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card__body"&gt;
+                    &lt;h3 class="tit"&gt;운동!
+                        &lt;span class="btn" aria-hidden="true"&gt;
+                            &lt;svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;path
+                                    d="M0 5C0 2.23858 2.23858 0 5 0H23C25.7614 0 28 2.23858 28 5V23C28 25.7614 25.7614 28 23 28H5C2.23858 28 0 25.7614 0 23V5Z"
+                                    fill="#BAEFEF" /&gt;
+                                &lt;path
+                                    d="M8 13C7.44772 13 7 13.4477 7 14C7 14.5523 7.44772 15 8 15L8 13ZM20.7071 14.7071C21.0976 14.3166 21.0976 13.6834 20.7071 13.2929L14.3431 6.92893C13.9526 6.53841 13.3195 6.53841 12.9289 6.92893C12.5384 7.31946 12.5384 7.95262 12.9289 8.34315L18.5858 14L12.9289 19.6569C12.5384 20.0474 12.5384 20.6805 12.9289 21.0711C13.3195 21.4616 13.9526 21.4616 14.3431 21.0711L20.7071 14.7071ZM8 15L20 15L20 13L8 13L8 15Z"
+                                    fill="black" /&gt;
+                            &lt;/svg&gt;
+                        &lt;/span&gt;
+                    &lt;/h3&gt;
+                    &lt;p class="desc"&gt;운동은 신체적 건강 이외에 심리적
+                        건강(우울ㆍ불안ㆍ스트레스 감소,
+                        자존감 향상)에도 긍정적 영향을 ...&lt;/p&gt;
+                    &lt;a class="btn" href="/"&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;figure class="card__header"&gt;
+                    &lt;img src="img/사이트02_02.jpg" alt="폴댄스"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card__body"&gt;
+                    &lt;h3 class="tit"&gt;운동!
+                        &lt;span class="btn" aria-hidden="true"&gt;
+                            &lt;svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;path
+                                    d="M0 5C0 2.23858 2.23858 0 5 0H23C25.7614 0 28 2.23858 28 5V23C28 25.7614 25.7614 28 23 28H5C2.23858 28 0 25.7614 0 23V5Z"
+                                    fill="#BAEFEF" /&gt;
+                                &lt;path
+                                    d="M8 13C7.44772 13 7 13.4477 7 14C7 14.5523 7.44772 15 8 15L8 13ZM20.7071 14.7071C21.0976 14.3166 21.0976 13.6834 20.7071 13.2929L14.3431 6.92893C13.9526 6.53841 13.3195 6.53841 12.9289 6.92893C12.5384 7.31946 12.5384 7.95262 12.9289 8.34315L18.5858 14L12.9289 19.6569C12.5384 20.0474 12.5384 20.6805 12.9289 21.0711C13.3195 21.4616 13.9526 21.4616 14.3431 21.0711L20.7071 14.7071ZM8 15L20 15L20 13L8 13L8 15Z"
+                                    fill="black" /&gt;
+                            &lt;/svg&gt;
+                        &lt;/span&gt;
+                    &lt;/h3&gt;
+                    &lt;p class="desc"&gt;운동은 신체적 건강 이외에 심리적
+                        건강(우울ㆍ불안ㆍ스트레스 감소,
+                        자존감 향상)에도 긍정적 영향을 ...&lt;/p&gt;
+                    &lt;a class="btn" href="/"&gt;&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;figure class="card__header"&gt;
+                    &lt;img src="img/사이트02_03.jpg" alt="발레"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card__body"&gt;
+                    &lt;h3 class="tit"&gt;운동!
+                        &lt;span class="btn" aria-hidden="true"&gt;
+                            &lt;svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;path
+                                    d="M0 5C0 2.23858 2.23858 0 5 0H23C25.7614 0 28 2.23858 28 5V23C28 25.7614 25.7614 28 23 28H5C2.23858 28 0 25.7614 0 23V5Z"
+                                    fill="#BAEFEF" /&gt;
+                                &lt;path
+                                    d="M8 13C7.44772 13 7 13.4477 7 14C7 14.5523 7.44772 15 8 15L8 13ZM20.7071 14.7071C21.0976 14.3166 21.0976 13.6834 20.7071 13.2929L14.3431 6.92893C13.9526 6.53841 13.3195 6.53841 12.9289 6.92893C12.5384 7.31946 12.5384 7.95262 12.9289 8.34315L18.5858 14L12.9289 19.6569C12.5384 20.0474 12.5384 20.6805 12.9289 21.0711C13.3195 21.4616 13.9526 21.4616 14.3431 21.0711L20.7071 14.7071ZM8 15L20 15L20 13L8 13L8 15Z"
+                                    fill="black" /&gt;
+                            &lt;/svg&gt;
+                        &lt;/span&gt;
+                    &lt;/h3&gt;
+                    &lt;p class="desc"&gt;운동은 신체적 건강 이외에 심리적
+                        건강(우울ㆍ불안ㆍ스트레스 감소,
+                        자존감 향상)에도 긍정적 영향을 ...&lt;/p&gt;
+                    &lt;a class="btn" href="/"&gt;&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;figure class="card__header"&gt;
+                    &lt;img src="img/사이트02_04.jpg" alt="요가"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card__body"&gt;
+                    &lt;h3 class="tit"&gt;운동!
+                        &lt;span class="btn" aria-hidden="true"&gt;
+                            &lt;svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;path
+                                    d="M0 5C0 2.23858 2.23858 0 5 0H23C25.7614 0 28 2.23858 28 5V23C28 25.7614 25.7614 28 23 28H5C2.23858 28 0 25.7614 0 23V5Z"
+                                    fill="#BAEFEF" /&gt;
+                                &lt;path
+                                    d="M8 13C7.44772 13 7 13.4477 7 14C7 14.5523 7.44772 15 8 15L8 13ZM20.7071 14.7071C21.0976 14.3166 21.0976 13.6834 20.7071 13.2929L14.3431 6.92893C13.9526 6.53841 13.3195 6.53841 12.9289 6.92893C12.5384 7.31946 12.5384 7.95262 12.9289 8.34315L18.5858 14L12.9289 19.6569C12.5384 20.0474 12.5384 20.6805 12.9289 21.0711C13.3195 21.4616 13.9526 21.4616 14.3431 21.0711L20.7071 14.7071ZM8 15L20 15L20 13L8 13L8 15Z"
+                                    fill="black" /&gt;
+                            &lt;/svg&gt;
+                        &lt;/span&gt;
+                    &lt;/h3&gt;
+                    &lt;p class="desc"&gt;운동은 신체적 건강 이외에 심리적
+                        건강(우울ㆍ불안ㆍ스트레스 감소,
+                        자존감 향상)에도 긍정적 영향을 ...&lt;/p&gt;
+                    &lt;a class="btn" href="/"&gt;&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+        &lt;!-- 위에 4개 --&gt;
+        &lt;div class="card__inner container"&gt;
+            &lt;article class="card"&gt;
+                &lt;figure class="card__header"&gt;
+                    &lt;img src="img/사이트02_05.jpg" alt="서핑"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card__body"&gt;
+                    &lt;h3 class="tit"&gt;운동!
+                        &lt;span class="btn" aria-hidden="true"&gt;
+                            &lt;svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;path
+                                    d="M0 5C0 2.23858 2.23858 0 5 0H23C25.7614 0 28 2.23858 28 5V23C28 25.7614 25.7614 28 23 28H5C2.23858 28 0 25.7614 0 23V5Z"
+                                    fill="#BAEFEF" /&gt;
+                                &lt;path
+                                    d="M8 13C7.44772 13 7 13.4477 7 14C7 14.5523 7.44772 15 8 15L8 13ZM20.7071 14.7071C21.0976 14.3166 21.0976 13.6834 20.7071 13.2929L14.3431 6.92893C13.9526 6.53841 13.3195 6.53841 12.9289 6.92893C12.5384 7.31946 12.5384 7.95262 12.9289 8.34315L18.5858 14L12.9289 19.6569C12.5384 20.0474 12.5384 20.6805 12.9289 21.0711C13.3195 21.4616 13.9526 21.4616 14.3431 21.0711L20.7071 14.7071ZM8 15L20 15L20 13L8 13L8 15Z"
+                                    fill="black" /&gt;
+                            &lt;/svg&gt;
+                        &lt;/span&gt;
+                    &lt;/h3&gt;
+                    &lt;p class="desc"&gt;운동은 신체적 건강 이외에 심리적
+                        건강(우울ㆍ불안ㆍ스트레스 감소,
+                        자존감 향상)에도 긍정적 영향을 미.&lt;/p&gt;
+                    &lt;a class="btn" href="/"&gt;&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;figure class="card__header"&gt;
+                    &lt;img src="img/사이트02_06.jpg" alt="웨이크보드"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card__body"&gt;
+                    &lt;h3 class="tit"&gt;운동!
+                        &lt;span class="btn" aria-hidden="true"&gt;
+                            &lt;svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;path
+                                    d="M0 5C0 2.23858 2.23858 0 5 0H23C25.7614 0 28 2.23858 28 5V23C28 25.7614 25.7614 28 23 28H5C2.23858 28 0 25.7614 0 23V5Z"
+                                    fill="#BAEFEF" /&gt;
+                                &lt;path
+                                    d="M8 13C7.44772 13 7 13.4477 7 14C7 14.5523 7.44772 15 8 15L8 13ZM20.7071 14.7071C21.0976 14.3166 21.0976 13.6834 20.7071 13.2929L14.3431 6.92893C13.9526 6.53841 13.3195 6.53841 12.9289 6.92893C12.5384 7.31946 12.5384 7.95262 12.9289 8.34315L18.5858 14L12.9289 19.6569C12.5384 20.0474 12.5384 20.6805 12.9289 21.0711C13.3195 21.4616 13.9526 21.4616 14.3431 21.0711L20.7071 14.7071ZM8 15L20 15L20 13L8 13L8 15Z"
+                                    fill="black" /&gt;
+                            &lt;/svg&gt;
+                        &lt;/span&gt;
+                    &lt;/h3&gt;
+                    &lt;p class="desc"&gt;운동은 신체적 건강 이외에 심리적
+                        건강(우울ㆍ불안ㆍ스트레스 감소,
+                        자존감 향상)에도 긍정적 영향을 미.&lt;/p&gt;
+                    &lt;a class="btn" href="/"&gt;&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;figure class="card__header"&gt;
+                    &lt;img src="img/사이트02_07.jpg" alt="스포츠댄스"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card__body"&gt;
+                    &lt;h3 class="tit"&gt;운동!
+                        &lt;span class="btn" aria-hidden="true"&gt;
+                            &lt;svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;path
+                                    d="M0 5C0 2.23858 2.23858 0 5 0H23C25.7614 0 28 2.23858 28 5V23C28 25.7614 25.7614 28 23 28H5C2.23858 28 0 25.7614 0 23V5Z"
+                                    fill="#BAEFEF" /&gt;
+                                &lt;path
+                                    d="M8 13C7.44772 13 7 13.4477 7 14C7 14.5523 7.44772 15 8 15L8 13ZM20.7071 14.7071C21.0976 14.3166 21.0976 13.6834 20.7071 13.2929L14.3431 6.92893C13.9526 6.53841 13.3195 6.53841 12.9289 6.92893C12.5384 7.31946 12.5384 7.95262 12.9289 8.34315L18.5858 14L12.9289 19.6569C12.5384 20.0474 12.5384 20.6805 12.9289 21.0711C13.3195 21.4616 13.9526 21.4616 14.3431 21.0711L20.7071 14.7071ZM8 15L20 15L20 13L8 13L8 15Z"
+                                    fill="black" /&gt;
+                            &lt;/svg&gt;
+                        &lt;/span&gt;
+                    &lt;/h3&gt;
+                    &lt;p class="desc"&gt;운동은 신체적 건강 이외에 심리적
+                        건강(우울ㆍ불안ㆍ스트레스 감소,
+                        자존감 향상)에도 긍정적 영향을 미.&lt;/p&gt;
+                    &lt;a class="btn" href="/"&gt;&lt;/a&gt;    
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;figure class="card__header"&gt;
+                    &lt;img src="img/사이트02_08.jpg" alt="스노우보드"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card__body"&gt;
+                    &lt;h3 class="tit"&gt;운동!
+                        &lt;span class="btn" aria-hidden="true"&gt;
+                            &lt;svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;path
+                                    d="M0 5C0 2.23858 2.23858 0 5 0H23C25.7614 0 28 2.23858 28 5V23C28 25.7614 25.7614 28 23 28H5C2.23858 28 0 25.7614 0 23V5Z"
+                                    fill="#BAEFEF" /&gt;
+                                &lt;path
+                                    d="M8 13C7.44772 13 7 13.4477 7 14C7 14.5523 7.44772 15 8 15L8 13ZM20.7071 14.7071C21.0976 14.3166 21.0976 13.6834 20.7071 13.2929L14.3431 6.92893C13.9526 6.53841 13.3195 6.53841 12.9289 6.92893C12.5384 7.31946 12.5384 7.95262 12.9289 8.34315L18.5858 14L12.9289 19.6569C12.5384 20.0474 12.5384 20.6805 12.9289 21.0711C13.3195 21.4616 13.9526 21.4616 14.3431 21.0711L20.7071 14.7071ZM8 15L20 15L20 13L8 13L8 15Z"
+                                    fill="black" /&gt;
+                            &lt;/svg&gt;
+                        &lt;/span&gt;
+                    &lt;/h3&gt;
+                    &lt;p class="desc"&gt;운동은 신체적 건강 이외에 심리적
+                        건강(우울ㆍ불안ㆍ스트레스 감소,
+                        자존감 향상)에도 긍정적 영향을 미.&lt;/p&gt;
+                    &lt;a class="btn" href="/"&gt;&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+        &lt;!-- 아래 4개 --&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+</code></pre>
+            </div>
+            <h4 class="t_tit3">3. vscode를 통해 코딩해주기! : <i>CSS편</i></h4>
+            <p class="t_desc">
+                style을 통해 CSS를 설정해줍니다. <br>
+                피그마로 만들어 놓은 레이아웃을 보며 HTML로 구역을 정해준 후 CSS로 하나하나 디자인해 나가는 것이 중요합니다!
+            </p>
+            <div class="t_code">
+<pre><code>&lt;style&gt;
+    /* fonts */
+    @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+    .gmarketsans {
+        font-family: 'GmarketSans';
+        font-weight: 400;
+    }
+
+    /* reset */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: normal;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    /* common */
+    .container {
+        width: 1160px;
+        padding: 0 20px;
+        margin: 0 auto;
+        min-width: 1160px;
+    }
+
+    .section {
+        padding: 120px 0;
+    }
+
+    /* +는 형제 &gt; 바로 밑에 있는 자식(그래서 다른 자식들한테는 해당 안됨) */
+    .section&gt;h2 {
+        font-size: 50px;
+        line-height: 1;
+        /*figma auto랑 같음*/
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .section&gt;p {
+        font-style: 22px;
+        font-weight: 300;
+        color: #666;
+        text-align: center;
+        margin-bottom: 70px;
+        line-height: 1.4;
+    }
+
+    /* cardType */
+    .card__inner {
+        display: flex;
+        justify-content: space-between;
+        /*양쪽 정렬 맞춰주는 것*/
+    }
+
+    .card {
+        width: 275px;
+        background: #ffffff;
+    }
+    .card__header {
+        padding-bottom: 20px;
+    }
+    
+    .card__body {}
+
+    .card__body .tit {
+        font-size: 28px;
+        position: relative;
+    }
+
+    .card__body .desc {
+        font-size: 18px;
+        line-height: 1.4;
+        color: #666;
+        font-weight: 100;
+        margin: 10px 0 50px 0;
+    }
+
+    .card__body .btn {
+        position: absolute;
+        right: 0;
+    }
+&lt;/style&gt;
+</code></pre>
+            </div> 
+            <h3 class="t_tit2">▶완성본</h3>   
+            <div class="t_iframe" style="min-height: 1040px; padding-top: 0;">
+                <iframe src="https://KwonHyehyeon.github.io/coding/site/cardType/cardType02.html" frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://KwonHyehyeon.github.io/coding/site/cardType/cardType02.html" target="_blank">실제 사이트 보기</a>
+                <a href="https://github.com/KwonHyehyeon/coding/blob/main/site/cardType/cardType02.html" target="_blank">원본 소스 보기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

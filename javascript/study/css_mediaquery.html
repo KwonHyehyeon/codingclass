@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 미디어쿼리</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">미디어쿼리(media query)란 무엇일까?</h2>
+            <p class="t_desc">
+               미디어쿼리란, <i>뷰포트의 해상도에 따라 CSS를 분리</i>시키는 미디어쿼리는 반응형 프로젝트에서 반드시 필요한 기법입니다.
+            </p>
+            <p class="t_desc2">
+                ▶︎ 종류<br>
+                01. &lt;link ~ media=""&gt;<br>
+                02. @media <br>
+                03. media query를 흉내내는 script
+            </p>
+            <h3 class="t_tit2">01. &lt;link ~ media=""&gt;</h3>
+            <div class="t_box">
+                &lt;link rel="stylesheet" type="text/css" media="all and (min-width: 1000px)" href="style_pc.css"
+            </div>
+            <p class="t_desc">
+                위의 박스의 뜻은 최소 가로폭이 1000px, 즉 1000px보다 넓은 해상도일 때에 style_pc.css를 연결한다는 뜻입니다.<br>
+                태블릿이나 모바일 기기마다 가로폭이 다른데, 크롬 브라우저에서 개발자 도구(F12)를 열고 Toggle device Toolbar를 누르면 기기마다의
+                해상도도 확인할 수 있고 기기 모델도 추가할 수 있습니다.
+            </p>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>모바일 기기</th>
+                        <th>가로</th>
+                        <th>세로</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">iPhone X</td>
+                        <td class="ce">375</td>
+                        <td class="ce">812</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">iPhone 6,7,8</td>
+                        <td class="ce">375</td>
+                        <td class="ce">667</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">iPhone 6,7,8 plus</td>
+                        <td class="ce">414</td>
+                        <td class="ce">736</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">iPhone 5</td>
+                        <td class="ce">320</td>
+                        <td class="ce">568</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">Galaxy S5, S8</td>
+                        <td class="ce">360</td>
+                        <td class="ce">640</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">Galaxy Note 8</td>
+                        <td class="ce">360</td>
+                        <td class="ce">640</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">iPad Pro</td>
+                        <td class="ce">1024</td>
+                        <td class="ce">1366</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">...</td>
+                        <td class="ce">...</td>
+                        <td class="ce">...</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+            <h3 class="t_tit2">02. @media</h3>
+            <p class="t_desc">
+               처음 로딩할 때 성능이 저하되지 않도록 CSS 파일을 하나로 만들어서 CSS 내부에서 조건에 따라 분기시키는 넋이 일반적인 형태의 반응형웹 CSS입니다.
+            </p>
+            <div class="t_box">
+                @media all and (min-width: 1000px) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/*모든 기기에서 해상도가 최소 1000px 인 경우 적용할 속성들*/<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/*all은 Media Type을 나타냄. and 전, 후에 띄어씀.*/<br>
+                }
+            </div>
+            <h4 class="t_tit3">▶ Media Type 종류</h>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>Media Type</th>
+                        <th>설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">all</td>
+                        <td>모든 미디어 장치에 사용 (기본값)</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">print</td>
+                        <td>프린터에 사용</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">screen</td>
+                        <td>PC, 태블릿, 스마트폰에 사용</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">speech</td>
+                        <td>스크린리더기가 페이지를 읽는데 사용</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="t_tit2">예시</h3>
+            <div class="t_box">
+            body { color: red; }<br>
+            @media only screen and (max-width: 768px) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body { color: blue; }<br>
+            }
+            </div>
+            <p class="t_desc">
+                원래 글자색이 빨간색인데, <i>화면이 768px보다 작아졌을 때는 글자색을 파란색으로 지정한다는 뜻</i>이므로 PC에서는 글자 색상이 빨간색으로, 모바일에서는 파란색으로 나타나게 됩니다.
+            </p>
+            <h3 class="t_tit2">예시</h3>
+            <div class="t_box">
+            body { color: blue; }<br>
+            @media only screen and (min-width: 768px) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body { color: red; }<br>
+            }
+            </div>
+            <p class="t_desc">
+                원래 글자색이 파란색인데, <i>화면이 768px보다 커지면 글자색을 빨간색으로 지정한다는 뜻</i>
+            </p>
+            <h3 class="t_tit2">예시</h3>
+            <div class="t_box">
+            @media only screen and (orientation: portrait) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body { background: skyblue; }<br>
+            }
+            </div>
+            <p class="t_desc">
+                모바일 기기를 세워 <i>세로가 가로보다 긴 세로방향</i>이 되면 <i>배경색을 하늘색으로 지정한다는 뜻</i>
+            </p>
+            <h3 class="t_tit2">예시</h3>
+            <div class="t_box">
+            @media only screen and (orientation: landscape) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body { background: lightgreen; }<br>
+            }
+            </div>
+            <p class="t_desc">
+                모바일 기기를 눕혀 <i>가로가 세로보다 긴 가로방향</i>이 되면 <i>배경색을 연두색으로 지정한다는 뜻</i>
+            </p>
+            <h3 class="t_tit2">예시</h3>
+            <div class="t_box">
+            @media screen and (max-width: 900px) and (min-width: 600px), (min-width: 1100px) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body { color: red; }<br>
+            }
+            </div>
+            <p class="t_desc">
+                ※ 쉼표로 구분하여 조건을 추가할 수 있음.
+                <br>
+                가로가 600px에서 900px 사이일 때, 그리고 1100px 이상일 때에만 글자색을 빨간색으로 한다는 뜻
+            </p>
+            <hr><br>
+            <h4 class="t_tit">미디어쿼리를 이용해서 레이아웃을 만들어 봅시다!</h4><br>
+            <div class="iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fgc5BPvQ2aXoHF3PODadUeO%2FUntitled%3Fnode-id%3D0%253A1" allowfullscreen></iframe>
+            </div>
+            <br>
+            <div class="result">
+                <details>
+                    <summary><strong>HTML</strong></summary>
+                    <div class="t_code">
+<pre><code>&lt;body&gt;
+    &lt;div id="wrap"&gt;
+        &lt;header id="header"&gt;header&lt;/header&gt;
+        &lt;main id="main"&gt;
+            &lt;div class="lnb"&gt;lnb&lt;/div&gt;
+            &lt;content id="content"&gt;content&lt;/content&gt;
+            &lt;aside id="aside"&gt;aside&lt;/aside&gt;
+        &lt;/main&gt;
+        &lt;footer id="footer"&gt;footer&lt;/footer&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+                    </div>
+                </details>
+            </div>
+            <br>
+            <div class="result">
+                <details>
+                    <summary><strong>CSS</strong></summary>
+                    <div class="t_code">
+<pre><code>&lt;style&gt;
+    @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+    * {
+        margin: 0;
+        padding: 0;
+        font-size: 64px;
+        font-family: 'GmarketSans';
+        text-align: center;
+    }
+    #wrap {
+        width: 100%;
+    }
+    #header {
+        height: 200px;
+        background-color: #FFCFB4;
+        line-height: 200px;
+    }
+    #main {
+        display: flex;
+    }
+    .lnb {
+        width: 25%;
+        height: 600px;
+        background-color: #EEC28F;
+        line-height: 600px;
+    }
+    #content {
+        width: 50%;
+        height: 600px;
+        background-color: #FFB054;
+        line-height: 600px;
+    }
+    #aside {
+        width: 25%;
+        height: 600px;
+        background-color: #EDA046;
+        line-height: 600px;
+    }
+    #footer {
+        height: 200px;
+        background-color: #FC9054;
+        line-height: 200px;
+    }
+    /* 미디어쿼리 */
+    @media (max-width:1280px){}
+    @media (max-width:1024px){
+        #main {
+            flex-wrap: wrap;
+        }
+        .lnb {
+            width: 30%;
+            height: 400px;
+            line-height: 400px;
+        }
+        #content {
+            width: 70%;
+            height: 400px;
+            line-height: 400px;
+        }
+        #aside {
+            width: 100%;
+            height: 200px;
+            line-height: 200px;
+        }
+    }
+    @media (max-width:768px){
+        .lnb {
+            width: 100%;
+            height: 200px;
+            line-height: 200px;
+        }
+        #content {
+            width: 100%;
+            height: 200px;
+            line-height: 200px;
+        }
+    }
+&lt;/style&gt;
+</code></pre>
+            </div>
+                </details>
+            </div>
+            <br>
+            <div class="result">
+                <details>
+                    <summary><strong>완성본</strong></summary>
+                    <div class="iframe">
+                        <iframe height="300" style="width: 500px;" scrolling="no" title="Untitled" src="https://codepen.io/kwonhyehyeon/embed/YzaJBaw?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href="https://codepen.io/kwonhyehyeon/pen/YzaJBaw">
+                            Untitled</a> by KwonHyehyeon (<a href="https://codepen.io/kwonhyehyeon">@kwonhyehyeon</a>)
+                            on <a href="https://codepen.io">CodePen</a>.
+                          </iframe>
+                    </div>
+                    <div class="t_link">
+                        <a href="https://KwonHyehyeon.github.io/coding/test/tistoryex273p.html" target="_blank">실제 사이트 보기</a>
+                    </div>
+                </details>
+            </div>
+            <hr>
+            <h3 class="t_tit2">03. media query를 흉내내는 script</h3>
+            <div class="t_box">
+                function initLayout() {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var widthWin = $(window).width()<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (widthWin &gt; 1000) $('body').addClass('mob').removeClass('pc');<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else $('body').removeClass('mob').addClass('pc');<br>
+                }
+            </div>
+            <p class="t_desc">
+               창의 가로 크기를 재고 1000px 보다 좁으면 body에 mob 클래스를 붙이고 pc 클래스는 제거하고, <br>
+               1000px 이상이면 body에 pc 클래스를 붙이고, mob 클래스는 제거한다는 뜻입니다.
+            </p>
+            <div class="t_box">
+                $(window).resize(function() {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initLayout();<br>
+                });
+            </div>
+            <p class="t_desc">
+               미리 만들어둔 스크립트를 창 크기가 바뀔 때마다 실행합니다.
+            </p>
+            <div class="t_box">
+                ...<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body.mob { max-width: 720px; }<br>
+                ...
+            </div>
+            <p class="t_desc">
+               css에서 body.mob에 속성을 추가하면 모바일일 때의 속성이 등록되는 것입니다.
+            </p>
+            
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+</html>

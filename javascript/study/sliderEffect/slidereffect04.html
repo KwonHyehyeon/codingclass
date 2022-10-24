@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 이펙트 04</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="document">
+        <h2 class="t_tit">🎞 슬라이드 이펙트 - 좌우로 움직이기(버튼을 이용하여)</h2>
+        <p class="t_desc">
+            📌 prev와 next 버튼을 이용하여 슬라이드를 좌우로 움직일 수 있게 만들어봅시다!<br>
+        </p>
+        <hr>
+        <h3 class="t_tit2">슬라이드 이펙트 - 좌우로 움직이기(버튼을 이용하여) 효과 완성⭐️</h3>
+        <div class="t_iframe" style="min-height: 1080px; padding-top: 0;">
+            <iframe src="https://kwonhyehyeon.github.io/coding/javascript/effect/sliderEffect04.html" frameborder="0"></iframe>
+        </div>
+        <div class="t_link">
+            <a href="https://kwonhyehyeon.github.io/coding/javascript/effect/sliderEffect04.html" target="_blank"
+            >움직이는 슬라이드가 궁금하다면?💡</a>
+            <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/effect/sliderEffect04.html" target="_blank"
+            >원본 소스보기</a>
+            <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/assets/css/slider.css" target="_blank"
+            >CSS 소스보기</a>
+        </div>  
+        <h3 class="t_tit2">HTML</h3>
+        <p class="t_desc2">
+            코드 보기를 펼쳐 봐주세요 :)<br>
+            슬라이드에 들어갈 이미지를 넣어준 후 소스보기에 넣어줘야 할 틀을 구성해줍니다.
+        </p>
+
+        <div class="result">
+            <details>
+                <summary>코드 보기</summary>
+                <div class="t_code">
+<pre><code class="language-js">&lt;header id="header"&gt;
+    &lt;h1&gt;javascript Slider Effect04&lt;/h1&gt;
+    &lt;p&gt;슬라이드 이펙트 - 좌우로 움직이기(버튼을 이용하여)&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="sliderEffect01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="sliderEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="sliderEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="active"&gt;&lt;a href="sliderEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="sliderEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="sliderEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="sliderEffect07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/header&gt;
+&lt;!-- header --&gt;
+&lt;main id="main"&gt;
+    &lt;section id="sliderType01"&gt;
+        &lt;div class="slider__wrap"&gt;
+            &lt;div class="slider__img"&gt;
+                &lt;div class="slider__inner"&gt;
+                    &lt;div class="slider" role="group" aria-label="1/5"&gt;&lt;img src="../assets/img/effect_bg02.jpg" alt="이미지1"&gt;&lt;/div&gt;
+                    &lt;div class="slider" role="group" aria-label="2/5"&gt;&lt;img src="../assets/img/effect_bg06.jpg" alt="이미지2"&gt;&lt;/div&gt;
+                    &lt;div class="slider" role="group" aria-label="3/5"&gt;&lt;img src="../assets/img/effect_bg07.jpg" alt="이미지3"&gt;&lt;/div&gt;
+                    &lt;div class="slider" role="group" aria-label="4/5"&gt;&lt;img src="../assets/img/effect_bg018.jpg" alt="이미지4"&gt;&lt;/div&gt;
+                    &lt;div class="slider" role="group" aria-label="5/5"&gt;&lt;img src="../assets/img/effect_bg05.jpg" alt="이미지5"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="slider__btn"&gt;
+                &lt;a href="#" class="prev" role="button" aria-label="왼쪽 이미지"&gt;prev&lt;/a&gt;
+                &lt;a href="#" class="next" role="button" aria-label="오른쪽 이미지"&gt;next&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/main&gt;
+</code></pre>
+                </div>
+            </details>
+        </div>
+
+        <h3 class="t_tit2">CSS</h3>
+    <p class="t_desc2">
+        부분적인 CSS입니다. 미디어쿼리도 사용했습니다.<br>
+        전체적인 CSS를 보시려면 위 CSS보기를 참고해주세요!
+    </p>
+    <div class="result">
+    <details>
+    <summary>코드 보기</summary>
+    <div class="t_code">
+<pre><code class="language-js">/* slider */
+.slider__wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* slider__img :  이미지 보이는 영역*/
+.slider__img {
+    position: relative;
+    width: 800px;
+    height: 450px;
+    /* 나머지 이미지 가리기 */
+    overflow: hidden; 
+}
+/* slide__inner : 이미지를 감싸고 있는 부모 : 움직이는 부분 */
+.slider__inner {
+    display: flex;
+    flex-wrap: wrap;
+    width: 4800px; /*위에를 써주고 이걸 써주어야 가로로 정렬됨 , 첫이미지 복사했으니까 기존 4000에서 4800으로 변경해주어야함*/ 
+    height: 450px;
+    /* position: relative; 제이쿼리 썼을 때 이미지 넘겨지게 설정-&gt;제이쿼리에서 따로 설정해줌 */
+}
+/* slider : 개별적인 이미지 */
+.slider {
+    position: relative;
+    width: 800px;
+    height: 450px;
+}
+.slider::before {
+    position:absolute;
+    left: 5px;
+    top: 5px;
+    background: rgba(0, 0, 0, 0.4);
+    color:#fff;
+    padding: 5px 10px;
+}
+/* z-index 필요없음 */
+.slider:nth-child(1)::before {content: '이미지1';}
+.slider:nth-child(2)::before {content: '이미지2';}
+.slider:nth-child(3)::before {content: '이미지3';}
+.slider:nth-child(4)::before {content: '이미지4';}
+.slider:nth-child(5)::before {content: '이미지5';}
+.slider:nth-child(6)::before {content: '이미지1';}
+@media (max-width: 800px){
+    .slider__img {
+        width: 400px;
+        height: 250px;
+    }
+}
+.slider__btn a {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    line-height: 50px;
+    transition: all 0.2s;
+    display: block;
+    color: #fff;
+}
+.slider__btn a:hover {
+    background: rgba(240, 31, 251, 0.4);
+    border-radius: 50%;
+    color: #000;
+}
+.slider__btn a.prev {
+    left: 0;
+}
+.slider__btn a.next {
+    right: 0;
+}
+</code></pre>
+            </div>
+        </details>
+    </div>
+    <h3 class="t_tit2">Javascript</h3>
+    <p class="t_desc2">
+        자바스크립트를 통해 prev버튼을 눌렀을 때 이전으로,<br>
+        next버튼을 눌렀을 때 다음으로 가게 해주어야 합니다.<br>
+        특히, 처음 인덱스로 왔을 때 다시 마지막인덱스로 이어지게 하려면 어떻게 해야하는지가 관건입니다!
+    </p>
+    <div class="result">
+    <details>
+    <summary>코드 보기</summary>
+    <div class="t_code">
+<pre><code class="language-js">const sliderWrap = document.querySelector(".slider__wrap")
+const sliderImg = document.querySelector(".slider__img")        //보여지는 영역
+const sliderInner = document.querySelector(".slider__inner")    //움직이는 영역
+const slider = document.querySelectorAll(".slider")             //각각 이미지
+const sliderBtn = document.querySelector(".slider__btn");    //버튼
+const sliderBtnPrev = document.querySelector(".prev");       //왼쪽버튼
+const sliderBtnNext = document.querySelector(".next");       //오른쪽버튼
+
+let currentIndex = 0;       //현재 이미지
+let sliderCount = slider.length;//이미지 갯수
+let sliderWidth = sliderImg.offsetWidth; //이미지 가로값
+
+//이미지 움직이는 영역
+function gotoSlider(num){
+    sliderInner.style.transition = "all 400ms";
+    sliderInner.style.transform = "translateX("+ -sliderWidth * num+"px)";
+    //이걸 안 써주면 currentIndex이 계속 0이므로 계속안가고 한 번 가고 0돼서 멈춤
+    currentIndex = num;
+}
+// gotoSlider();
+    
+
+//왼쪽 버튼 클릭했을 때
+sliderBtnPrev.addEventListener("click", () =&gt; {
+    //1, 4, 3, 2, 1, 0, 
+    //currentIndex : prev눌렀을 때 가는 페이지 인덱스
+    let prevIndex = (currentIndex+(sliderCount-1)) % sliderCount; //0, 4, 3, 2, 1, 0, 4...
+    gotoSlider(prevIndex);
+});
+//오른쪽 버튼 클릭했을 때
+sliderBtnNext.addEventListener("click", () =&gt; {
+    let nextIndex = (currentIndex + 1) % sliderCount //5이미지갯수로 나누기
+    gotoSlider(nextIndex);
+});
+</code></pre>
+            </div>
+        </details>
+    </div>
+<!-- document -->
+
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

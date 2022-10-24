@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>패럴랙스 이펙트 02</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <div class="document">
+        <h2 class="t_tit">🔮 패럴랙스 이펙트 - 사이드 메뉴</h2>
+        <p class="t_desc">
+            📌 이번 이펙트는 사이드 메뉴를 클릭했을 때 해당하는 페이지로 이동하는 이펙트입니다.<br>
+        </p>
+        <hr>
+        <h3 class="t_tit2">패럴랙스 이펙트를 피그마를 활용하여 설명</h3>
+        <div class="iframe">
+            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="700" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FaeLa26s8XLtAsZiKx2CAMx%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D3106%253A2165" allowfullscreen></iframe>
+        </div>
+        <hr>
+        <h3 class="t_tit2">➰ HTML</h3>
+        <p class="t_desc2">
+            footer를 제외한 전체 body 코드입니다.
+        </p>
+        <div class="t_code">
+<pre><code class="language-js">&lt;body class="img04"&gt;
+    &lt;header id="header"&gt;
+        &lt;h1&gt;Javascript parallax Effect02&lt;/h1&gt;
+        &lt;p&gt;패럴랙스 이펙트 - 사이드 메뉴&lt;/p&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="parallaxEffect01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="active"&gt;&lt;a href="parallaxEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="parallaxEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="parallaxEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="parallaxEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="parallaxEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="parallaxEffect07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/header&gt;
+    &lt;!-- //header --&gt;
+    &lt;nav id="parallax__dot"&gt;
+        &lt;ul&gt;
+            &lt;li class="active"&gt;&lt;a href="#section1"&gt;&lt;span&gt;메뉴1&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section2"&gt;&lt;span&gt;메뉴2&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section3"&gt;&lt;span&gt;메뉴3&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section4"&gt;&lt;span&gt;메뉴4&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section5"&gt;&lt;span&gt;메뉴5&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section6"&gt;&lt;span&gt;메뉴6&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section7"&gt;&lt;span&gt;메뉴7&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section8"&gt;&lt;span&gt;메뉴8&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section9"&gt;&lt;span&gt;메뉴9&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+    &lt;!-- //parallax__dot --&gt;
+    &lt;main id="parallax__cont"&gt;
+        &lt;div id="contents"&gt;
+            &lt;section id="section1" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;01&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;section1&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;오늘 할 수 있는 일에 전력을 다하라. 그러면 내일에는 한걸음 더 진보한다.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- //section1 --&gt;
+            &lt;section id="section2" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;02&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;section2&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;게으르지 않음은 영원한 삶의 집이요, 게으름은 죽음의 집이다.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- //section2--&gt;
+            &lt;section id="section3" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;03&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;section3&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;우리는 행복하기 때문에 웃는게 아니라, 웃기 때문에 행복하다.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- //section3 --&gt;
+            &lt;section id="section4" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;04&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;section4&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;인생은 가까이서 보면 비극, 멀리서 보면 희극이다.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- //section4 --&gt;
+            &lt;section id="section5" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;05&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;section5&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;승자는 시간을 관리하며 살고 패자는 시간에 끌려 산다.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- //section5 --&gt;
+            &lt;section id="section6" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;06&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;section6&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;아무것도 하지 않으면 아무 일도 일어나지 않는다.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- //section6 --&gt;
+            &lt;section id="section7" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;07&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;section7&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;일단 시작해라. 나중에 완벽해지면 된다.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- //section7 --&gt;
+            &lt;section id="section8" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;08&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;section8&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;모든 이의 마음을 얻으려고 계산된 글은 그 누구의 마음도 얻지 못한다.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- //section8 --&gt;
+            &lt;section id="section9" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;09&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;section9&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;우리 자신에게 실패를 허락하는 것이 성공을 허락하는 것이다.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- //section9 --&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+    &lt;!-- //main --&gt;
+
+    &lt;aside id="parallax__info"&gt;
+        &lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt;px&lt;/div&gt;
+    &lt;/aside&gt;
+    &lt;!-- //parallax__info--&gt;
+&lt;/body&gt;
+</code></pre>
+        </div>
+        <h3 class="t_tit2">➿ 세부적으로 살펴봅시다!</h3>
+        <p class="t_box">
+            ∙ parallax__dot은 사이드 바 부분입니다.
+        </p>
+        <div class="t_code">
+<pre><code class="language-js">&lt;nav id="parallax__dot"&gt;
+    &lt;ul&gt;
+        &lt;li class="active"&gt;&lt;a href="#section1"&gt;&lt;span&gt;메뉴1&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section2"&gt;&lt;span&gt;메뉴2&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section3"&gt;&lt;span&gt;메뉴3&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section4"&gt;&lt;span&gt;메뉴4&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section5"&gt;&lt;span&gt;메뉴5&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section6"&gt;&lt;span&gt;메뉴6&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section7"&gt;&lt;span&gt;메뉴7&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section8"&gt;&lt;span&gt;메뉴8&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section9"&gt;&lt;span&gt;메뉴9&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;!-- //parallax__dot --&gt;
+</code></pre>
+        </div>
+        <p class="t_box">
+            ∙ parallax__cont는 컨텐츠 내용입니다. 
+        </p>
+        <div class="t_code">
+<pre><code class="language-js">&lt;main id="parallax__cont"&gt;
+    &lt;div id="contents"&gt;
+        &lt;section id="section1" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;01&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section1&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;오늘 할 수 있는 일에 전력을 다하라. 그러면 내일에는 한걸음 더 진보한다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section1 --&gt;
+        &lt;section id="section2" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;02&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section2&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;게으르지 않음은 영원한 삶의 집이요, 게으름은 죽음의 집이다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section2--&gt;
+        &lt;section id="section3" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;03&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section3&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;우리는 행복하기 때문에 웃는게 아니라, 웃기 때문에 행복하다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section3 --&gt;
+        &lt;section id="section4" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;04&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section4&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;인생은 가까이서 보면 비극, 멀리서 보면 희극이다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section4 --&gt;
+        &lt;section id="section5" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;05&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section5&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;승자는 시간을 관리하며 살고 패자는 시간에 끌려 산다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section5 --&gt;
+        &lt;section id="section6" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;06&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section6&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;아무것도 하지 않으면 아무 일도 일어나지 않는다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section6 --&gt;
+        &lt;section id="section7" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;07&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section7&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;일단 시작해라. 나중에 완벽해지면 된다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section7 --&gt;
+        &lt;section id="section8" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;08&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section8&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;모든 이의 마음을 얻으려고 계산된 글은 그 누구의 마음도 얻지 못한다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section8 --&gt;
+        &lt;section id="section9" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;09&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section9&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;우리 자신에게 실패를 허락하는 것이 성공을 허락하는 것이다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section9 --&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+</code></pre>
+        </div>
+        <p class="t_box">
+            ∙ parallax__info는 페이지 왼쪽 하단에 스크롤 좌표값을 알려주는 부분입니다.
+        </p>
+        <div class="t_code">
+<pre><code class="language-js">&lt;aside id="parallax__info"&gt;
+    &lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt;px&lt;/div&gt;
+&lt;/aside&gt;
+</code></pre>
+        </div>
+        <!-- html -->
+        <hr>
+    <h3 class="t_tit2">➰ CSS</h3>
+    <p class="t_desc2">
+        HTML로 만든 뼈대에 CSS스타일을 입혀 페이지 완성도를 더 높여줍니다.
+    </p>
+    <p class="t_box">
+        ∙ parallax__cont(컨텐츠 내용)에 해당하는 부분에 스타일을 입혀줍니다.
+    </p>
+    <div class="t_code">
+<pre><code class="language-js">#parallax__cont {
+    max-width: 1600px;
+    width: 98%;
+    margin: 0 auto;
+    /* background-color: rgba(255,255,255,0.1); */
+}
+.content__item {
+    width: 1000px;
+    max-width: 70vw;
+    margin: 30vw auto;
+    /* background-color: rgba(255,255,255,0.3); */
+    text-align: left;
+    margin-right: 0;
+    position: relative;
+    padding-top: 7vw;
+}
+.content__item:nth-child(2n){
+    /* 2n even 짝수 / 곱하기도 쓰기 가능 */
+    margin-left: 0;
+    text-align: right;
+}
+.content__item__num {
+    font-size: 35vw;
+    font-family: 'Lato';
+    font-weight: 100;
+    position: absolute;
+    left: -5vw;
+    top: -16vw;
+    opacity: 0.07;
+    z-index: -2;
+}
+.content__item:nth-child(even) .content__item__num {
+    /* left초기화 기준점 right로 바뀜*/
+    left: auto;
+    right: -5vw;
+}
+.content__item__title {
+    font-weight: 400;
+    text-transform: capitalize;
+}
+.content__item__imgWrap {
+    width: 100%;
+    /* 이미지 영역 만들어주기 패딩으로 */
+    padding-bottom: 56.25%;
+    background: #000;
+    position: relative;
+    /* 사진 넘치는 거 가리기 */
+    overflow: hidden;
+    z-index: -1;
+}
+.content__item__img {
+    position: absolute;
+    background-image: url(../assets/img/effect_bg05.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+     /* 사진안짤리게 */
+    background-size: cover;
+    width: 110%;
+    height: 110%;
+    left: -5%;
+    top: -5%;
+    /* 흑백효과 */
+    filter: saturate(0%);
+    transition: all 1s;
+}
+.content__item:nth-child(1) .content__item__img {
+    background-image: url(../assets/img/effect_bg01.jpg);
+}
+.content__item:nth-child(2) .content__item__img {
+    background-image: url(../assets/img/effect_bg02.jpg);
+}
+.content__item:nth-child(3) .content__item__img {
+    background-image: url(../assets/img/effect_bg03.jpg);
+}
+.content__item:nth-child(4) .content__item__img {
+    background-image: url(../assets/img/effect_bg04.jpg);
+}
+.content__item:nth-child(5) .content__item__img {
+    background-image: url(../assets/img/effect_bg05.jpg);
+}
+.content__item:nth-child(6) .content__item__img {
+    background-image: url(../assets/img/effect_bg06.jpg);
+}
+.content__item:nth-child(7) .content__item__img {
+    background-image: url(../assets/img/effect_bg07.jpg);
+}
+.content__item:nth-child(8) .content__item__img {
+    background-image: url(../assets/img/effect_bg08.jpg);
+}
+.content__item:nth-child(9) .content__item__img {
+    background-image: url(../assets/img/effect_bg09.jpg);
+}
+.content__item__desc {
+    font-size: 4vw;
+    line-height: 1.4;
+    margin-top: -5vw;
+    margin-left: -4vw;
+    word-break: keep-all;
+}
+/* 홀수는 odd랍니다. */
+.content__item:nth-child(even) .content__item__desc {
+    margin-left: auto;
+    margin-right: -4vw;
+}
+</code></pre>
+    </div>
+    <p class="t_box">
+        ∙ parallax__info(스크롤 좌표값)에 해당하는 부분에 스타일을 입혀줍니다.
+    </p>
+    <div class="t_code">
+<pre><code class="language-js">#parallax__info {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 2000;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+</code></pre>
+    </div>
+    <p class="t_box">
+        ∙ parallax__dot(사이드 메뉴)에 해당하는 부분에 스타일을 입혀줍니다.
+    </p>
+    <div class="t_code">
+<pre><code class="language-js">#parallax__dot {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    /* z-index없으면 클릭이 안돼서 z-index로 맨 앞으로 빼준 것 */
+    z-index: 10000;
+    background: rgba(0,0,0,0.4);
+    padding: 20px 10px;
+    border-radius: 30px;
+}
+#parallax__dot li {
+    position: relative;
+    /* 동그라미 사이즈 */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 12px 8px;
+    /* 모든 페이지 사이드 바 원 테두리 box-shadow 이용 */ 
+    box-shadow: 0 0 0 2px rgba(255,255,255,0);
+    transition: box-shadow 0.2s ease;
+}
+#parallax__dot li a {
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    /* 원 크기 변화 transition */
+    transition: transform 0.2s ease;
+}
+#parallax__dot li.active {
+    /* 해당 페이지 사이드 바 작은 원 테두리 */ 
+    box-shadow: 0 0 0 2px rgba(255,255,255,1);
+}
+#parallax__dot li.active a {
+    /* 해당 페이지는 원 작게 */ 
+    transform: scale(0.4);
+}
+#parallax__dot li span {
+    /* 메뉴 글자 없애주기 */
+    display: none;
+}
+</code></pre>
+    </div>
+            <hr>
+        <h3 class="t_tit2">➰ 자바스크립트 활용</h3>
+        <p class="t_desc2">
+            ➿ let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; : scrollTop은 셋 중 하나, Y좌표값<br>
+            나머지는 주석을 통해 확인해주세요!
+        </p>
+        <p class="t_box">
+            ∙ 사이드 메뉴 동그라미를 클릭했을 때의 효과
+        </p>
+        <div class="t_code">
+<pre><code class="language-js">document.querySelectorAll("#parallax__dot a").forEach( el =&gt; {
+    el.addEventListener("click", e =&gt; {
+        // a 링크 기능 차단
+        // 이걸 안 해주면 부드럽게 가지 않고 뚝뚝 끊겨서 감 : a태그의 기본 동작
+        // a 태그를 눌렀을때도 href 링크로 이동하지 않게 하기 위해 preventDefault를 사용하는데 이 기능을 통해 a태그의 기본 동작은 막아주고
+        e.preventDefault();
+        
+        //getAttribute속성에 href를 가져와 이 href를 출력할 때 부드럽게 출력하게 한다는 의미(부드러운 효과를 주기 위해선 a태그의 기본 동작을 막아주어야 하는 것) 
+        document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"})
+    });
+});
+</code></pre>
+    </div>
+        <p class="t_box">
+            ∙ 스크롤 했을 때 좌표값 구하기<br>
+            ∙ 스크롤 했을 때 사이드 메뉴 해당 페이지에 스크롤이 도달했을 때 active 활성화시키기<br>
+        </p>
+        <div class="t_code">
+<pre><code class="language-js">
+window.addEventListener("scroll", () =&gt; {
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; 
+
+    //#parallax__info의 span(숫자나오는 부분)을 텍스트로 출력하되 소수점 뒤는 없이
+    document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop); //Math.floor() : 버림 : 소수점 뒤에 다 버림
+
+    document.querySelectorAll(".content__item").forEach((e, i) =&gt; {
+        //scrollTop이 요소의 문서기준의 Y축값의 10을 뺀 값보다 크거나 같다면 : 스크롤이 해당페이지보다 더 내려갔거나 해당페이지라면
+        if(scrollTop &gt;= e.offsetTop-10){
+            document.querySelectorAll("#parallax__dot li").forEach(li =&gt; {
+                //li에 active 모두 제거
+                li.classList.remove("active");
+            });
+            //그러나 해당 li에는 active활성화
+            document.querySelector("#parallax__dot li:nth-child("+(i+1)+")").classList.add("active");
+        }
+    })
+});
+        // window.scroll({leftTo: 0, top: 2000});
+        // window.scrollTo(0, 1000)
+        // window.scroll({leftTo: 0, top: 2000, behavior: "smooth"});
+        // window.scroll({leftTo: 0, top: 2000});
+
+        //window.scrollBy(0, 1000)
+        //window.scrollBy(0, 1000)
+        //window.scrollBy({leftT0: 0, top: 2000, behavior: "smooth"});
+</code></pre>
+    </div>
+    <div class="t_iframe" style="min-height: 1080px; padding-top: 0;">
+        <iframe src="https://kwonhyehyeon.github.io/coding/javascript/effect/parallaxEffect02.html" frameborder="0"></iframe>
+    </div>
+    <div class="t_link">
+        <a href="https://kwonhyehyeon.github.io/coding/javascript/effect/parallaxEffect02.html" target="_blank"
+        >실제 사이트보기</a>
+        <a href="https://github.com/KwonHyehyeon/coding/blob/main/javascript/effect/parallaxEffect02.html" target="_blank"
+        >원본 소스보기</a>
+    </div>  
+    <!-- document -->
+
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

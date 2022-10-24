@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>블로그</title>
+    <style>
+    @import url('https://webfontworld.github.io/goodchoice/Jalnan.css');
+    .main__add {
+	  background: #000;
+	  margin-top: 100px;
+	  margin-bottom: 120px;
+	  position: relative;
+	  display: flex;
+	  justify-content: space-between;
+	  padding: 100px 0;
+	}
+	.main__add::before {
+	  content: '';
+	  width: 1000px;
+	  height: 100%;
+	  background-color: #F5F5F5;
+	  position: absolute;
+	  left: -1000px;
+	  top: 0;
+	  z-index: 1;
+	}
+	.main__add::after {
+	  content: '';
+	  width: 1000px;
+	  height: 100%;
+	  background-color: #F5F5F5;
+	  position: absolute;
+	  right: -1000px;
+	  top: 0;
+	  z-index: 1;
+	}
+	.main__add .card {
+	  width: 32%;
+	  background: #ccc;
+      margin: 20px;
+	}
+    /* reset */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+    img {
+        width: 100%;    /* 이미지 튀어나온 거 집어넣기 */
+    }
+
+    /* cardType */
+    .card {
+        display: flex;
+    }
+    .card__box1 {
+        width: 100%;
+        height: 100px;
+        background-color: #fff;
+    }
+    .card__box2 {}
+    .card__box3 {}
+    .card__box h3 {}
+    .card__box a {}
+    .card_tit {
+        margin-bottom: 5px;
+        text-align: center;
+        font-family: 'Jalnan';
+    }
+    .card_more {
+        text-decoration: none;
+        font-family: 'Jalnan';
+        text-align: center;
+    }
+    .card_more:hover {
+        text-decoration: underline;
+        border-radius: 20px;
+        background-color: rgb(249, 167, 24, 0.5);
+    }
+    .card_more.blue:hover {
+        background-color: rgb(59, 193, 242, 0.5);
+    }
+    .card_more.yellow:hover {
+        background-color: rgb(242, 239, 33, 0.5);
+    }
+    a {
+        display: inline-block;
+    }
+    .card__img img{
+        transition: all 0.15s ease-in-out;
+    }
+    .article:hover .card__img img {
+        transform: scale(1.05);
+        border-radius: 5px;
+    }
+    </style>
+</head>
+<body>
+    <div class="main__add">
+        <div class="card">
+            <article class="article">
+                <figure class="card__img">
+                    <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/HTML.jpg?raw=true" alt="">
+                </figure>
+                <div class="card__box1">
+                    <h3 class="card_tit">HTML</h3>
+                    <a href="https://kwonhyehyeon.github.io/coding/html/alphabet.html" class="card_more">함께 공부해요!</a>
+                </div>
+            </article>
+        </div>
+        <div class="card">
+            <article class="article">
+                <figure class="card__img">
+                    <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/CSS.jpg?raw=true" alt="">
+                </figure>
+                <div class="card__box2">
+                    <h3 class="card_tit">CSS</h3>
+                    <a href="https://kwonhyehyeon.github.io/coding/css/index.html" class="card_more blue">함께 공부해요!</a>
+                </div>
+            </article>
+        </div>
+        <div class="card">
+            <article class="article">
+                <figure class="card__img">
+                    <img src="https://github.com/KwonHyehyeon/coding/blob/main/assets/tistory/JAVA.jpg?raw=true" alt="">
+                </figure>
+                <div class="card__box3">
+                    <h3 class="card_tit">JAVASCRIPT</h3>
+                    <a href="https://kwonhyehyeon.github.io/coding/javascript/index.html" class="card_more yellow">함께 공부해요!</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</body>
+</html>

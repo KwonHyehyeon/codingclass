@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 제작하기 : 텍스트 유형03</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 제작하기 : 📝 텍스트 유형03</h2>
+            <p class="t_box">
+                텍스트 유형은 이미지가 아닌 말 그대로 텍스트로 이루어진 유형입니다.<br>
+                이번 유형은 카드유형01번과 비슷한 레이아웃이지만 디테일이 많이 추가 된 유형입니다.
+            </p>
+            <h3 class="t_tit2">오늘 만들 사이트 형식</h3>
+            <div class="iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FaeLa26s8XLtAsZiKx2CAMx%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D2024%253A1895" allowfullscreen></iframe>
+            <hr>
+            <h3 class="t_tit2">사이트 제작 방법</h3>
+            <h4 class="t_tit3">1. Figma 사용해서 레이아웃 설정</h4>
+            <p class="t_desc">
+                사이트를 만들기 위해서는 먼저 사이트 레이아웃을 설정해야 합니다. (그리드 이용)<br>
+                밑의 이미지와 같이 figma를 이용하여 레이아웃을 설정해줄 수 있습니다. " shift + R " 로 자 기능을 활용하여 레이아웃을 만들어줍니다. <br>
+                ※ 이 때, 칸이나 줄이 확실하게 맞아야 하며 오차없이 레이아웃을 설정해주는 것이 중요합니다.
+            </p>
+            <h4 class="t_tit3">2. vscode를 통해 코딩해주기! : <i>HTML편</i></h4>
+            <p class="t_desc">
+                레이아웃을 다 설정해줬다면 코딩을 해봅시다! <br>
+                html의 body 부분에 레이아웃 구역을 정해줍니다.<br>
+            </p>
+            <div class="result">
+                <details>
+                    <summary>코드 보기</summary>
+                    <div class="t_code">
+<pre><code>&lt;section id="textType02" class="text__wrap gmarketsans section"&gt;
+    &lt;h2&gt;중앙역 맛집&lt;/h2&gt;
+    &lt;p&gt;안산에 있는 중앙역 아주 인기 있는 맛집을 소개합니다.&lt;/p&gt;
+    &lt;div class="text__inner container"&gt;
+        &lt;article class="text"&gt;
+            &lt;div class="text__body"&gt;
+                &lt;p class="desc"&gt;중앙역에 위치한 마라탕집이 있습니다. 이름은 마라선향이고 위치는 라인 컴퓨터 학원 1층에 위치해 있는데 진짜 진짜 맛있습니다. 생긴지 얼마 안된건지는 모르겠는데 깔끔합니다. 그리고 맵기도 조절할 수 있고 땅콩향이 강해서 을매나 맛있게유? 념념 다들 한 번 꼭 드셔보세유~ 스트레스 퐉 풀리는 것이 아주아주 기깔 납니다. 또 먹으러 가야겠습니다. 맵찔이의 맛집 추천. &lt;/p&gt;
+                &lt;div class="line"&gt;&lt;/div&gt;
+                &lt;div class="profile"&gt;
+                    &lt;div class="icon circle1"&gt;&lt;/div&gt;
+                    &lt;div class="name"&gt;권규비&lt;/div&gt;
+                    &lt;div class="stars good1"&gt;&lt;/div&gt;
+                    &lt;div class="career"&gt;안산 23년차&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="line"&gt;&lt;/div&gt;
+                &lt;div class="more"&gt;&lt;a class="btn" href="/"&gt;
+                    자세히 보기
+                &lt;/a&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="text__body"&gt;
+                &lt;p class="desc"&gt;중앙역에 위치한 빵집이 있습니다. 이름은 베이크ing이고 소금빵 맛집입니다. 소금빵만 판매하냐고요? 아니요! 아주 다양한 빵이 마련되어 있습니다. 저도 소금빵 한 번 먹어봤는데 아주 감탄스러운 맛이었습니다. 버터향이 폴폴~ 아주 쫄깃하고 맛있었습니다. 추천합니다. 그리고 최근에 발견한 바나나 카스테라 그것도 아주 대단한 맛입니다. 코딩 스트레스 바나나 카스테라로 푸세요~&lt;/p&gt;
+                &lt;div class="line"&gt;&lt;/div&gt;
+                &lt;div class="profile"&gt;
+                    &lt;div class="icon circle2"&gt;&lt;/div&gt;
+                    &lt;div class="name"&gt;권장첸&lt;/div&gt;
+                    &lt;div class="stars soso"&gt;&lt;/div&gt;
+                    &lt;div class="career"&gt;안산 0년차&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="line"&gt;&lt;/div&gt;
+                &lt;div class="more"&gt;&lt;a class="btn" href="/"&gt;
+                    자세히 보기
+                &lt;/a&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="text__body"&gt;
+                &lt;p class="desc"&gt;중앙역에 위치한 닭강정집이 있습니다. 바삭 통통이라는 곳인데 라인 아트 학원이랑 아주 가까이에 위치해 있습니다. 저는 아직 한 번도 안 먹어봤지만 친구가 너무 맛있다고 합니다. 저도 먹어보고 싶은데 손이 느려 과제를 늦게 꺼내서 아직 못 사봤습니다. 금요일날을 노려보겠습니다. 닭강정 이즈 뭔들이겠지만 특히 맛있다는 바삭통통 불금에 영화보면서 맥주랑 먹으면 딱이겠죠?&lt;/p&gt;
+                &lt;div class="line"&gt;&lt;/div&gt;
+                &lt;div class="profile"&gt;
+                    &lt;div class="icon circle3"&gt;&lt;/div&gt;
+                    &lt;div class="name"&gt;강유진&lt;/div&gt;
+                    &lt;div class="stars good2"&gt;&lt;/div&gt;
+                    &lt;div class="career"&gt;안산 27년차&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="line"&gt;&lt;/div&gt;
+                &lt;div class="more"&gt;&lt;a class="btn" href="/"&gt;
+                    자세히 보기
+                &lt;/a&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+            </div>
+                </details>
+            </div>
+            <h4 class="t_tit3">3. vscode를 통해 코딩해주기! : <i>CSS편</i></h4>
+            <p class="t_desc">
+                style을 통해 CSS를 설정해줍니다. <br>
+                피그마로 만들어 놓은 레이아웃을 보며 HTML로 구역을 정해준 후 CSS로 하나하나 디자인해 나가는 것이 중요합니다!<br>
+                이미지 스프라이트를 이용할 것이며 피그마 모양툴로 별을 만들었습니다.<br>
+                배경색이랑 텍스트 내부 색상은 피그마와 다르개 해주었음!
+            </p>
+            <div class="result">
+                <details>
+                    <summary>코드 보기</summary>
+                    <div class="t_code">
+<pre><code> @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+.gmarketsans {
+    font-family: 'GmarketSans';
+    font-weight: 400;
+}
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+img {
+    width: 100%;
+}
+body {
+    background-color: rgba(162, 192, 210, 0.3);
+}
+/* common */
+.container {
+    width: 1160px;
+    padding: 0 20px;
+    margin: 0 auto;
+    min-width: 1160px;
+}
+.section {
+    padding: 120px 0;
+}
+/* +는 형제 > 바로 밑에 있는 자식(그래서 다른 자식들한테는 해당 안됨) */
+.section>h2 {
+    font-size: 50px;
+    line-height: 1;
+    /*figma auto랑 같음*/
+    text-align: center;
+    margin-bottom: 20px;
+}
+.section>p {
+    font-style: 22px;
+    font-weight: 300;
+    color: #666;
+    text-align: center;
+    margin-bottom: 70px;
+}
+/* textType */
+
+.text__inner {
+    }
+.text {
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 70px;
+}
+.text__body {
+    width: 32%;
+    padding: 30px;
+    background-color: #fff;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+.text__body .desc {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.4;
+    color: #000;
+    margin-bottom: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 7; 
+    -webkit-box-orient: vertical;
+    position: relative;
+}
+.line {
+    border: 1px solid #eee;
+    margin-bottom: 20px;
+}
+.icon {
+    background: url(img/texttype03.svg) no-repeat center;
+}
+.circle1 {
+    width: 50px;
+    height: 50px;
+    background-color: #D9D9D9;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: 20px;
+    background-position: 9px;
+}
+.circle2 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #640B0B;
+    display: inline-block;
+    margin-bottom: 20px;
+    background-position: -41px;
+}
+.circle3 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #275233;
+    display: inline-block;
+    margin-bottom: 20px;
+    background-position: -91px;
+}
+.name {
+    font-size: 28px;
+    display: inline;
+    position: absolute;
+    top: 540px;
+    padding-left: 13px;
+}
+.stars {
+    margin: -35px 0 25px 62px;
+    width: 100px;
+    height: 13px;
+    background-color: #fff;
+    background: url(img/star.svg);
+}
+.good1 {
+    background-position:  -500px;
+}
+.soso {
+    background-position:  -700px;
+}
+.good2 {}
+.career {
+    position: absolute;
+    top: 552px;
+    padding-left: 155px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #666;
+}
+.text__body .btn {
+    width: 107px; 
+    height: 22px;
+    text-align: center;
+    line-height: 22px;
+    color: #fff;
+    background-color: blue;   
+    padding: 4px 20px;
+    border-radius: 20px;    
+}
+.more {
+    text-align: center;
+    margin-top: 28px;
+    font-weight: 300;
+}                                     
+</code></pre>
+            </div>
+                </details>
+            </div>
+            
+            <h3 class="t_tit2">▶완성본</h3>   
+            <div class="t_iframe" style="min-height: 1040px; padding-top: 0;">
+                <iframe style="width: 1000px;"src="https://kwonhyehyeon.github.io/coding/site/textType/textType03.html" frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://kwonhyehyeon.github.io/coding/site/textType/textType03.html" target="_blank">실제 사이트 보기</a>
+                <a href="https://github.com/KwonHyehyeon/coding/blob/main/site/textType/textType03.html" target="_blank">원본 소스 보기</a>
+            </div>          
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>
