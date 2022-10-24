@@ -1,6 +1,6 @@
 ## codingclass   
 ## 자바스크립트   
-https://kwonhyehyeon.github.io/codingclass/javascript/index.html   
+https://KwonHyehyeon.github.io/codingclass/javascript/index.html   
 https://KwonHyehyeon.github.io/codingclass/javascript/javascript01.html   
 https://KwonHyehyeon.github.io/codingclass/javascript/javascript02.html   
 https://KwonHyehyeon.github.io/codingclass/javascript/javascript03.html   
