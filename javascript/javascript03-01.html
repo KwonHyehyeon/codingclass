@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,11 +11,12 @@
     <link rel="stylesheet" href="assets/css/dracula.css">
     <link rel="stylesheet" href="assets/css/parallaxTop.css">
 </head>
+
 <body>
     <header id="header">
     </header>
     <!-- //header -->
-    
+
     <div id="parallax__top">Top</div>
     <!-- parallax__top -->
 
@@ -604,7 +606,7 @@ func();
                 <div id="sample22" class="sample">
                     <h3>22. 아규먼트 함수</h3>
                     <div class="script">
-<pre><code class="language-js">function func(a, b){
+                        <pre><code class="language-js">function func(a, b){
     document.write(arguments[0]);
     document.write(arguments[1]);
 }
@@ -625,7 +627,7 @@ func("함수가 실행되었습니다.", "함수가 실행되었습니다.");
                 <div id="sample23" class="sample">
                     <h3>23. 재귀 함수</h3>
                     <div class="script">
-    <pre><code class="language-js">//반복적으로
+                        <pre><code class="language-js">//반복적으로
 function func(num){
     if(num &lt;= 1){
         document.write("함수가 실행되었습니다." + num);
@@ -660,7 +662,7 @@ animation();
                 <div id="sample24" class="sample">
                     <h3>24. 콜백 함수 : 다른 함수에 인자로 넘겨지는 함수</h3>
                     <div class="script">
-<pre><code class="language-js">//재귀함수 : 동시에 여러개 실행
+                        <pre><code class="language-js">//재귀함수 : 동시에 여러개 실행
 //콜백함수 : 컷번째 함수가 실행 -> 두번째 함수가 실행
 function func(){
     document.write("함수가 실행되었습니다.1");
@@ -686,7 +688,7 @@ callback(func);
                 <div id="sample25" class="sample">
                     <h3>25. 콜백 함수 : 반복문</h3>
                     <div class="script">
-<pre><code class="language-js">function func(index){
+                        <pre><code class="language-js">function func(index){
     document.write("함수가 실행되었습니다." + index);
 }
 function callback(num){
@@ -701,7 +703,8 @@ callback(func);
                         <details>
                             <summary>결과보기</summary>
                             <div class="sample25_result">
-                                함수가 실행되었습니다.1함수가 실행되었습니다.2함수가 실행되었습니다.3함수가 실행되었습니다.4함수가 실행되었습니다.5함수가 실행되었습니다.6함수가 실행되었습니다.7함수가 실행되었습니다.8함수가 실행되었습니다.9함수가 실행되었습니다.10
+                                함수가 실행되었습니다.1함수가 실행되었습니다.2함수가 실행되었습니다.3함수가 실행되었습니다.4함수가 실행되었습니다.5함수가 실행되었습니다.6함수가
+                                실행되었습니다.7함수가 실행되었습니다.8함수가 실행되었습니다.9함수가 실행되었습니다.10
                             </div>
                         </details>
                     </div>
@@ -711,7 +714,7 @@ callback(func);
                 <div id="sample26" class="sample">
                     <h3>26. 콜백 함수 : 동기/비동기</h3>
                     <div class="script">
-<pre><code class="language-js">//01
+                        <pre><code class="language-js">//01
 // function funcA() {
 //     document.write("funcA가 실행되었습니다.<br>");
 // }
@@ -801,7 +804,7 @@ funcA(function(){
                 <div id="sample27" class="sample">
                     <h3>27. promise 함수</h3>
                     <div class="script">
-<pre><code class="language-js">
+                        <pre><code class="language-js">
 </code></pre>
                     </div>
                     <div class="result">
@@ -817,7 +820,7 @@ funcA(function(){
                 <div id="sample28" class="sample">
                     <h3>28. 내부 함수 : 스코프, 클로져</h3>
                     <div class="script">
-<pre><code class="language-js">//내부함수는 변수를 불어오는 게 복잡해지고 문제가 되기 때문에 클로져 개념이 등장하였습니다.
+                        <pre><code class="language-js">//내부함수는 변수를 불어오는 게 복잡해지고 문제가 되기 때문에 클로져 개념이 등장하였습니다.
 //함수의 규모가 커지면 변수를 불러오는 데에 여러가지 오류가 생깁니다.
 //스코프와 클로져는 같은 개념이라고 보면 됩니다.
 function func(){
@@ -847,7 +850,7 @@ func();
                 <div id="sample29" class="sample">
                     <h3>29. 클래스</h3>
                     <div class="script">
-<pre><code class="language-js">class study {
+                        <pre><code class="language-js">class study {
     //constructor는 이름이 정해진 함수
     constructor(num, name, job){
         this.num = num;
@@ -880,7 +883,7 @@ info2.result();
                 <div id="sample30" class="sample">
                     <h3>30. 클래스 상속</h3>
                     <div class="script">
-<pre><code class="language-js">class study {
+                        <pre><code class="language-js">class study {
     //constructor는 이름이 정해진 함수
     constructor(num, name, job){
         this.num = num;
@@ -935,7 +938,7 @@ info2.result2();
     <script src="assets/js/parallaxTop.js"></script>
     <script>
         hljs.highlightAll();
-        
+
         headerMenuIn();
         const active = document.querySelectorAll(".header_nav ul li");
         active[2].classList.add("active");
@@ -955,7 +958,7 @@ info2.result2();
             //         document.write(this.num + ". 내 이름은 " + this.name + "이며, 직업은 " + this.job + "입니다.");
             //     }
             // }
-            
+
             // class study2 extends study {
             //     constructor(num, name, job, age){
             //         super(num, name, job);
@@ -968,10 +971,11 @@ info2.result2();
 
             // const info1 = new study("1", "웹쓰", "웹퍼블리셔");
             // const info2 = new study2("2", "척척학사", "감자", "7353");
-            
+
             // info1.result();
             // info2.result2();
         }
     </script>
 </body>
+
 </html>

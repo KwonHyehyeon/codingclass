@@ -1,6 +1,8 @@
 @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
 @import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+
 .music__wrap {}
+
 .music__inner {
     width: 450px;
     background: #000;
@@ -12,35 +14,42 @@
     display: none;
     /* z-index: -1; */
 }
+
 .music__header {
     width: 100%;
     height: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: #fff;   
+    color: #fff;
     /* background-color: rgb(62, 95, 106); */
     border-bottom: 1px solid #fff;
     font-family: 'Galmuri11';
 
 }
+
 .music__header h2 {
     font-size: 14px;
 }
+
 .music__contents {
     background: #c4c4c4;
     width: 100%;
 }
+
 .music__view {
     display: flex;
     padding: 20px;
 }
+
 .music__view .img {
     width: 30%;
 }
-.music__view .img img{
+
+.music__view .img img {
     width: 100%;
 }
+
 .music__view .title {
     width: 70%;
     text-align: center;
@@ -50,27 +59,32 @@
     justify-content: center;
     font-family: 'Galmuri11';
 }
+
 .music__view .title h3 {
     margin-bottom: 5px;
     font-size: 25px;
     line-height: 1.2;
     font-weight: bold;
 }
+
 .music__view .title p {
     color: hotpink;
     font-weight: bold;
 }
+
 /* 볼륨바 */
 /* 볼륨 */
 .volumeOn {
     position: relative;
 }
+
 .volumeOn img {
     width: 35px;
     position: absolute;
     top: 100px;
     left: -105px;
 }
+
 .volumeOn .volumeBar {
     width: 80px;
     height: 5px;
@@ -82,15 +96,15 @@
     top: 110px;
     left: -80px;
 }
+
 .volumeOn .volumeBar .volumeSize {
     width: 30%;
     height: inherit;
     background: #ffffffd2;
     border-radius: 5px;
 }
-.volume.mute {
-    
-}
+
+.volume.mute {}
 
 .music__control {
     width: 100%;
@@ -98,12 +112,14 @@
     padding: 20px;
     padding-top: 0;
 }
+
 .music__control .progress {
     width: 100%;
     height: 6px;
     background: #000;
     border-radius: 5px;
 }
+
 /* 뮤직흘러가는 색깔 처리 */
 .music__control .progress .bar {
     width: 0;
@@ -111,12 +127,14 @@
     background: #7fff5b;
     border-radius: 5px;
 }
-.music__control .progress .timer{
+
+.music__control .progress .timer {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 3px;
 }
+
 .music__control .control {
     display: flex;
     align-items: center;
@@ -124,9 +142,9 @@
     margin-top: 40px;
     width: 100%;
 }
-.music__control .control i {
 
-}
+.music__control .control i {}
+
 .music__control .control .repeat {
     display: block;
     width: 24px;
@@ -135,6 +153,7 @@
     background-size: 250px;
     background-position: -140px 0px;
 }
+
 .music__control .control .repeat_one {
     display: block;
     width: 24px;
@@ -144,6 +163,7 @@
     background-position: -170px -1px;
 
 }
+
 .music__control .control .shuffle {
     display: block;
     width: 24px;
@@ -152,6 +172,7 @@
     background-size: 250px;
     background-position: -195px 0px;
 }
+
 .music__control .control .prev {
     display: block;
     width: 24px;
@@ -161,6 +182,7 @@
     background-position: -60px 0px;
 
 }
+
 .music__control .control .next {
     display: block;
     width: 24px;
@@ -170,6 +192,7 @@
     background-position: -85px 0px;
 
 }
+
 .music__control .control .play {
     display: block;
     width: 24px;
@@ -179,6 +202,7 @@
     background-position: 2px 0px;
 
 }
+
 .music__control .control .stop {
     display: block;
     width: 24px;
@@ -187,6 +211,7 @@
     background-size: 250px;
     background-position: -30px 0px;
 }
+
 .music__control .control .list {
     display: block;
     width: 24px;
@@ -196,10 +221,12 @@
     background-position: -110px 0px;
 
 }
+
 .music__footer {
     display: none;
 }
-.music__footer.show{
+
+.music__footer.show {
     display: block;
     background: #c4c4c4;
 }
@@ -208,6 +235,7 @@
     padding: 20px;
     position: relative;
 }
+
 .music__list h3 {
     font-size: 24px;
     border-top: 2px solid #000;
@@ -215,6 +243,7 @@
     margin-bottom: 10px;
     font-family: 'Galmuri11';
 }
+
 .music__list .list {
     display: inline-block;
     width: 24px;
@@ -225,6 +254,7 @@
     margin-right: 5px;
     vertical-align: -5px;
 }
+
 #music__list__close {
     position: absolute;
     top: 35px;
@@ -236,7 +266,8 @@
     background-size: 200px;
     background-position: -175px 0px;
 }
-.music__list ul{
+
+.music__list ul {
     max-height: 200px;
     overflow-y: scroll;
 }
@@ -247,6 +278,7 @@
     padding: 7px 20px;
     position: relative;
 }
+
 .music__list li.playing {
     background-color: rgba(230, 57, 181, 0.536);
     color: #fff;
@@ -254,16 +286,19 @@
     font-family: 'NexonLv1Gothic';
 
 }
+
 .music__list li strong {
     display: block;
     font-size: 18px;
     margin-bottom: 4px;
 }
+
 .music__list li em {
     font-style: normal;
     font-size: 16px;
 
 }
+
 .music__list li span {
     position: absolute;
     right: 0;

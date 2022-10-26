@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자바스크립트 : 데이터 저장하기</title>
-    
+
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dracula.css">
 </head>
+
 <body>
     <header id="header">
         <h1><a href="index.html">Javascript</a></h1>
@@ -32,7 +34,6 @@
             <ul class="effect">
                 <li><a href="effect/searchEffect.html">검색 효과</a></li>
                 <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
-                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
                 <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
                 <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
                 <li><a href="effect/parallaxEffect.html">패랠랙스 효과</a></li>
@@ -45,22 +46,22 @@
         <div class="container">
             <div class="main_menu">
                 <ul>
-                    <li><a href="#">01. 수학 메서드 : Math.round() : 반올림 : 반환(숫자)</a></li>                     
-                    <li><a href="#">02. 수학 메서드 : Math.floor() : 버림 : 반환(숫자)</a></li> 
-                    <li><a href="#">03. 수학 메서드 : Math.ceil() : 올림 : 반환(숫자)</a></li> 
-                    <li><a href="#">04. 수학 메서드 : Math.max() : 가장 큰 값 반환 : 반환(숫자)</a></li> 
-                    <li><a href="#">05. 수학 메서드 : Math.min() : 가장 작은 값 반환 : 반환(숫자)</a></li> 
-                    <li><a href="#">06. 수학 메서드 : Math.abs() : 절댓값 반환 : 반환(숫자)</a></li> 
-                    <li><a href="#">06. 수학 메서드 : Math.trulc() : 값의 정수 부분만 반환 : 반환(숫자)</a></li> 
-                    <li><a href="#">07. 수학 메서드 : Math.random() : 랜덤값 반환(0-1사이에 난수 값을 반환) : 반환(숫자)</a></li> 
-                    <li><a href="#">08. 수학 메서드 : Math.PI</a></li> 
-                    <li><a href="#">09. 수학 메서드 : Math.sqrt</a></li> 
-                    <li><a href="#">10. 수학 메서드 : Math.pow</a></li> 
+                    <li><a href="#">01. 수학 메서드 : Math.round() : 반올림 : 반환(숫자)</a></li>
+                    <li><a href="#">02. 수학 메서드 : Math.floor() : 버림 : 반환(숫자)</a></li>
+                    <li><a href="#">03. 수학 메서드 : Math.ceil() : 올림 : 반환(숫자)</a></li>
+                    <li><a href="#">04. 수학 메서드 : Math.max() : 가장 큰 값 반환 : 반환(숫자)</a></li>
+                    <li><a href="#">05. 수학 메서드 : Math.min() : 가장 작은 값 반환 : 반환(숫자)</a></li>
+                    <li><a href="#">06. 수학 메서드 : Math.abs() : 절댓값 반환 : 반환(숫자)</a></li>
+                    <li><a href="#">06. 수학 메서드 : Math.trulc() : 값의 정수 부분만 반환 : 반환(숫자)</a></li>
+                    <li><a href="#">07. 수학 메서드 : Math.random() : 랜덤값 반환(0-1사이에 난수 값을 반환) : 반환(숫자)</a></li>
+                    <li><a href="#">08. 수학 메서드 : Math.PI : 원의 둘레에 대한 지름의 비율, 약 3.14159</a></li>
+                    <li><a href="#">09. 수학 메서드 : Math.sqrt : 제곱근을 반환</a></li>
+                    <li><a href="#">10. 수학 메서드 : Math.pow : 전달된 두 개의 값을 가지고 제곱 연산 수행</a></li>
                 </ul>
             </div>
             <div class="main_sample">
                 <div id="sample01" class="sample">
-                    <h3>01. 수학 메서드 : Math.random() : 0과 1사이의 난수 값을 반환 : 반환(숫자)</h3>
+                    <h3>07. 수학 메서드 : Math.random() : 0과 1사이의 난수 값을 반환 : 반환(숫자)</h3>
                     <div class="table">
                         <table>
                             <colgroup>
@@ -107,8 +108,30 @@
                         </table>
                     </div>
                     <div class="script">
-    <pre><code class="language-js">
-    </code></pre>
+                        <pre><code class="language-js">document.querySelector(".sample01_N1").innerHTML = 1;
+document.querySelector(".sample01_Q1").innerHTML = "0 ~ 1";
+document.querySelector(".sample01_M1").innerHTML = "Math.random()";
+document.querySelector(".sample01_P1").style.color = "black";
+document.querySelector(".sample01_B1").addEventListener("click", () => {
+    document.querySelector(".sample01_P1").innerHTML = Math.random();
+})
+
+document.querySelector(".sample01_N2").innerHTML = 2;
+document.querySelector(".sample01_Q2").innerHTML = "0 ~ 9";
+document.querySelector(".sample01_M2").innerHTML = "Math.random()";
+document.querySelector(".sample01_P2").style.color = "black";
+document.querySelector(".sample01_B2").addEventListener("click", () => {
+    document.querySelector(".sample01_P2").innerHTML = Math.floor(Math.random()*10);
+})
+
+document.querySelector(".sample01_N3").innerHTML = 3;
+document.querySelector(".sample01_Q3").innerHTML = "10 ~ 19";
+document.querySelector(".sample01_M3").innerHTML = "Math.random()";
+document.querySelector(".sample01_P3").style.color = "black";
+document.querySelector(".sample01_B3").addEventListener("click", () => {
+    document.querySelector(".sample01_P3").innerHTML = 10 + Math.floor(Math.random() * 10);
+})
+</code></pre>
                     </div>
                 </div>
                 <!-- //sample01 -->
@@ -120,7 +143,7 @@
     <footer id="footer">
         <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
     </footer>
-    <!-- //footer --> 
+    <!-- //footer -->
     <script src="assets/js/highlight.min.js"></script>
     <script>
         hljs.highlightAll();
@@ -139,7 +162,7 @@
         document.querySelector(".sample01_M2").innerHTML = "Math.random()";
         document.querySelector(".sample01_P2").style.color = "black";
         document.querySelector(".sample01_B2").addEventListener("click", () => {
-            document.querySelector(".sample01_P2").innerHTML = Math.floor(Math.random()*10);
+            document.querySelector(".sample01_P2").innerHTML = Math.floor(Math.random() * 10);
         })
 
         document.querySelector(".sample01_N3").innerHTML = 3;
@@ -151,4 +174,5 @@
         })
     </script>
 </body>
+
 </html>
