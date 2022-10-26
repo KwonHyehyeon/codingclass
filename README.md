@@ -25,10 +25,10 @@ https://kwonhyehyeon.github.io/codingclass/html/alphabet.html
 https://kwonhyehyeon.github.io/codingclass/css/index.html  
    
 ## 사이트 제작하기1  
-https://kwonhyehyeon.github.io/codingclass/site/site1_res/index.html  
+https://kwonhyehyeon.github.io/codingclass/site1/index.html  
    
 ## 사이트 제작하기2  
-https://kwonhyehyeon.github.io/codingclass/site/site2/index.html  
+https://kwonhyehyeon.github.io/codingclass/site2/index.html  
    
 ## 검색 이펙트   
 https://kwonhyehyeon.github.io/codingclass/javascript/effect/searchEffect01.html  
