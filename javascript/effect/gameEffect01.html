@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../assets/css/music.css">
     <link rel="stylesheet" href="../assets/css/searchgame.css">
     <link rel="stylesheet" href="../assets/css/search_ani.css">
+    <link rel="stylesheet" href="../assets/css/memory.css">
 
 </head>
 
@@ -39,7 +40,11 @@
                 </div>
                 <div class="icon2">
                     <img src="../assets/img/icon2.png" alt="뮤직">
-                    <span>CSS</span>
+                    <span>M_Game</span>
+                </div>
+                <div class="icon2_off">
+                    <img src="../assets/img/icon1_off.png" alt="뮤직">
+                    <span>M_Game</span>
                 </div>
                 <div class="icon3">
                     <img src="../assets/img/icon3.png" alt="뮤직">
@@ -90,65 +95,228 @@
         <!-- /footer -->
 
         <!-- 뮤직 플레이어 -->
-        <div class="music__wrap">
-            <div class="music__inner">
-                <div class="music__header">
-                    <div>🎀   ***</div>
-                    <h2>noeyheyh Player</h2>
-                    <div>***   🎀</div>
-                </div>
-                <div class="music__contents">
-                    <div class="music__view">
-                        <div class="img">
-                            <img src="../assets/img/music_img1.png" alt="앨범">
-                        </div>
-                        <div class="title">
-                            <h3>RYYZN - Secrets</h3>
-                            <p>youtube music</p>
-                        </div>
-                        <div class="volumeOn">
-                            <i title="볼륨" class="volume" id="control-volume"></i>
-                            <img src="../assets/img/volumeO.png" alt="볼륨ON">
-                            <div class="volumeBar" aria-hidden="true">
-                                <div class="volumeSize"></div>
-                            </div>
-                            <!-- <i title="음소거" class="volumeNo" id="control-volume"></i> -->
-                        </div>
-                    </div>
 
-                    <div class="music__control">
-                        <div class="progress">
-                            <div class="bar">
-                                <audio id="main-audio" src="../assets/audio/music_audio01.mp3"></audio>
+        <div class="game_box">
+            <div class="music__wrap">
+                <div class="music__inner">
+                    <div class="music__header">
+                        <div>🎀   ***</div>
+                        <h2>noeyheyh Player</h2>
+                        <div>***   🎀</div>
+                    </div>
+                    <div class="music__contents">
+                        <div class="music__view">
+                            <div class="img">
+                                <img src="../assets/img/music_img1.png" alt="앨범">
                             </div>
-                            <div class="timer">
-                                <span class="current">0:00</span>
-                                <span class="duration">4:00</span>
+                            <div class="title">
+                                <h3>RYYZN - Secrets</h3>
+                                <p>youtube music</p>
+                            </div>
+                            <div class="volumeOn">
+                                <i title="볼륨" class="volume" id="control-volume"></i>
+                                <img src="../assets/img/volumeO.png" alt="볼륨ON">
+                                <div class="volumeBar" aria-hidden="true">
+                                    <div class="volumeSize"></div>
+                                </div>
+                                <!-- <i title="음소거" class="volumeNo" id="control-volume"></i> -->
                             </div>
                         </div>
-                        <div class="control">
-                            <!-- id값을 활용해주는 것이 좋음 한번 밖에 사용 못하니깐 충돌 위험 X -->
-                            <i title="전체 반복" class="repeat" id="control-repeat"></i>
-                            <!-- <i title="한곡 반복" class="repeat_one">repeat</i>
-                            <i title="랜덤 반복" class="shuffle">repeat</i> -->
-                            <i title="이전곡 재생" class="prev" id="control-prev"></i>
-                            <i title="재생" class="play" id="control-play"></i>
-                            <!-- <i title="정지" class="stop" id="control-stop"></i> -->
-                            <i title="다음곡 재생" class="next" id="control-next"></i>
-                            <i title="재생 목록" class="list" id="control-list"></i>
+
+                        <div class="music__control">
+                            <div class="progress">
+                                <div class="bar">
+                                    <audio id="main-audio" src="../assets/audio/music_audio01.mp3"></audio>
+                                </div>
+                                <div class="timer">
+                                    <span class="current">0:00</span>
+                                    <span class="duration">4:00</span>
+                                </div>
+                            </div>
+                            <div class="control">
+                                <!-- id값을 활용해주는 것이 좋음 한번 밖에 사용 못하니깐 충돌 위험 X -->
+                                <i title="전체 반복" class="repeat" id="control-repeat"></i>
+                                <!-- <i title="한곡 반복" class="repeat_one">repeat</i>
+                                <i title="랜덤 반복" class="shuffle">repeat</i> -->
+                                <i title="이전곡 재생" class="prev" id="control-prev"></i>
+                                <i title="재생" class="play" id="control-play"></i>
+                                <!-- <i title="정지" class="stop" id="control-stop"></i> -->
+                                <i title="다음곡 재생" class="next" id="control-next"></i>
+                                <i title="재생 목록" class="list" id="control-list"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="music__footer">
+                        <div class="music__list">
+                            <h3><span class="list"></span>뮤직 리스트</h3><span id="music__list__close"></span></a>
+                            <ul>
+                                <!-- <li>
+                                    <strong>제목</strong>
+                                    <em>아티스트</em>
+                                    <span>재생시간</span>
+                                </li> -->
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="music__footer">
-                    <div class="music__list">
-                        <h3><span class="list"></span>뮤직 리스트</h3><span id="music__list__close"></span></a>
-                        <ul>
-                            <!-- <li>
-                                <strong>제목</strong>
-                                <em>아티스트</em>
-                                <span>재생시간</span>
-                            </li> -->
-                        </ul>
+            </div>
+            <div class="memory__wrap">
+                <div class="memory__inner">
+                    <div class="memory__header">
+                        <div>👽   ***</div>
+                        <h2>Welcome to Memory_Game</h2>
+                        <div>***   👽</div>
+                    </div>
+                    <div class="memory__card">
+                        <div class="memory__info">
+                            <h3 class="info_tit">🚀 우주 동물들아 꼭꼭 숨어라 머리카락 보일라 🚀</h3>
+                            <div class="info_desc">
+                                <span>카드를 뒤집어 나오는 동물의 짝을 찾아주세요!</span><br>
+                                📍 제한 시간 : 1분<br>
+                                📍 같은 그림 2개를 1쌍으로, 총 8쌍의 카드를 짝지어주세요!<br><br>
+                                <span>🔥 우주 동물 8마리를 찾으로 출동 GABOJAGO 🔥</span>
+                            </div>
+                            <a class="memory__info__btn" href="#">START</a>
+                        </div>
+                        <!-- memory__card -->
+                        <div class="cards__inner">
+                            <h3 class="cards_tit">🚀 우주 동물들아 꼭꼭 숨어라 머리카락 보일라 🚀</h3>
+                            <div class="cards_time">
+                                <div>맞은 갯수 : 0</div>
+                                <div>남은 기회 : 5</div>
+                            </div>
+                            <ul class="cards">
+                                <li>
+                                    <div class="view front">
+                                        <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
+                                    </div>
+                                    <div class="view back">
+                                        <img src="../assets/img/animal_cow.svg" alt="memory_card">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
+                                    </div>
+                                    <div class="view back">
+                                        <img src="../assets/img/animal_bear.svg" alt="memory_card">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
+                                    </div>
+                                    <div class="view back">
+                                        <img src="../assets/img/animal_girin.svg" alt="memory_card">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
+                                    </div>
+                                    <div class="view back">
+                                        <img src="../assets/img/animal_hippo.svg" alt="memory_card">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
+                                    </div>
+                                    <div class="view back">
+                                        <img src="../assets/img/animal_lion.svg" alt="memory_card">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
+                                    </div>
+                                    <div class="view back">
+                                        <img src="../assets/img/animal_pig.svg" alt="memory_card">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
+                                    </div>
+                                    <div class="view back">
+                                        <img src="../assets/img/animal_lion.svg" alt="memory_card">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
+                                    </div>
+                                    <div class="view back">
+                                        <img src="../assets/img/animal_cow.svg" alt="memory_card">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
+                                    </div>
+                                    <div class="view back">
+                                        <img src="../assets/img/animal_mulgae.svg" alt="memory_card">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
+                                    </div>
+                                    <div class="view back">
+                                        <img src="../assets/img/animal_rabbit.svg" alt=" memory_card">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
+                                    </div>
+                                    <div class="view back">
+                                        <img src="../assets/img/animal_bear.svg" alt="memory_card">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
+                                    </div>
+                                    <div class="view back">
+                                        <img src="../assets/img/animal_mulgae.svg" alt="memory_card">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
+                                    </div>
+                                    <div class="view back">
+                                        <img src="../assets/img/animal_hippo.svg" alt="memory_card">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
+                                    </div>
+                                    <div class="view back">
+                                        <img src="../assets/img/animal_rabbit.svg" alt="memory_card">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
+                                    </div>
+                                    <div class="view back">
+                                        <img src="../assets/img/animal_pig.svg" alt="memory_card">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
+                                    </div>
+                                    <div class="view back">
+                                        <img src="../assets/img/animal_girin.svg" alt="memory_card">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -160,7 +328,7 @@
             <div class="searchgame__inner">
                 <div class="search__header">
                     <div>🎮   ***</div>
-                    <h2>Search_Game</h2>
+                    <h2>Welcome to Search_Game</h2>
                     <div>***   🎮</div>
                 </div>
                 <div class="search__inner">
@@ -620,6 +788,7 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="../assets/js/music.js"></script>
     <script src="../assets/js/searchgame.js"></script>
+    <script src="../assets/js/memory.js"></script>
     <script>
         $(".icon1").draggable({
             drag: function () {
@@ -632,6 +801,11 @@
             }
         });
         $(".icon2").draggable({
+            drag: function () {
+                $(".mouse__cursor img").attr("src", "../assets/img/cursor2.png")
+            }
+        });
+        $(".icon2_off").draggable({
             drag: function () {
                 $(".mouse__cursor img").attr("src", "../assets/img/cursor2.png")
             }
@@ -661,7 +835,7 @@
                 $(".mouse__cursor img").attr("src", "../assets/img/cursor6.png")
             }
         });
-        $(".music__wrap").draggable({
+        $(".music__wrap, .memory__wrap").draggable({
             drag: function () {
                 $(".mouse__cursor img").attr("src", "../assets/img/cursor7.png")
             }
@@ -777,7 +951,7 @@
             Icon5OFF.style.display = "none";
         })
 
-        //게임 열고 닫기
+        //서치게임 열고 닫기
         const Icon1 = document.querySelector(".icon1");
         const Icon1OFF = document.querySelector(".icon1_off");
         const searchGame = document.querySelector(".searchgame__wrap");
@@ -790,6 +964,21 @@
             searchGame.style.display = "block"
             Icon1.style.display = "block"
             Icon1OFF.style.display = "none";
+        })
+
+        //메모리게임 열고 닫기
+        const Icon2 = document.querySelector(".icon2");
+        const Icon2OFF = document.querySelector(".icon2_off");
+        const MemoryGame = document.querySelector(".memory__wrap");
+        Icon2.addEventListener("click", () => {
+            MemoryGame.style.display = "none";
+            Icon2OFF.style.display = "block";
+            Icon2.style.display = "none";
+        })
+        Icon2OFF.addEventListener("click", () => {
+            MemoryGame.style.display = "block"
+            Icon2.style.display = "block"
+            Icon2OFF.style.display = "none";
         })
 
         //탭 메뉴

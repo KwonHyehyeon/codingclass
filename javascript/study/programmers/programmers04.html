@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알고리즘 문제풀기</title>
+    
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">🔥 Programmers Lv.1 : 약수의 합</h2><br>
+            <p class="t_desc2">
+                🔍 문제 : " 정수 n을 입력받아 <i>n의 약수를 모두 더한 값</i>을 리턴하는 함수, solution을 완성해주세요. "
+            </p>
+            <div class="t_desc2">
+                📎 조건 : <br> 
+                ∙ n은 0 이상 3000이하인 정수입니다.
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 My answer</h2>
+            <div class="t_code">
+<pre><code>function solution(n) {
+    let answer = 0;
+    for(let i=0; i&lt;=n; i++){
+        if(n%i==0){
+            answer+=i;
+        }
+    }
+    return answer;
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+               : n을 i로 나눈 값이 0이 됐을 때, 즉 n의 약수인 값 i를 다 더하기 위해 answer+=i;을 써준 후 return으로 출력하면 약수의 합을 구할 수 있습니다.
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 Another ways</h2>
+            <div class="t_code">
+<pre><code>function sumDivisor(num) {
+    var root=Math.sqrt(num);
+    var sum=num;
+    for(var i=0;i&lt;num;i++){
+        if(i&gt;root && num%i==0){
+            sum=sum+i;
+            console.log("큰수: "+sum);
+        }else if(i&lt;root && num%i==0){
+             sum=sum+i;
+            console.log("작은수: "+sum);
+        }
+    }
+    return sum;
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+               : 조건으로 num의 제곱근을 구하는 변수 root를 지정해서 약수가 num의 제곱근보다 작을때와 클때의 범위를 정해서 약수의 합을 구하였습니다.
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

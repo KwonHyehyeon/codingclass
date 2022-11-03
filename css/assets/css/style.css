@@ -11,7 +11,8 @@
 
 /* 링크 초기화 */
 a {
-    text-decoration: none; /*a 태그 들어가니깐*/
+    text-decoration: none;
+    /*a 태그 들어가니깐*/
     color: #222;
 }
 
@@ -21,7 +22,13 @@ li {
 }
 
 /* 제목 초기화 */
-h1, h2, h3, h4, h5, h6 { /*제목 폰트 기본적으로 bold하기 때문에 얇게*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    /*제목 폰트 기본적으로 bold하기 때문에 얇게*/
     font-weight: normal;
 }
 
@@ -31,7 +38,8 @@ strong {
 }
 
 /* 이텔릭체 초기화 */
-em, i {
+em,
+i {
     font-style: normal;
 }
 
@@ -45,7 +53,8 @@ table {
 
 /* 기본 셋팅 */
 :root {
-    font-size: 22px; /*1rem*/
+    font-size: 22px;
+    /*1rem*/
     --fontTitle: "OKDdung";
     --fontSub: "UtoImageTree";
     --fontDocs: "SCoreDream";
@@ -64,19 +73,23 @@ table {
 body {
     background-color: var(--bgMain);
 }
+
 #header {}
+
 #main {}
+
 #footer {
     padding: 40px 0;
     text-align: center;
 }
+
 #footer a:hover {
     text-decoration: underline;
 }
 
 /* container */
 .container {
-    max-width: 1400px; 
+    max-width: 1400px;
     width: 100%;
     margin: 0 auto;
 }
@@ -91,20 +104,24 @@ body {
     text-align: center;
     display: none;
 }
+
 .main_title h1 {
     font-family: var(--fontTitle);
     font-size: 7vw;
     color: var(--orange);
     white-space: nowrap;
 }
+
 .main_title h1 strong {
     color: var(--bgMain);
 }
+
 .main_title em {
     font-family: var(--fontSub);
     font-size: 100px;
     color: var(--brown);
 }
+
 .main_title p {
     font-family: var(--fontSub);
     font-size: 30px;
@@ -123,15 +140,18 @@ body {
     border-radius: 20px;
     overflow: hidden;
 }
+
 .main_desc .deco {
     position: absolute;
     left: 50%;
     top: 0;
     transform: translateX(-50%);
     padding-top: 10px;
-    white-space: nowrap; /*줄바꿈 안하게 하는 것*/
+    white-space: nowrap;
+    /*줄바꿈 안하게 하는 것*/
     width: 90%;
 }
+
 .main_desc .deco span {
     width: 30px;
     height: 30px;
@@ -145,6 +165,7 @@ body {
     margin: 0 1%;
     position: relative;
 }
+
 .main_desc .deco span::after {
     content: '';
     width: 10px;
@@ -154,14 +175,16 @@ body {
     left: 0;
     top: -20px;
 }
-.main_desc .title{
+
+.main_desc .title {
     margin-bottom: 2rem;
 }
 
 .main_desc .title h2 {
     display: inline-block;
     border: 4px solid var(--brown);
-    font-style: 2rem; /*44px*/
+    font-style: 2rem;
+    /*44px*/
     padding: 0.6rem 1rem 0.5rem 80px;
     font-family: var(--fontDocs);
     font-weight: 900;
@@ -169,6 +192,7 @@ body {
     position: relative;
     box-sizing: border-box;
 }
+
 .main_desc .title h2::before {
     content: '';
     width: 50px;
@@ -179,32 +203,41 @@ body {
     left: 0;
     border-right: 4px solid var(--brown);
 }
+
 .main_desc .title p {
     font-family: var(--fontSub);
     font-size: 1.3rem;
     line-height: 1.3;
     color: var(--brown);
 }
+
 .main_desc .subTitle {
-        overflow: hidden;
+    overflow: hidden;
 }
+
 .main_desc .subTitle ul {}
+
 .main_desc .subTitle li {
-    float: left; /*원래 display: inline; 이었는데 float으로 바꿔줌*/
-    margin-right: -4px; /*마진값만 -쓸 수 있음*/
+    float: left;
+    /*원래 display: inline; 이었는데 float으로 바꿔줌*/
+    margin-right: -4px;
+    /*마진값만 -쓸 수 있음*/
     margin-bottom: -4px;
 }
+
 .main_desc .subTitle li.active a {
     background-color: var(--brown);
     color: var(--white);
 }
+
 .main_desc .subTitle li a {
     font-family: var(--fontDocs);
     font-size: 0.8rem;
     border: 4px solid var(--brown);
     padding: 0.5em 1em;
-    display: inline-block; /*안그러면 이미 인라인 구조라서 깨짐*/
-    
+    display: inline-block;
+    /*안그러면 이미 인라인 구조라서 깨짐*/
+
 }
 
 
@@ -213,10 +246,12 @@ body {
     font-family: var(--fontDocs);
     font-size: 0.7rem;
 }
-.main_desc .table tr th{
-    background-color: rgba(0,0,0,0.08);
+
+.main_desc .table tr th {
+    background-color: rgba(0, 0, 0, 0.08);
     font-weight: normal;
 }
+
 .main_desc .table tr th,
 .main_desc .table tr td {
     border: 1px solid var(--brown);
@@ -229,20 +264,22 @@ body {
     text-align: left;
 } */
 
-.main_desc .table tr td span{
+.main_desc .table tr td span {
     font-size: 16px;
     padding-top: 4px;
 }
 
 
 .main_desc .table tr td:nth-child(2),
-.main_desc .table tr td:nth-child(3){
+.main_desc .table tr td:nth-child(3) {
     text-align: left;
 }
+
 .main_desc .table.rowTable tr td:nth-child(2),
-.main_desc .table.rowTable tr td:nth-child(3){
+.main_desc .table.rowTable tr td:nth-child(3) {
     text-align: center;
 }
-.main_desc .table.rowTable .left{
+
+.main_desc .table.rowTable .left {
     text-align-last: left !important;
 }

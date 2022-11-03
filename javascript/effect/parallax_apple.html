@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://webfontworld.github.io/woori/Wooridaum.css" rel="stylesheet">
+    <!-- 300 500 700 -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Wooridaum';
+            font-weight: 400;
+            cursor: none;
+        }
+
+        .fixed {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .scrollTop {
+            position: fixed;
+            left: 10px;
+            top: 10px;
+            width: 40px;
+            height: 40px;
+            background: rgb(252, 164, 0);
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            z-index: 1000;
+        }
+
+        /* layout */
+        #contents {}
+
+        #section1 {
+            height: 10000px;
+            background-color: #FDB589;
+        }
+
+        #section2 {}
+
+        #section3 {}
+
+        #section4 {}
+
+        #section5 {}
+
+        #section6 {}
+
+
+        /* sec1 */
+        .sec1 {
+            background: #FDB589;
+        }
+        .sec1_text1 {
+            font-size: 15vw;
+            white-space: nowrap;
+            background: #FDB589;
+            color: #fff;
+            text-shadow: 7px 10px 0px rgb(155, 155, 155);
+        }
+        .sec1_text2 {
+            font-size: 6vw;
+            white-space: nowrap;
+            width: 100%;
+            text-align: center;
+            line-height: 1.7;    
+            color: #000;
+        }
+        span {
+            border-bottom: 4px solid rgb(255, 255, 255);
+            background-color: #000000;
+            color: #fff;
+            font-weight: 700;
+            padding: 10px 50px;
+            border-radius: 20px;
+        }
+        i {
+            font-style: normal;
+            color: rgb(157, 217, 255);
+            font-weight: 700;
+        }
+
+        .sec1_text3 {
+            width: 100%;
+            height: 100vh;
+            background-image: url(../assets/img/sihyeonhada.jpg);
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            /* border-radius: 50%; */
+            color: #000;
+        }
+
+        .sec1_text4 {
+            width: 50vw;
+            height: 50vw;
+            border-radius: 50%;
+            color: #000;
+            text-align: center;
+            line-height: 50vw;
+            font-size: 5vw;
+        }
+        /* 마우스 */
+        .mouse__cursor {
+            background-image: url(../assets/img/butterfly.gif) ;
+            background-position: center;
+            background-size: cover;
+            width: 130px;
+            height: 130px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            /* 선택이나 클릭 안되게 할 때 */
+            user-select: none;
+            pointer-events: none;
+            transition: 
+              background-color 0.3s,
+              border-color 0.3s,
+              /* style 2에 트랜스폼줬으니 여기도 줘야함 */
+              transform 0.6s,
+              border-radius 0.3s
+              ;
+            z-index:100000;
+        }
+    </style>
+</head>
+<body>
+    <div class="mouse__cursor"></div>
+    <div class="scrollTop">0</div>
+    <div id="contents">
+        <section id="section1">
+            <div class="sec1">
+                <div class="sec1_text1 fixed" data-0="left: 165%; opacity: 1" data-500="left: -180%; opacity: 0">
+                   Hello👋🏻 I'm PRE-FRONT-END DEVELOPER.
+                </div>
+                <div class="sec1_text2 fixed" data-500="top: 70%; opacity: 0; transform: translate(-50%, -50%) scale(1)"
+                    data-1000="top: 50%; opacity: 1; transform: translate(-50%, -50%) scale(1)"
+                    data-1500="top: 50%; opacity: 1; transform: translate(-50%, -50%) scale(0)">
+                    <span><i>심도 있는</i> 프론트앤드 개발자</span>가 <br>목표인
+                </div>
+            </div>
+            <div class="sec1_text3 fixed"
+                data-1300="width: 0%; transform: translate(-50%, -50%)  opacity: 0;"
+                data-1680="width: 42%; transform: translate(-50%, -50%)  opacity: 1;">
+            </div>
+            <div class="sec1_text4 fixed" data-1680="top: 100%; opacity: 0; transform: translate(-50%, -50%) scale(0)"
+                data-1680="top: 80%; transform: translate(-50%, -50%) scale(0); opacity: 1;"
+                data-2000="top: 80%; transform: translate(-50%, -50%) scale(1); opacity: 1;"
+                data-2400="top: 100%; transform: translate(-50%, -50%) scale(1); opacity: 0;"
+                >권혜현입니다.
+            </div>
+        </section>
+
+        <!-- // section1-->
+        <section id="section2"></section><!-- // section2-->
+        <section id="section3"></section><!-- // section3-->
+        <section id="section4"></section><!-- // section4-->
+        <section id="section5"></section><!-- // section5-->
+        <section id="section6"></section><!-- // section6-->
+    </div>
+
+    <!-- // contents -->
+    <script src="https://cdn.jsdelivr.net/npm/skrollr@0.6.26/dist/skrollr.min.js"></script>
+    <script>
+        const cursor = document.querySelector(".mouse__cursor")
+
+        window.addEventListener("mousemove", (e) => {
+          //커서에 포지션 되어있기 때문에 left
+          //px 처럼 단위값을 써주어야 실행됨
+
+          cursor.style.left = e.clientX -72 + "px";
+          cursor.style.top = e.clientY -72 + "px";
+        });
+        const s = skrollr.init();
+        function scroll() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            document.querySelector(".scrollTop").innerText = Math.ceil(scrollTop);
+            requestAnimationFrame(scroll);
+        }
+        scroll();
+
+      
+    </script>
+</body>
+</html>

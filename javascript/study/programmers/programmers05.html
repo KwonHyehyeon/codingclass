@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알고리즘 문제풀기</title>
+    
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">🔥 Programmers Lv.1 : 자릿수 더하기</h2><br>
+            <p class="t_desc2">
+                🔍 문제 : " 자연수 N이 주어지면, N의 각 자릿수의 합을 구해서 return 하는 solution 함수를 만들어 주세요.
+                예를들어 N = 123이면 1 + 2 + 3 = 6을 return 하면 됩니다. "
+            </p>
+            <div class="t_desc2">
+                📎 조건 : <br> 
+                ∙ N의 범위 : 100,000,000 이하의 자연수
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 My answer</h2>
+            <div class="t_code">
+<pre><code>function solution(n){
+    let sum = 0;
+    let answer=String(n).split("");
+    for(let i=0; i&lt;answer.length; i++){
+        let num = parseInt(answer[i]);
+        sum += num;
+    }
+    return sum;
+}
+solution(123);
+</code></pre>
+            </div>
+            <div class="t_box">
+               01. n인 123을 먼저 한 개씩으로 나눠주기 위해 문자열로 바꿔 split메서드를 이용하여 한 자릿 수로 나누어 주었습니다. <br>
+               02. 한 자릿 수로 나눈 answer는 ["1", "2", "3"]이 상태이며 인덱스별 값 "1", "2", "3"을 1,2,3과 같이 숫자로 변환하기 위해 parseInt()를 사용하였습니다.<br>
+               03. 숫자로 바뀐 값의 총합(sum)을 구해 sum을 리턴해주면 자릿수를 더한 값의 결과를 도출할 수 있습니다.
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 Another ways</h2>
+            <div class="t_code">
+<pre><code>function solution(n){
+    // 쉬운방법
+    return (n+"").split("").reduce((acc, curr) => acc + parseInt(curr), 0)
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+               : reduce의 initial value는 첫 acc 값입니다. 즉, 0을 넣어서 acc 초기값을 정수화 해주는 겁니다("문자열 + 정수 = 문자열" 방지차원). initial value를 지정하지 않는다면 parseInt(acc) + parseInt(curr)로 하면 될 것 같습니다.<br>
+               : n+""은 숫자 + 문자열의 형태이기 때문에 결과적으로 문자열 n을 반환합니다.  =  String(n)
+            </div>
+            <div class="t_code">
+<pre><code>function solution(n) {
+    var arr = n.toString().split('');
+    var sum = 0;
+    arr.forEach(element => {
+        sum += parseInt(element);
+    });
+    return sum;
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+               : forEach문을 이용해서 더욱 간결하게 표현해주었습니다.
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

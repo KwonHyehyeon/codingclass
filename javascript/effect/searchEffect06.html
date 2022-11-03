@@ -43,7 +43,7 @@
                     <li><a href="#" class="btn6">랜덤 정렬하기</a></li>
                     <li ><a href="#" class="btn7">카테고리 정렬하기</a></li>
                 </ul>
-                <ul style="display: none;">
+                <ul class="search__category" style="display: none;">
                     <li data-category="0"><a href="#" class="ct1">animation</a></li>
                     <li data-category="1"><a href="#" class="ct2">background</a></li>
                     <li data-category="2"><a href="#" class="ct3">border</a></li>
@@ -67,7 +67,7 @@
             </div>
             <div class="search__info">
                 <div>전체 속성 갯수 : <span class="num">0</span></div>
-                <div>찾은 속성 갯수 : <span class="num2">0</span></div>
+                <div class="search__info2">찾은 속성 갯수 : <span class="num2">0</span></div>
             </div>
             <div class="search__list">
                 <ul class="line">
@@ -1471,7 +1471,9 @@ li {
             { num: 386, category: "etc", name: "z-index", desc: " 요소들의 위치가 겹칠 경우, Z축(화면에 뜨는) 순서를 정의합니다."}
         ];
 
-
+        const searchInfo2Wrap = document.querySelector(".search__info2");        // 전체 개수
+        const searchInfo = document.querySelector(".search__info .num");        // 전체 개수
+        const searchInfo2 = document.querySelector(".search__info .num2");
         const cssList = document.querySelector(".search__list .line");
         // 데이터 출력하기
         const updateList = () => {
@@ -1502,14 +1504,17 @@ li {
         // 반대로 정렬 클릭
         document.querySelector(".btn1").addEventListener("click", (e) => {
             e.preventDefault();
+            searchInfo2Wrap.style.display = "none"
             cssProperty.reverse();
             updateList();
             searchClick2.style.display = "none";
             searchNumSec.style.display = "none";
+
         });
         // 오름차순 정렬 클릭
         document.querySelector(".btn2").addEventListener("click", (e) => {
             e.preventDefault();
+            searchInfo2Wrap.style.display = "none";
             cssProperty.sort((a,b) => {
                 return a.num - b.num;
             });
@@ -1520,6 +1525,7 @@ li {
         // 내림차순 정렬 클릭
         document.querySelector(".btn3").addEventListener("click", (e) => {
             e.preventDefault();
+            searchInfo2Wrap.style.display = "none";
             cssProperty.sort((a,b) => {
                 return b.num - a.num;
             });
@@ -1530,6 +1536,7 @@ li {
         // 알파벳 정렬(a~z) 클릭
         document.querySelector(".btn4").addEventListener("click", (e) => {
             e.preventDefault();
+            searchInfo2Wrap.style.display = "none";
             cssProperty.sort((a, b) => {
                 let x = a.name;
                 let y = b.name;
@@ -1542,6 +1549,7 @@ li {
         // 알파벳 정렬(z~a) 클릭
         document.querySelector(".btn5").addEventListener("click", (e) => {
             e.preventDefault();
+            searchInfo2Wrap.style.display = "none";
             cssProperty.sort((a, b) => {
                 let x = a.name;
                 let y = b.name;
@@ -1554,6 +1562,7 @@ li {
         // 랜덤 정렬
         document.querySelector(".btn6").addEventListener("click", (e) => {
             e.preventDefault();
+            searchInfo2Wrap.style.display = "none";
             for(let i=cssProperty.length-1; i>=0; i--){
                 const randomIndex = Math.floor(Math.random() * (i+1));
                 [cssProperty[i], cssProperty[randomIndex]] = [cssProperty[randomIndex], cssProperty[i]];
@@ -1598,18 +1607,20 @@ li {
         // 카테고리 정렬(다른 방법) 
         document.querySelector(".btn7").addEventListener("click", (e) => {
             e.preventDefault();
+            searchInfo2Wrap.style.display = "none";
             cssProperty.sort((a, b) => {
                 return a.category < b.category ? -1 : a.category > b.category ? 1 : 0;
             });
             updateList();
         });
-ㄴ
+
         // 카테고리 클릭시 해당 데이터 나오게 처리
         const searchClick2 = document.querySelector(".search__click ul:nth-child(2)");
         const searchClickC = document.querySelectorAll(".search__click ul:nth-child(2) li");
         let count = 0;
 
         document.querySelector(".ct1").addEventListener("click" , () => {
+            searchInfo2Wrap.style.display = "block"
             let listCSS = "";
             cssProperty.forEach((data, index) => {
                 if(cssProperty[index].category === 'animation')  {
@@ -1790,15 +1801,19 @@ li {
 
 
         // 전체속성갯수 구하기
-        const searchNum = document.querySelector(".search__info .num");
-        const searchNum2 = document.querySelector(".search__info .num2");
-        const searchNumSec = document.querySelector(".search__info div:nth-child(2)");
-        cssProperty.map((element, index) => {
-            // searchNum에 index 넣어주기
-            //searchNum.innerText = cssProperty.length;
-            searchNum.innerText = index + 1;
-            searchNumSec.style.display = "none";
-        });
+        // const searchNum = document.querySelector(".search__info .num");
+        // const searchNum2 = document.querySelector(".search__info .num2");
+        // const searchNumSec = document.querySelector(".search__info div:nth-child(2)");
+        // cssProperty.map((element, index) => {
+        //     // searchNum에 index 넣어주기
+        //     //searchNum.innerText = cssProperty.length;
+        //     searchNum.innerText = index + 1;
+        //     searchNumSec.style.display = "none";
+        // });
+
+        const count2 = cssProperty.length;
+        searchInfo.innerHTML = count2;
+        searchInfo2Wrap.style.display ="none";
             
     </script>
 </body>

@@ -560,11 +560,13 @@
 #contents_tit p {
 	padding: 35px 0;
 	font-family: 'Gaegu', cursive;
-	font-size: 40px;
+	font-size: 28px;
+	font-weight: 900;
 }
 
 #contents_tit p a {
-	color: #F7EDDB;
+	color: rgb(152, 152, 152);
+	font-family: 'Poppins';
 }
 
 
@@ -682,9 +684,9 @@
 }
 
 .gridly .webstandard a {
-	color: #157ed3;
+	color: #FFACC7;
 	display: block;
-	border-bottom: 3px solid #a5d5fa;
+	border-bottom: 3px solid #FFDDD2;
 	margin-right: 20px;
 }
 
@@ -779,6 +781,7 @@
 .image-wrap.active .hover-wrap {
 	opacity: 0.9;
 	filter: alpha(opacity=90);
+	display: flex;
 
 }
 
@@ -796,8 +799,8 @@ overlay-text-thumb {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: #f2a1d1;
-	color: #FFFFFF;
+	background: #040404cc;
+	color: white;
 	font-size: 25px;
 	font-weight: 300;
 	line-height: 32px;
@@ -806,6 +809,8 @@ overlay-text-thumb {
 	padding-top: 130px;
 	opacity: 1;
 	filter: alpha(opacity=100);
+	font-family: 'PyeongChangPeace';
+	font-weight: 700;
 }
 
 .image-wrap .hover-wrap .overlay-img-donut.black {
@@ -838,11 +843,10 @@ overlay-text-thumb {
 	width: 100%;
 	text-align: center;
 	margin-top: 30px;
-	color: #FFFFFF;
+	color: white;
 	font-size: 14px;
 	line-height: 22px;
 	font-weight: 200px;
-
 	opacity: 1;
 	filter: alpha(opacity=100);
 }
@@ -854,7 +858,7 @@ overlay-text-thumb {
 	top: 50%;
 	width: 100%;
 	margin: 102px 0 0 0px;
-	color: #FFFFFF;
+	color: white;
 	font-size: 12px;
 	line-height: 22px;
 	font-weight: 300px;
@@ -2818,4 +2822,55 @@ overlay-text-thumb {
 
 .control h3 {
 	margin-top: 30px;
+}
+
+/* 버튼 */
+.button {
+	margin-top: 80%;
+}
+.image-wrap .hover-wrap .btn-6 {
+	display: block;
+	margin: 0 auto;
+    width: 130px;
+	height: 40px;
+    transform: translateX(35%);
+	border-radius: 10px;
+    margin-bottom: 10px;
+	/* border-radius: 10px; */
+    font-weight: normal;
+    font-size: 18px;
+	background: radial-gradient(circle, rgba(247,150,192,1) 0%, rgba(118,174,241,1) 100%);
+	border: none;
+	text-align: center;
+	line-height: 40px;
+	overflow: hidden;
+	box-shadow:  1px 1px 6px 0 rgba(255,255,255,.3),
+	4px 4px 6px 0 rgba(116, 125, 136, .2), 
+	inset -4px -4px 6px 0 rgba(255,255,255,.2),
+	inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+}
+.image-wrap .hover-wrap .btn-6 a {
+	color: #fff;
+}
+.btn-6:hover {	  
+	color: #fff;
+	font-weight: 700;
+	opacity: .7;
+}
+.btn-6:before {
+	position: absolute;
+	content: '';
+	top: -180px;
+	left: 0;
+	width: 30px;
+	height: 100%;
+	background-color: #fff;
+	animation: shiny-btn1 2.6s ease-in-out infinite;
+}
+
+@-webkit-keyframes shiny-btn1 {
+	0% { -webkit-transform: scale(0) rotate(45deg); opacity: 0; }
+	80% { -webkit-transform: scale(0) rotate(45deg); opacity: 0.5; }
+	81% { -webkit-transform: scale(4) rotate(45deg); opacity: 1; }
+	100% { -webkit-transform: scale(50) rotate(45deg); opacity: 0; }
 }
