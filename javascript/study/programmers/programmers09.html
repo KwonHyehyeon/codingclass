@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알고리즘 문제풀기</title>
+    
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">🔥 Programmers Lv.1 : 정수 제곱근 판별</h2><br>
+            <p class="t_desc2">
+                🔍 문제 : " 임의의 양의 정수 n에 대해, n이 어떤 양의 정수 x의 제곱인지 아닌지 판단하려 합니다.<br>
+                n이 양의 정수 x의 제곱이라면 x+1의 제곱을 리턴하고, n이 양의 정수 x의 제곱이 아니라면 -1을 리턴하는 함수를 완성하세요. "
+            </p>
+            <div class="t_desc2">
+                📎 조건 : <br> 
+                ∙ n은 1이상, 50000000000000 이하인 양의 정수입니다.
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 My answer</h2>
+            <div class="t_code">
+<pre><code>function solution(n) {
+    if(Math.sqrt(n) % 1 !== 0){
+        return -1;
+    } else {
+        return(Math.sqrt(n) + 1)*(Math.sqrt(n) + 1)
+    }
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+               : 제곱근의 값이 1로 나누었을 때 나머지가 있으면 양의 정수 x의 제곱이 아니기 때문에 -1을 리턴하고 그 외에는 x+1을 제곱한다.
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 Another ways</h2>
+            <div class="t_code">
+<pre><code>function solution(n) {
+    var answer = 0;
+ 
+    for(let i=0, a=0; i&lt;=n; i++){
+      if(n/i===i){
+        a = i + 1
+        return a*a
+      } else {
+        answer = -1
+      }
+    }
+ 
+    return answer;
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+               저의 방법과 비슷하지만 좀 더 이해하기 쉬운 방법일 것 같습니다.
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -2336,7 +2336,7 @@ const searchResultWrap = document.querySelector(".search__result");
 const searchRestart = document.querySelector(".search__result .restart");
 
 // 2분동안
-let timeReamining = 120, //남은 시간
+let timeReamining = 3, //남은 시간
   timeInterval = "", //시간 간격
   score = 0, //점수
   answers = {}; //새로운 정답   //위에 cssProperty에서 데이터 값 가져와서 새로운 객체 배열 만들것임.
@@ -2350,6 +2350,43 @@ function updateList() {
 // 게임 시작하면 리스트 나옴
 updateList();
 
+// 게임 리셋
+function resetQuiz() {
+  searchResultWrap.classList.remove("show");
+  // 시간 정지 clearInterval : setInterval 반대
+  clearInterval(timeInterval);
+
+  document.querySelector(".search__time").style.background = "var(--htmlColor)";
+
+  timeReamining = 120; //남은 시간
+  timeInterval = ""; //시간 간격
+  score = 0; //점수
+  // answers = ""; //새로운 정답   //위에 cssProperty에서 데이터 값 가져와서 새로운 객체 배열 만들것임.
+
+  searchTime.innerText = displayTime();
+
+  searchStart.style.display = "block";
+  searchList.style.display = "block";
+
+  searchStart.style.pointerEvents = "all";
+
+  // searchAudio.play();
+
+  // timeInterval = setInterval(reduceTime, 1000);
+
+  // 버튼 모습
+  searchAudioStop.style.display = "block";
+  searchAudioPlay.style.display = "none";
+
+  searchAnswers.innerHTML = "";
+  searchMissAnswers.innerHTML = "";
+  searchMissAnswers.style.display = "none";
+  searchRestart.style.display = "none";
+  searchResult.style.display = "none";
+
+  updateList();
+}
+
 // 게임 시작하기
 function startQuiz() {
   // 게임시작하면 시작 버튼 없애기
@@ -2358,8 +2395,8 @@ function startQuiz() {
   searchList.style.display = "none";
 
   // 다시 시작할 때 기존 데이터 초기화
-  searchAnswers.innerHTML = "";
-  searchMissAnswers.innerHTML = "";
+  // searchAnswers.innerHTML = "";
+  // searchMissAnswers.innerHTML = "";
 
   // 시간 설정 //1초(1000)에 한번씩 실행되라
   timeInterval = setInterval(reduceTime, 1000);
@@ -2367,6 +2404,7 @@ function startQuiz() {
   // 뮤직 추가하기
   searchAudioPlay.style.display = "block";
   searchAudioStop.style.display = "none";
+  searchAudio.currentTime = 0;
   searchAudio.play();
 
   // 점수 계산
@@ -2375,6 +2413,8 @@ function startQuiz() {
   // 정답 체크
   checkAnswers();
 }
+
+
 // 인풋 체크하기
 function checkInput() {
   // alert("ddd")
@@ -2492,6 +2532,7 @@ function endQuiz() {
   // 시작버튼 만들기
   searchStart.style.display = "block";
   searchStart.style.pointerEvents = "none";
+  searchRestart.style.display = "block";
 
   // 오답 보여주기
   missAnswers();
@@ -2510,28 +2551,38 @@ function endQuiz() {
   let point = Math.round((score / cssProperty.length) * 100);
   searchResult.innerHTML = `게임이 끝났습니다.<br> 당신은 ${cssProperty.length}개 중에 ${score}개를 맞추었습니다.<br> 당신의 점수는 ${point}점입니다.`;
 }
-//다시 시작하기
+
+// 다시 시작하기
 function restart() {
   searchResultWrap.classList.remove("show");
-  startQuiz();
-  timeReamining = 120;
-  if (timeReamining < 11) {
-    document.querySelector(".search__time").style.background = "blue";
-  } else {
-    document.querySelector(".search__time").style.background =
-      "var(--htmlColor)";
-  }
+  timeReamining = 120; // 시간
   score = 0;
-  searchScoreNow.innerText = "0";
+
+  document.querySelector(".search__time").style.background = "var(--htmlColor)";
+
+
+  searchStart.style.display = "none"; // 버튼 숨김
+  searchStart.style.pointerEvents = "all";
+  searchList.style.display = "none";
+
+  //맞힌 갯수 없애기
+  searchScoreNow.textContent = "0";
+
+  //노래
   searchAudioStop.style.display = "none";
   searchAudioPlay.style.display = "block";
   searchAudio.play();
+
+  startQuiz();
 }
+  
+
 // 버튼 이벤트
 searchStart.addEventListener("click", startQuiz);
 // input했을 때 checkInput이라는 함수 돌리기
 searchInput.addEventListener("input", checkInput);
 searchRestart.addEventListener("click", restart);
+
 // 오디오
 // 버튼 클릭시 플레이
 searchStart.addEventListener("click", () => {
@@ -2546,10 +2597,31 @@ searchAudioStop.addEventListener("click", () => {
   searchAudioStop.style.display = "none";
   searchAudio.play();
 });
-
+ 
 // stop 버튼
 searchAudioPlay.addEventListener("click", () => {
   searchAudioPlay.style.display = "none";
   searchAudioStop.style.display = "block";
   searchAudio.pause();
 });
+
+// const searchClose1 = document.querySelector(".search__header .circles .circle1");
+//     searchClose1.forEach( (e) => {
+//         e.addEventListener("click", () => {
+//             searchResultWrap.classList.remove("show");
+//             searchStart.style.display = "block";
+//             timeReamining = 120;
+//             score = 0;
+//             searchCount.innerText = "0";
+    
+//             searchAnswers.innerHTML = "";
+//             searchMissAnswers.innerHTML = "";
+    
+            
+//             searchAudio.play();
+//             searchAudioPlay.style.display = "none";
+//             searchAudioStop.style.display = "block";
+//             searchTime.innerText = displayTime();
+//             clearInterval(timeInterval);
+//         });
+//     })

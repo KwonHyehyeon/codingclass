@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알고리즘 문제풀기</title>
+    
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">🔥 Programmers Lv.1 : 정수 내림차순으로 배치하기</h2><br>
+            <p class="t_desc2">
+                🔍 문제 : " 함수 solution은 정수 n을 매개변수로 입력받습니다. n의 각 자릿수를 큰것부터 작은 순으로 정렬한 새로운 정수를 리턴해주세요. 예를들어 n이 118372면 873211을 리턴하면 됩니다. "
+            </p>
+            <div class="t_desc2">
+                📎 조건 : <br> 
+                ∙ n은 1이상 8000000000 이하인 자연수입니다.
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 My answer</h2>
+            <div class="t_code">
+<pre><code>function solution(n) {
+    return String(n).split("").sort((a, b) => b - a).join("")/1
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+               : 여러 메서드를 사용한 수 문자열에서 숫자로 변환할 때 저도 이전 문제처럼 문자열에 나누기를 해주었습니다. 
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 Another ways</h2>
+            <div class="t_code">
+<pre><code>function solution(n) {
+    var answer = "";
+    n = n + "";
+    var emptyArray = [];
+    for (var i = 0; i &lt; n.length; i++) {
+        emptyArray.push(n[i]);
+    }
+    for (var j = 0; j &lt; emptyArray.length; j++) {
+        if (emptyArray[j] &lt; emptyArray[j+1]) {
+            var temp = emptyArray[j];
+            emptyArray[j] = emptyArray[j+1];
+            emptyArray[j+1] = temp;
+            j = -1;
+        }
+    }
+    for (var k = 0; k &lt; emptyArray.length; k++) {
+        answer += emptyArray[k];
+    }
+    answer = Number(answer);
+    return answer;
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+               : 이 분의 머릿속이 궁금합니다.👍🏻
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

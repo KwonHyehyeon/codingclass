@@ -57,57 +57,64 @@ body {
 
 /* Header  */
 
-/* @keyframes slide {
+@keyframes slide {
 	0% {
 	  transform: translate3d(0, 0, 0);
 	}
 	100% {
 	  transform: translate3d(-3000px, 0, 0);
 	}
-}
+  }
+  
 
+  
+  body {
+	z-index: -99999;
+  }
+  
 
-.far,
-.mid,
-.near {
+  .far,
+  .mid,
+  .near {
 	position: absolute;
 	bottom: 0;
-}
+	z-index: -20;
+  }
   
 .far,
-.mid,
-.near {
+  .mid,
+  .near {
 	width: 6000px;
 	height: 198px;
 	background-repeat: repeat-x;
 	background-position: left bottom;
 	background-size: 600px 198px;
 	animation: slide linear infinite;
-	z-index: 1;
-}
+  }
   
-.far {
+  .far {
 	background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/62127/bg-pdx-forest-far.svg");
 	animation-duration: 60s;
-}
+  }
   
-.mid {
+  .mid {
 	background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/62127/bg-pdx-forest-mid.svg");
 	animation-duration: 45s;
-}
+  }
   
-.near {
+  .near {
 	background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/62127/bg-pdx-forest-near.svg");
 	background-size: 600px 158px;
 	height: 158px;
 	animation-duration: 30s;
-} */
+  }
 
 #header {
 	/* background: linear-gradient(white pink) center 57px !important; */
 	background: #FFdcdc center 57px;
 	padding: 10px 0 10px 0px;
 	position: relative;
+	z-index: -9999;
 	width: 100%;
 	overflow: hidden;
 }
@@ -143,8 +150,7 @@ body {
 	margin-top: 20px;
 	font-weight: 500;
 	font-family: 'Fredoka One', cursive;
-	position: relative;
-	z-index: 2;
+	z-index: 100;
 }
 
 #header h3 {
@@ -248,7 +254,7 @@ pre.pre-show {
 	color: #fff;
 	line-height: 60px;
 	transition: box-shadow 0.3s ease;
-	z-index: 100000;
+	z-index: 100;
 }
 
 .header_icon li a span {
@@ -263,7 +269,7 @@ pre.pre-show {
 	border-radius: 6px 0;
 	opacity: 0;
 	transition: opacity 0.3s ease, top 0.3s ease;
-	z-index: 10000000;
+	z-index: 10000;
 }
 
 .header_icon li a span:before {
@@ -279,7 +285,6 @@ pre.pre-show {
 
 .header_icon li a:hover span {
 	opacity: 1;
-	z-index: 10000000;
 	top: -33px;
 }
 
@@ -287,8 +292,6 @@ pre.pre-show {
 	box-shadow:
 		0 0 0 3px #fff inset,
 		0 0 0 100px rgba(255, 255, 255, 0.1) inset;
-	z-index: 10000000;
-
 }
 
 

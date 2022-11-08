@@ -13,11 +13,15 @@
     <link rel="stylesheet" href="../assets/css/searchgame.css">
     <link rel="stylesheet" href="../assets/css/search_ani.css">
     <link rel="stylesheet" href="../assets/css/memory.css">
-
+    <!-- <link rel="stylesheet" href="../assets/css/shaky.css"> -->
+    
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet prefetch" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous"> -->
+    <!-- <link rel="stylesheet" href="css/app.css"> -->
 </head>
 
 <body>
-    <div class="wrap">
+    <div class="wrap shaky">
         <header id="header">
             <h1>Welcome to noeyheyh's Game Place</h1>
             <div class="time"></div>
@@ -77,7 +81,7 @@
                 <div class="modal__cont">
                     <div class="modal__box">
                         <div class="cont">
-                            <iframe src="https://github1s.com/kwonhyehyeon/coding" frameborder="0"></iframe>
+                            <iframe src="https://github1s.com/kwonhyehyeon/codingclass" frameborder="0"></iframe>
                         </div>
                     </div>
                     <div class="modal__close">
@@ -163,9 +167,12 @@
             <div class="memory__wrap">
                 <div class="memory__inner">
                     <div class="memory__header">
-                        <div>👽   ***</div>
-                        <h2>Welcome to Memory_Game</h2>
-                        <div>***   👽</div>
+                        <div class="circles">
+                            <div class="circle4"></div>
+                            <div class="circle5"></div>
+                            <div class="circle6"></div>
+                        </div>
+                        <h2>👽 *** Welcome to Memory_Game *** 👽</h2>
                     </div>
                     <div class="memory__card">
                         <div class="memory__info">
@@ -182,8 +189,18 @@
                         <div class="cards__inner">
                             <h3 class="cards_tit">🚀 우주 동물들아 꼭꼭 숨어라 머리카락 보일라 🚀</h3>
                             <div class="cards_time">
-                                <div>맞은 갯수 : 0</div>
-                                <div>남은 기회 : 5</div>
+                                <ul class="stars">
+                                    <li><i class="starThree fa fa-star full"></i></li>
+                                    <li><i class="starTwo fa fa-star full"></i></li>
+                                    <li><i class=" starOne fa fa-star full"></i></li>
+                                </ul>
+                                <span class="moves">10</span> Moves   
+                                <p>점수 : <span class="memory__card__score">0</span> / 100</p>
+                                <p>  맞춘 카드 : <span class="memory__card__correct">0 </span> / 16        </p>      
+                                <div class="memory_restart">
+                                    Replay
+                                    <i class="fa fa-repeat"></i>
+                                </div>
                             </div>
                             <ul class="cards">
                                 <li>
@@ -316,20 +333,21 @@
                                 </li>
                             </ul>
                         </div>
-                        
                     </div>
                 </div>
             </div>
-        </div>
         <!-- //뮤직 플레이어 -->
 
         <!-- 서치 게임 -->
         <div class="searchgame__wrap">
             <div class="searchgame__inner">
                 <div class="search__header">
-                    <div>🎮   ***</div>
-                    <h2>Welcome to Search_Game</h2>
-                    <div>***   🎮</div>
+                    <div class="circles">
+                        <div class="circle1"></div>
+                        <div class="circle2"></div>
+                        <div class="circle3"></div>
+                    </div>
+                    <h2>🕹 *** Welcome to Search_Game *** 🕹</h2>
                 </div>
                 <div class="search__inner">
                     <div class="search__wrap">
@@ -384,6 +402,7 @@
                             <div>현재 맞춘 갯수 : <span class="now">0</span></div>
                         </div>
 
+                        <div class="search__answer__wrap"></div>
                         <div class="search__answers"></div>
 
                         <div class="search__missAnswers"></div>
@@ -779,7 +798,9 @@
                 <!-- main -->
             </div>
         </div>
-    </div>
+                    </div>
+                </div>
+            </div>
 
     <!-- //서치 게임 플레이어 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -934,7 +955,6 @@
         modalClose.addEventListener("click", () => {
             modalCont.classList.add("hide");
             cursor.style.display = "block";
-
         });
 
         //파일 누르면 뮤직 이너 뜨게
@@ -955,30 +975,71 @@
         const Icon1 = document.querySelector(".icon1");
         const Icon1OFF = document.querySelector(".icon1_off");
         const searchGame = document.querySelector(".searchgame__wrap");
+        const Circle_Close = document.querySelector(".circle1");
         Icon1.addEventListener("click", () => {
             searchGame.style.display = "none";
             Icon1OFF.style.display = "block";
             Icon1.style.display = "none";
+            searchAudio.pause();
+            resetQuiz();
         })
         Icon1OFF.addEventListener("click", () => {
+            // musicInner.style.display = "none";
+            musicAudio.pause();
+            // Icon5OFF.style.display = "block";
+            // Icon5.style.display = "none";
+            MemoryGame.style.display = "none";
+            Icon2OFF.style.display = "block";
+            Icon2.style.display = "none";
             searchGame.style.display = "block"
             Icon1.style.display = "block"
             Icon1OFF.style.display = "none";
+            resetQuiz();
+            // restart();
+        })
+        Circle_Close.addEventListener("click", () => {
+            searchGame.style.display = "none";
+            Icon1OFF.style.display = "block";
+            Icon1.style.display = "none";
+            searchAudio.pause();
+            searchAudioPlay.style.display = "none";
+            searchAudioStop.style.display = "block";
+            resetQuiz();
         })
 
         //메모리게임 열고 닫기
         const Icon2 = document.querySelector(".icon2");
         const Icon2OFF = document.querySelector(".icon2_off");
         const MemoryGame = document.querySelector(".memory__wrap");
+        const MemoryGameClose = document.querySelector(".circle4");
         Icon2.addEventListener("click", () => {
             MemoryGame.style.display = "none";
             Icon2OFF.style.display = "block";
             Icon2.style.display = "none";
+            resetGame();
+
         })
         Icon2OFF.addEventListener("click", () => {
+            // musicInner.style.display = "none";
+            musicAudio.pause();
+            // Icon5OFF.style.display = "block";
+            // Icon5.style.display = "none";
+            searchGame.style.display = "none";
+            searchAudio.pause();
+            Icon1OFF.style.display = "block";
+            Icon1.style.display = "none";
             MemoryGame.style.display = "block"
             Icon2.style.display = "block"
             Icon2OFF.style.display = "none";
+            resetGame();
+
+        })
+        MemoryGameClose.addEventListener("click", () => {
+            MemoryGame.style.display = "none";
+            Icon2OFF.style.display = "block";
+            Icon2.style.display = "none";
+            resetGame();
+            
         })
 
         //탭 메뉴

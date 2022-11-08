@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알고리즘 문제풀기</title>
+    
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">🔥 Programmers Lv.1 : 수박수박수박수박수박수?</h2><br>
+            <p class="t_desc2">
+                🔍 문제 : " 길이가 n이고, "수박수박수박수...."와 같은 패턴을 유지하는 문자열을 리턴하는 함수, solution을 완성하세요. 예를들어 n이 4이면 "수박수박"을 리턴하고 3이라면 "수박수"를 리턴하면 됩니다. "
+            </p>
+            <div class="t_desc2">
+                📎 조건 : <br> 
+                ∙ n은 길이 10,000이하인 자연수입니다.
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 My answer</h2>
+            <div class="t_code">
+<pre><code>function solution(n) {
+    let answer = '';
+    for(i=1; i&lt;=n; i++){
+        if(i%2==0){
+            answer += "박";
+        } else {
+            answer += "수";
+        }
+    }
+    return answer;
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+               : for문을 돌려주어 짝수가 될 때는 박의 값이 나오도록 홀수가 될 때는 짝 값이 나오도룩 구현해줍니다. 
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 Another ways</h2>
+            <div class="t_code">
+<pre><code>function waterMelon(n){
+    var result = "수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박"
+    //함수를 완성하세요
+  
+    return result.substring(0,n);
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+               👩🏻 : 예?
+            </div>
+            <div class="t_code">
+<pre><code>const waterMelon = n => {
+    return '수박'.repeat(n/2) + (n%2 === 1 ? '수' : '');
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+               : 깔끔하면서 이해 쏙 코드!
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
