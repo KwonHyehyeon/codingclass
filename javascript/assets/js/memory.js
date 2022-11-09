@@ -142,7 +142,6 @@ let soundSuccess = new Audio(sound[2]);
 // allows board to reset on click from Reset icon.
 // allows "Play Again?" to reset board & pop-up to be removed on click.
 $('.popRestart').click(resetGame);
-$('.memory_restart').click(resetDeck);
 
 // $('.card').click(selectCard); // allows cards to be "flipped" on click.
 $('.popReturn').click(returnToGame); // allows "Return?" to remove pop-up and return to won game.

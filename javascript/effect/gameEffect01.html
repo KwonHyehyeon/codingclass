@@ -13,15 +13,32 @@
     <link rel="stylesheet" href="../assets/css/searchgame.css">
     <link rel="stylesheet" href="../assets/css/search_ani.css">
     <link rel="stylesheet" href="../assets/css/memory.css">
+    <link rel="stylesheet" href="../assets/css/tetris.css">
     <!-- <link rel="stylesheet" href="../assets/css/shaky.css"> -->
     
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <!-- <link rel="stylesheet prefetch" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous"> -->
+    
     <!-- <link rel="stylesheet" href="css/app.css"> -->
+    <style>
+        /* body {
+  background: #0f1030;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+} */
+        /* canvas, svg {
+          position: absolute;
+        }
+
+        #squid {
+          fill: #d28bfd;
+        } */
+    </style>
 </head>
 
 <body>
-    <div class="wrap shaky">
+    <div class="wrap">
         <header id="header">
             <h1>Welcome to noeyheyh's Game Place</h1>
             <div class="time"></div>
@@ -164,6 +181,19 @@
                     </div>
                 </div>
             </div>
+            <!-- tetris game : 다중 배열 활용 -->
+            <div class="tetris__wrap">
+                <div class="tetris__inner">
+                    <div class="tetris__start"></div>
+                    <div class="tetris__restart"></div>
+                    <div class="tetris__play">
+                        <div class="playground">
+                            <ul></ul>
+                        </div>
+                    </div>
+                </div>                    
+            </div>
+            <!-- //tetris__wrap -->
             <div class="memory__wrap">
                 <div class="memory__inner">
                     <div class="memory__header">
@@ -208,7 +238,7 @@
                                         <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
                                     </div>
                                     <div class="view back">
-                                        <img src="../assets/img/animal_cow.svg" alt="memory_card">
+                                        <!-- <img src="../assets/img/animal_cow.svg" alt="memory_card"> -->
                                     </div>
                                 </li>
                                 <li>
@@ -216,7 +246,7 @@
                                         <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
                                     </div>
                                     <div class="view back">
-                                        <img src="../assets/img/animal_bear.svg" alt="memory_card">
+                                        <!-- <img src="../assets/img/animal_bear.svg" alt="memory_card"> -->
                                     </div>
                                 </li>
                                 <li>
@@ -224,7 +254,7 @@
                                         <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
                                     </div>
                                     <div class="view back">
-                                        <img src="../assets/img/animal_girin.svg" alt="memory_card">
+                                        <!-- <img src="../assets/img/animal_girin.svg" alt="memory_card"> -->
                                     </div>
                                 </li>
                                 <li>
@@ -232,7 +262,7 @@
                                         <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
                                     </div>
                                     <div class="view back">
-                                        <img src="../assets/img/animal_hippo.svg" alt="memory_card">
+                                        <!-- <img src="../assets/img/animal_hippo.svg" alt="memory_card"> -->
                                     </div>
                                 </li>
                                 <li>
@@ -240,7 +270,7 @@
                                         <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
                                     </div>
                                     <div class="view back">
-                                        <img src="../assets/img/animal_lion.svg" alt="memory_card">
+                                        <!-- <img src="../assets/img/animal_lion.svg" alt="memory_card"> -->
                                     </div>
                                 </li>
                                 <li>
@@ -248,7 +278,7 @@
                                         <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
                                     </div>
                                     <div class="view back">
-                                        <img src="../assets/img/animal_pig.svg" alt="memory_card">
+                                        <!-- <img src="../assets/img/animal_pig.svg" alt="memory_card"> -->
                                     </div>
                                 </li>
                                 <li>
@@ -256,7 +286,7 @@
                                         <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
                                     </div>
                                     <div class="view back">
-                                        <img src="../assets/img/animal_lion.svg" alt="memory_card">
+                                        <!-- <img src="../assets/img/animal_lion.svg" alt="memory_card"> -->
                                     </div>
                                 </li>
                                 <li>
@@ -264,7 +294,7 @@
                                         <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
                                     </div>
                                     <div class="view back">
-                                        <img src="../assets/img/animal_cow.svg" alt="memory_card">
+                                        <!-- <img src="../assets/img/animal_cow.svg" alt="memory_card"> -->
                                     </div>
                                 </li>
                                 <li>
@@ -272,7 +302,7 @@
                                         <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
                                     </div>
                                     <div class="view back">
-                                        <img src="../assets/img/animal_mulgae.svg" alt="memory_card">
+                                        <!-- <img src="../assets/img/animal_mulgae.svg" alt="memory_card"> -->
                                     </div>
                                 </li>
                                 <li>
@@ -280,7 +310,7 @@
                                         <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
                                     </div>
                                     <div class="view back">
-                                        <img src="../assets/img/animal_rabbit.svg" alt=" memory_card">
+                                        <!-- <img src="../assets/img/animal_rabbit.svg" alt=" memory_card"> -->
                                     </div>
                                 </li>
                                 <li>
@@ -288,7 +318,7 @@
                                         <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
                                     </div>
                                     <div class="view back">
-                                        <img src="../assets/img/animal_bear.svg" alt="memory_card">
+                                        <!-- <img src="../assets/img/animal_bear.svg" alt="memory_card"> -->
                                     </div>
                                 </li>
                                 <li>
@@ -296,7 +326,7 @@
                                         <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
                                     </div>
                                     <div class="view back">
-                                        <img src="../assets/img/animal_mulgae.svg" alt="memory_card">
+                                        <!-- <img src="../assets/img/animal_mulgae.svg" alt="memory_card"> -->
                                     </div>
                                 </li>
                                 <li>
@@ -304,7 +334,7 @@
                                         <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
                                     </div>
                                     <div class="view back">
-                                        <img src="../assets/img/animal_hippo.svg" alt="memory_card">
+                                        <!-- <img src="../assets/img/animal_hippo.svg" alt="memory_card"> -->
                                     </div>
                                 </li>
                                 <li>
@@ -312,7 +342,7 @@
                                         <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
                                     </div>
                                     <div class="view back">
-                                        <img src="../assets/img/animal_rabbit.svg" alt="memory_card">
+                                        <!-- <img src="../assets/img/animal_rabbit.svg" alt="memory_card"> -->
                                     </div>
                                 </li>
                                 <li>
@@ -320,7 +350,7 @@
                                         <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
                                     </div>
                                     <div class="view back">
-                                        <img src="../assets/img/animal_pig.svg" alt="memory_card">
+                                        <!-- <img src="../assets/img/animal_pig.svg" alt="memory_card"> -->
                                     </div>
                                 </li>
                                 <li>
@@ -328,7 +358,7 @@
                                         <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif" alt="front"> -->
                                     </div>
                                     <div class="view back">
-                                        <img src="../assets/img/animal_girin.svg" alt="memory_card">
+                                        <!-- <img src="../assets/img/animal_girin.svg" alt="memory_card"> -->
                                     </div>
                                 </li>
                             </ul>
@@ -336,9 +366,9 @@
                     </div>
                 </div>
             </div>
-        <!-- //뮤직 플레이어 -->
+        <!-- //music__player -->
 
-        <!-- 서치 게임 -->
+        <!-- searchgame -->
         <div class="searchgame__wrap">
             <div class="searchgame__inner">
                 <div class="search__header">
@@ -810,6 +840,7 @@
     <script src="../assets/js/music.js"></script>
     <script src="../assets/js/searchgame.js"></script>
     <script src="../assets/js/memory.js"></script>
+    <script src="../assets/js/tetris1.js"></script>
     <script>
         $(".icon1").draggable({
             drag: function () {
@@ -1078,6 +1109,7 @@
             pop_status.focus();
         }
     </script>
+
 </body>
 
 </html>

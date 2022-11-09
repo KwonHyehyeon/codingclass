@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알고리즘 문제풀기</title>
+    
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">🔥 Programmers Lv.1 : 문자열 내림차순으로 배치하기</h2><br>
+            <p class="t_desc2">
+                🔍 문제 : " 문자열 s에 나타나는 문자를 큰것부터 작은 순으로 정렬해 새로운 문자열을 리턴하는 함수, solution을 완성해주세요.
+                s는 영문 대소문자로만 구성되어 있으며, 대문자는 소문자보다 작은 것으로 간주합니다. "
+            </p>
+            <div class="t_desc2">
+                📎 조건 : <br> 
+                ∙ str은 길이 1 이상인 문자열입니다.
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 My answer</h2>
+            <div class="t_code">
+<pre><code>function solution(s) {
+    if(s.length >= 1){
+      return s
+        .split("")
+        .sort()
+        .reverse()
+        .join("")       
+    }  
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+               : 문자열을 거꾸로 하기 위해서 일단 split으로 조각을 내주었으며 그 조각의 배열을 정렬 후 역으로 정렬한 뒤 다시 합쳐주었습니다.
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 Another ways</h2>
+            <div class="t_code">
+<pre><code>function solution(s) {
+    return s.split("").sort((a,b) => a&lt;b ? 1:-1).join("")
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+               : 깔끔한 방법입니다.
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
