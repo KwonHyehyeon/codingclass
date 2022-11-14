@@ -397,8 +397,8 @@ const currentStr1 = str1.replace("javascript", "자바스크립트"); //자바�
 const currentStr2 = str1.replace("j", "J"); //Javascript reference
 const currentStr3 = str1.replace("e", "E"); //javascript rEference //제일 처음에 있는 e만 바뀜 //다 변경하고 싶을 때 replaceAll
 const currentStr4 = str1.replaceAll("e", "E"); //javascript rEfErEncE
-const currentStr5 = str1.replaceAll(/e/g, "E"); //javascript rEfErEncE //정규식 //g(global)는 모두 검색
-const currentStr6 = str1.replaceAll(/e/gi, "E"); //javascript rEfErEncE //정규식 //i는 소문자 대문자 구별없이!
+const currentStr5 = str1.replace(/e/g, "E"); //javascript rEfErEncE //정규식 //g(global)는 모두 검색
+const currentStr6 = str1.replace(/e/gi, "E"); //javascript rEfErEncE //정규식 //i는 소문자 대문자 구별없이!
 
 const str2 = "https://www.naver.com/img01.jpg";
 const currentStr7 = str2.replace("img01.jpg", "img02.jpg"); //https://www.naver.com/img02.jpg

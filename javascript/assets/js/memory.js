@@ -69,7 +69,7 @@ function matchCards(img1, img2) {
 
     cardOne.removeEventListener("click", flipCard);
     cardTwo.removeEventListener("click", flipCard);
-    cardOne = cardTwo = "";
+    cardOne = cardTwo = "";// cardOne ="" , cardTwo = "" 원래
     disableDeck = false;
   } else {
     // 일치하지 않을 경우 (BGM, 좌우 진동)
@@ -94,8 +94,8 @@ function matchCards(img1, img2) {
   const showMove = document.querySelector('.moves');
   showMove.innerHTML = moves;
 
-  const showPopMove = document.querySelector('.movesPop')
-  showPopMove.innerHTML = moves
+  const showPopMove = document.querySelector('.movesPop');
+  showPopMove.innerHTML = moves;
 }
 // 카드 섞기
 function shuffledCard() {
@@ -163,7 +163,7 @@ $('.popReturn').click(returnToGame); // allows "Return?" to remove pop-up and re
 function resetGame() {
 
   moves = 10;
-  cardOne, cardTwo; // 카드 저장
+  cardOne = cardTwo = ''; // 카드 저장
   disableDeck = false; //
   matchedCard = 0 // 맞힌 카드
   endCardGame = 0; // 점수
@@ -220,6 +220,5 @@ function returnToGame () {
 
 // 리플레이 버튼 클릭시
 Replay.addEventListener("click", () => {
-  // resetGame();
-  alert("ddd");
+  resetGame();
 })

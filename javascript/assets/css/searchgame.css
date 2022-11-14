@@ -57,7 +57,7 @@ li {
     /* border-bottom: 3px solid #000; */
     /* border-bottom-left-radius: 20px; */
     /* border-bottom-right-radius: 20px; */
-    z-index: 1;
+    z-index: 3;
     border-radius: 10px;
     /* overflow: scroll; */
 
@@ -119,13 +119,15 @@ li {
     padding: 30px;
     height: 620px;
     overflow-y: scroll;
-
+    color: var(--htmlColor);
 }
 .search__wrap>span {
     font-size: 20px;
     margin-bottom: 20px;
     display: inline-block;
     font-family: 'NexonLv1Gothic';
+    color: var(--htmlColor);
+    margin-top: 20px;
 }
 
 .search__wrap>h1 {
@@ -139,6 +141,7 @@ li {
 .search__wrap .desc {
     line-height: 1.4;
     margin-bottom: 20px;
+    color: var(--htmlColor);
 }
 
 .search__wrap .search__time {

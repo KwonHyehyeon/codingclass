@@ -1,5 +1,6 @@
 .memory__wrap {
     display: none;
+    z-index: 3;
 }
 
 .memory__inner {
@@ -12,13 +13,19 @@
     /* border-radius: 20px; */
     /* animation: flicker 1.5s infinite alternate; */
     overflow-y: scroll;
-    /* background: #030510; */
-    background: #3F0071;
+    background: rgba(124, 7, 166, 0.6) !important;
     /* display: none; */
+    content: '';
+    position:absolute;
+	top:0;
+	left:0;
+    background: #fff;
+    overflow:hidden;
 }
 
 .memory__header {
-    width: 100%;
+    width: 600px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;

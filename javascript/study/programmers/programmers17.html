@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알고리즘 문제풀기</title>
+    
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">🔥 Programmers Lv.1 : 핸드폰 번호 가리기</h2><br>
+            <p class="t_desc2">
+                🔍 문제 : " 프로그래머스 모바일은 개인정보 보호를 위해 고지서를 보낼 때 고객들의 전화번호의 일부를 가립니다.<br>
+                전화번호가 문자열 phone_number로 주어졌을 때, 전화번호의 뒷 4자리를 제외한 나머지 숫자를 전부 *으로 가린 문자열을 리턴하는 함수, solution을 완성해주세요. "
+            </p>
+            <div class="t_desc2">
+                📎 조건 : <br> 
+                ∙ phone_number는 길이 4 이상, 20이하인 문자열입니다.
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 My answer</h2>
+            <div class="t_code">
+<pre><code>function solution(phone_number) {
+    let answer = "";
+    for(let i=0; i&lt;phone_number.length; i++){
+        if(i&lt;phone_number.length-4){
+            answer = answer + "*";
+        } else {
+            answer = answer + phone_number[i];
+        }
+    }
+   return answer; 
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+               : for문과 if문을 이용하여 마치 자바스크립트의 초보처럼 코드를 작성해주었습니다.
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 Another ways</h2>
+            <div class="t_code">
+<pre><code>function solution(phone_number) {
+  var answer = phone_number.split("");
+  
+  return new Array(answer.length)
+    .fill("*")
+    .splice(0, answer.length - 4)
+    .concat(answer.splice(answer.length - 4))
+    .join("");
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+               : fill메서드를 통해 배열 안 요소 전부 다 *로 바꿔준 후 뒤에서부터 4자리를 splice메서드를 통해 제거한 후 answer의 뒷4자리를 다시 concat으로 합쳐주었습니다.
+            </div>
+            <div class="t_code">
+<pre><code>function hide_numbers(s) {
+    return s.replace(/\d(?=\d{4})/g, "*");
+  }
+</code></pre>
+            </div>
+            <div class="t_box">
+                : /\d(?=\d{4})/g => /정규식/, g: 전체, \d: 숫자[0-9]랑 같음, {n}: 앞의 식이 n번 반복, x(?=y) : y뒤에 있는 x만 대응,  \d(?=\d{4}) : 뒤에 달아 숫자 4개가 있다면 그 앞(x)부분<br>
+                : 정규식으로 쓰니 한 줄이면 충분하군요? 멋있다.
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

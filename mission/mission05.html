@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../mission/assets/css/mission5.css">
+</head>
+<body>
+    <div id="just__wrap">
+        <header id="header">
+            <div class="header__logo">
+                <a href="#"><img src="../mission/assets/img/mission4_logo.jpg" alt="로고"></a>
+            </div>
+            <div class="header__menu">
+                <span><a href="#">탑</a></span>
+                <span><a href="#">아우터</a></span>
+                <span><a href="#">팬츠</a></span>
+                <span><a href="#">악세서리</a></span>
+            </div>
+        </header>
+        <section id="slider">
+            <div class="slide__wrap">
+                <div class="slide">
+                    <h2>슬라이드 내용1</h2>
+                    <img src="../mission/assets/img/mission02_02_01.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <h2>슬라이드 내용2</h2>
+                    <img src="../mission/assets/img/mission02_02_01.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <h2>슬라이드 내용3</h2>
+                    <img src="../mission/assets/img/mission02_02_01.jpg" alt="">
+                </div>
+            </div>
+        </section>
+        <section id="main">
+            <!-- <div class="box">
+                <div class="title_box">
+                    <a href="#"><div class="notice active">공지사항</div></a>
+                    <a href="#"><div class="gallery">갤러리</div></a>
+                </div>
+                <div class="desc_box">
+                    <div class="desc">
+                        <a href="#"><span class="content">공지사항내용공지사항내용공지사항내용공지사항내용공지사항내용공지사항내용</span></a>
+                        <span class="date">공지사항날짜</span>
+                    </div>
+                    <div class="desc">
+                        <a href="#"><span class="content">공지사항내용공지사항내용공지사항내용공지사항내용공지사항내용공지사항내용</span></a>
+                        <span class="date">공지사항날짜</span>
+                    </div>
+                    <div class="desc">
+                        <a href="#"><span class="content">공지사항내용공지사항내용공지사항내용공지사항내용공지사항내용공지사항내용</span></a>
+                        <span class="date">공지사항날짜</span>
+                    </div>
+                    <div class="desc">
+                        <a href="#"><span class="content">공지사항내용공지사항내용공지사항내용공지사항내용공지사항내용공지사항내용</span></a>
+                        <span class="date">공지사항날짜</span>
+                    </div>
+                </div>
+            </div> -->
+            <div class="content">
+                <div class="tab">
+                     <ul class="tabMenu">
+                          <li class="on"><a href="#">공지사항</a></li>
+                          <li><a href="#">갤러리</a></li>
+                     </ul>
+                     <div class="tabItem">
+                          <ul class="notice on">
+                               <li><a href="#">공지사항내용공지사항내용공지사항내용공지사항내용공지사항내용</a><span>공지사항날짜</span></li>
+                               <li><a href="#">공지사항내용공지사항내용공지사항내용공지사항내용공지사항내용</a><span>공지사항날짜</span></li>
+                               <li><a href="#">공지사항내용공지사항내용공지사항내용공지사항내용공지사항내용</a><span>공지사항날짜</span></li>
+                               <li><a href="#">공지사항내용공지사항내용공지사항내용공지사항내용공지사항내용</a><span>공지사항날짜</span></li>
+                          </ul>
+                          <ul class="gallery">
+                               <li><a href="#"><img src="images/gallery01.png" alt="갤러리이미지1"></a></li>
+                               <li><a href="#"><img src="images/gallery02.png" alt="갤러리이미지2"></a></li>
+                               <li><a href="#"><img src="images/gallery03.png" alt="갤러리이미지3"></a></li>
+                          </ul>
+                     </div>
+                </div>
+            <div class="banner">
+                <!-- <img src="../mission/assets/img/mission02_07.jpg" alt="배너"> -->
+                <p>배너</p>
+            </div>
+            <div class="link">
+                <!-- <img src="../mission/assets/img/mission02_08.jpg" alt="바로가기"> -->
+                <a href="#"><p>바로가기</p></a>
+            </div>
+        </section>
+        <footer id="footer">
+            <img class="footer__logo" src="../mission/assets/img/mission4_logo.jpg" alt="">
+            <span>Copyright All right reserved JUST 쇼핑몰</span>
+            <a href="#"><img class="icon" src="../mission/assets/img/mission04_footer_icon.jpg" alt=""></a>
+        </footer>
+    </div>
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <script>
+        // 슬라이드
+        setInterval(function(){
+             $('.slide__wrap').animate({'marginTop':'-400px'}, function(){
+                  $('.slide:first').appendTo('.slide__wrap')
+                  $('.slide__wrap').css({'marginTop':'0px'})
+             })
+        },3000)
+
+        // 탭메뉴
+        $('.tabMenu li').click(function(){
+            var idx=$(this).index()
+
+            $('.tabItem >*').hide().removeClass('on')
+            $('.tabItem >*').eq(idx).show().addClass('on')
+
+            $('.tabMenu li').removeClass('on')
+            $(this).addClass('on')
+        })
+
+
+        //또는 아이디로 지정해서 href값을 타고 보이기
+        $('.tabMenu li').click(function(){
+             var href=$(this).find('a').attr('href')        
+
+             $('.tabItem >*').hide().removeClass('on')
+             $(href).show().addClass('on')      
+
+             $('.tabMenu li').removeClass('on')
+             $(this).addClass('on')
+        })
+    </script>
+</body>
+</html>

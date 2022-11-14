@@ -1,7 +1,9 @@
 @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
 @import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
 
-.music__wrap {}
+.music__wrap {
+    z-index: 3;
+}
 
 .music__inner {
     width: 450px;
