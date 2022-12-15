@@ -405,8 +405,8 @@ function tetrisGameover() {
   duration = 500;
   tetrisInfo.classList.remove("show");
   tetrisRestart.classList.add("show");
-  resultLine.innerText = tetrisLine;
-  resultScore.innerText = tetrisScore;
+  // resultLine.innerText = tetrisLine;
+  // resultScore.innerText = tetrisScore;
 }
 // 게임 시작하기
 function StartTetris() {
@@ -422,7 +422,7 @@ function StartTetris() {
 // 리셋하기
 function resetTetris() {
   tetrisRestart.classList.remove("show");
-  // tetrisInfo.classList.add("show");
+  tetrisInfo.classList.add("show");
   tetrisMusic.pause();
   tetrisMusic.currentTime = 0;
   tetrisScore = 0;
@@ -481,6 +481,8 @@ restartBtn.addEventListener("click", () => {
   stopTetris = false;
   generateNewBlock();
   tetrisMusic.play();
+  // tetrisRestart.style.display = "none";
+  // tetrisStart.style.display = "block";
   // tetrisRestart.classList.remove("show");
   // tetrisStart.classList.add("show");
 });

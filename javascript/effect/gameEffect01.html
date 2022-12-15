@@ -955,6 +955,7 @@
                         <!-- main -->
                     </div>
                 </div>
+                <!-- //searchgame -->
             </div>
         </div>
     </div>
@@ -1240,12 +1241,19 @@
             Icon3.style.display = "block"
             Icon3OFF.style.display = "none";
             resetTetris();
+            // tetrisInfo.classList.add("show");
         })
         TetrisClose.addEventListener("click", () => {
             Tetris.style.display = "none";
             Icon3OFF.style.display = "block";
             Icon3.style.display = "none";
             tetrisMusic.pause();
+            StartTetris();
+            Tetris.style.display = "none";
+            Icon3OFF.style.display = "block";
+            Icon3.style.display = "none";
+            resetTetris();
+            tetrisStart2.classList.add("show");
         })
 
         //탭 메뉴
