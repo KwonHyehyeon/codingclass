@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알고리즘 문제풀기</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">🔥 Programmers Lv.1 : 문자열 다루기 기본</h2><br>
+            <p class="t_desc2">
+                🔍 문제 : " 문자열 s의 길이가 4 혹은 6이고, 숫자로만 구성돼있는지 확인해주는 함수, solution을 완성하세요. 예를 들어 s가 "a234"이면 False를 리턴하고
+                "1234"라면 True를 리턴하면 됩니다. "
+            </p>
+            <div class="t_desc2">
+                📎 조건 : <br>
+                ∙ s는 길이 1 이상, 길이 8 이하인 문자열입니다.<br>
+                ∙ s는 영문 알파벳 대소문자 또는 0부터 9까지 숫자로 이루어져 있습니다.
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 My answer</h2>
+            <div class="t_code">
+                <pre><code>lfunction solution(s) {
+    return (s.length == 4 || s.length == 6) && s == parseInt(s)
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+                : s의 길이가 4 혹은 6이면서 s의 값이 숫자일때 true를 반환합니다.
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 Another ways</h2>
+            <div class="t_code">
+                <pre><code>function alpha_string46(s) {
+    return s.length == 4 || s.length == 6 ? !isNaN(s) : false 
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+                : 본인도 맨 처음에 이 방법 비슷하게 해주었는데 코드 실행으로는 두 개의 조건을 만족하는데 11번케이스에서 에러로 인해 정답으로 넘어갈 수 없었습니다 ㅜ
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+
+</html>

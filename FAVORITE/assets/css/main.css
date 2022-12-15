@@ -1,0 +1,363 @@
+@import url('https://webfontworld.github.io/Cafe24Ohsquare/Cafe24Ohsquare.css');
+@import url('https://webfontworld.github.io/Cafe24Ohsquareair/Cafe24Ohsquareair.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+.container {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+img {
+    width: 100%;
+}
+
+/* //reset */
+body {
+    background-color: #fff27b;
+}
+
+#header {
+    width: 100%;
+    height: 66px;
+
+    background-color: #fff;
+    border-bottom: 2px solid #000;
+
+}
+
+.header__inner {
+    display: flex;
+    font-family: 'Cafe24Ohsquare';
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.header__logo>img {
+    width: 37px;
+}
+
+.header__logo>h2 {
+    font-size: 28px;
+}
+
+.header__menu {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.header__menu>ul {
+    display: flex;
+    width: 60%;
+    font-family: 'Cafe24Ohsquareair';
+}
+
+.header__menu>ul>li {
+    padding-right: 20px;
+}
+
+.header__menu>ul>li a {
+    font-size: 22px;
+}
+
+.search {
+    width: 40%;
+}
+
+.search input {
+    padding: 10px 10px;
+    text-align: left;
+    width: 70%;
+}
+
+/* recommend */
+
+.recommend__desc {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    font-family: 'Cafe24Ohsquare';
+    font-size: 24px;
+    padding: 80px 0 60px 0;
+    text-align: center;
+}
+
+.recommend__desc>p img {
+    width: 35px;
+    height: 40px;
+    margin-right: 10px;
+    position: absolute;
+    top: -13px;
+    left: -40px;
+}
+
+.recommend__desc>p {
+    position: relative;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+
+.recommend {
+    width: 1000px;
+    background-color: #fff;
+    border-radius: 65px;
+}
+
+.recommend__inner {
+    padding: 70px 100px;
+    font-family: 'Cafe24Ohsquare';
+    position: relative;
+}
+
+.recommend__title {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.recommend__title .feelings {
+    display: flex;
+    border-bottom: 2px solid #E1FA93;
+}
+
+.recommend__title .feelings>span {
+    font-size: 20px;
+}
+
+.recommend__title .feelings>span>img {
+    width: 15px;
+    height: 22px;
+}
+
+.recommend__icon1>a {
+    display: inline-block;
+    margin-bottom: 50px;
+    padding: 0 20px;
+    font-family: 'Cafe24Ohsquareair' !important;
+}
+
+.recommend__icon1 .emoji1 {
+    width: 49%;
+    text-align: center;
+}
+
+.recommend__icon1 .emoji1 img {
+    display: block;
+    margin: 0 auto 20px;
+    width: 70px;
+}
+
+.recommend__icon1 .emoji1>p {
+    display: inline-block;
+    background-color: #273B58;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.recommend__icon1 .emoji2 {
+    width: 49%;
+    text-align: center;
+}
+
+.recommend__icon1 .emoji2 img {
+    display: block;
+    margin: 0 auto 20px;
+    width: 70px;
+}
+
+.recommend__icon1 .emoji2>p {
+    display: inline-block;
+    background-color: #6B3A5D;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.recommend__icon2>a {
+    display: inline-block;
+    padding: 0 20px;
+    font-family: 'Cafe24Ohsquareair' !important;
+
+}
+
+.recommend__icon2 .emoji3 {
+    width: 49%;
+    text-align: center;
+}
+
+.recommend__icon2 .emoji3 img {
+    display: block;
+    margin: 0 auto 20px;
+    width: 70px;
+}
+
+.recommend__icon2 .emoji3>p {
+    display: inline-block;
+    background-color: #35615E;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.recommend__icon2 .emoji4 {
+    width: 49%;
+    text-align: center;
+}
+
+.recommend__icon2 .emoji4 img {
+    display: block;
+    margin: 0 auto 20px;
+    width: 70px;
+}
+
+.recommend__icon2 .emoji4>p {
+    display: inline-block;
+    background-color: #2E2561;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+/* recommend2.html */
+.recommend__result {
+    /* display: flex; */
+}
+
+.recommend__result>img {
+    width: 70px;
+    height: 70px;
+    margin-left: 100px;
+    margin-top: -10px;
+}
+
+.recommend__result>p {
+    position: absolute;
+    top: 17%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 15px;
+    background-color: #10ABA2;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 10px;
+    font-family: 'Cafe24Ohsquare';
+}
+
+.recommend__result p {}
+
+.recommend__title .rerecommend a {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    display: flex;
+    margin-top: 2px;
+    background-color: #f4fdd9;
+    font-weight: normal;
+    padding: 10px 20px;
+    border-radius: 50px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.recommend__title .rerecommend a>span {
+    font-family: 'Cafe24Ohsquareair' !important;
+    margin-right: 10px;
+}
+
+.recommend__title .rerecommend a>img {
+    width: 20px;
+    height: 20px;
+}
+
+.beverage__box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.beverage__box .beverage1 {
+    width: 23%;
+    padding: 20px 20px 60px 20px;
+    border: 1px dashed #C7E7F5;
+    border-radius: 10px;
+}
+
+
+.beverage__box .beverage2 {
+    width: 23%;
+    padding: 20px 20px 60px 20px;
+    border: 1px dashed #C7E7F5;
+    border-radius: 10px;
+}
+
+.beverage__box .beverage3 {
+    width: 23%;
+    padding: 20px 20px 60px 20px;
+    border: 1px dashed #C7E7F5;
+    border-radius: 10px;
+}
+
+.beverage__box .beverage4 {
+    width: 23%;
+    padding: 20px 20px 60px 20px;
+    border: 1px dashed #C7E7F5;
+    border-radius: 10px;
+}
+
+.beverage__desc {
+    text-align: center;
+    margin-top: 30px;
+    position: relative;
+}
+
+.beverage__desc>span {
+    font-size: 16px;
+}
+
+.beverage__desc>a {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 11px;
+    font-family: 'Cafe24Ohsquareair' !important;
+    transition: all 0.3s;
+}
+
+.beverage__desc>a:hover {
+    padding: 7px;
+    background-color: #C7E7F5;
+    border-radius: 20px;
+}

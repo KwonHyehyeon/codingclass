@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .img-wrap {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin: 0 auto;
+            width: 1200px;
+            margin-top: 1000px;
+        }
+
+        .img {
+            height: 600px;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        .img:nth-child(1) {
+            background-image: url("https://images.unsplash.com/photo-1663620523284-5cb362128e3c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDEwfFM0TUtMQXNCQjc0fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60");
+        }
+
+        .img:nth-child(2) {
+            background-image: url("https://images.unsplash.com/photo-1667471728601-cc76d2a160e5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE4fFM0TUtMQXNCQjc0fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60");
+        }
+
+        .img:nth-child(3) {
+            background-image: url("https://images.unsplash.com/photo-1667248252765-146cc6d09f49?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDIwfFM0TUtMQXNCQjc0fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60");
+        }
+
+        .img:nth-child(4) {
+            background-image: url("https://images.unsplash.com/photo-1667360066767-aea4d0e8ed66?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDIzfFM0TUtMQXNCQjc0fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60");
+        }
+
+        .img:nth-child(5) {
+            background-image: url("https://images.unsplash.com/photo-1667133041438-92d54d7c5bd1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDMxfFM0TUtMQXNCQjc0fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60");
+        }
+
+        .img:nth-child(6) {
+            background-image: url("https://images.unsplash.com/photo-1667324518528-c6b2c2178a14?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDMwfFM0TUtMQXNCQjc0fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60");
+        }
+
+        .img:nth-child(7) {
+            background-image: url("https://images.unsplash.com/photo-1659783498317-bb647c6cea97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDM3fFM0TUtMQXNCQjc0fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60");
+        }
+
+        .img:nth-child(8) {
+            background-image: url("https://images.unsplash.com/photo-1657978752647-8a80682c214f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDM5fFM0TUtMQXNCQjc0fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60");
+        }
+
+        .img:nth-child(9) {
+            background-image: url("https://images.unsplash.com/photo-1664580097971-e3ee6a13013f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDM1fFM0TUtMQXNCQjc0fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60");
+        }
+
+        .img:nth-child(10) {
+            background-image: url("https://images.unsplash.com/photo-1648087924184-dd947b8d8bbb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDQ1fFM0TUtMQXNCQjc0fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60");
+        }
+
+        .img:nth-child(11) {
+            background-image: url("https://images.unsplash.com/photo-1662659443438-3e67275cd91e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDQxfFM0TUtMQXNCQjc0fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60");
+        }
+
+        .img:nth-child(12) {
+            background-image: url("https://images.unsplash.com/photo-1662330289264-305438b0058e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDUyfFM0TUtMQXNCQjc0fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60");
+        }
+
+        .img:nth-child(13) {
+            background-image: url("https://images.unsplash.com/photo-1652690379320-77458aec9012?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDU4fFM0TUtMQXNCQjc0fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60");
+        }
+
+        .img:nth-child(14) {
+            background-image: url("https://images.unsplash.com/photo-1667477159482-db346abdcd56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDYxfFM0TUtMQXNCQjc0fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60");
+        }
+
+        .img:nth-child(15) {
+            background-image: url("https://images.unsplash.com/photo-1652184513381-9755426e7fd2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDU3fFM0TUtMQXNCQjc0fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60");
+        }
+    </style>
+</head>
+
+<body>
+    <section class="img-wrap">
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script>
+        // 스크롤 움직임 부드럽게 하기
+        gsap.registerPlugin(ScrollTrigger);
+
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+        })
+
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
+
+
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".img-wrap .img",
+                scrub: true
+            }
+        })
+            // 세미콜론찍으면 안됨 이어서 하는 거라서
+            .to(".img", {
+                y: -1000,
+                scrub: true,
+                // 하나하나 시간차 두고 움직이게 하는 것
+                stagger: .2,
+                easing: "power1.out"
+
+            })
+    </script>
+</body>
+
+</html>

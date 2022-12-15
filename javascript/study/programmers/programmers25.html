@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알고리즘 문제풀기</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">🔥 Programmers Lv.1 : 콜라츠 추측</h2><br>
+            <p class="t_desc2">
+                🔍 문제 : " 1937년 Collatz란 사람에 의해 제기된 이 추측은, 주어진 수가 1이 될 때까지 다음 작업을 반복하면, 모든 수를 1로 만들 수 있다는 추측입니다. 작업은 다음과
+                같습니다. 예를 들어, 주어진 수가 6이라면 6 → 3 → 10 → 5 → 16 → 8 → 4 → 2 → 1 이 되어 총 8번 만에 1이 됩니다. 위 작업을 몇 번이나 반복해야 하는지
+                반환하는 함수, solution을 완성해 주세요. 단, 주어진 수가 1인 경우에는 0을, 작업을 500번 반복할 때까지 1이 되지 않는다면 –1을 반환해 주세요."
+            </p>
+            <div class="t_desc2">
+                📎 조건 : <br>
+                ∙ 입력된 수, num은 1 이상 8,000,000 미만인 정수입니다.<br>
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 My answer</h2>
+            <div class="t_code">
+                <pre><code>function solution(num) {
+    let result = 0;
+    while (result &lt;= 500) {
+    if (num == 1) return result;
+        num = num % 2 == 0 ? num / 2 : num * 3 + 1;
+        result += 1;
+    }
+    return -1;
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+                : 0부터 9까지 for문을 통해 돌렸을 때 numbers가 0부터 9까지 포함되지 않으면 answer에 더해주는 식을 만들었습니다.
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 Another ways</h2>
+            <div class="t_code">
+                <pre><code>function collatz(num,count = 0) {
+    return num == 1 ? (count >= 500 ? -1 : count) : collatz(num % 2 == 0 ? num / 2 : num * 3 + 1,++count);
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+                : 재귀함수를 이용하였고 삼항연산자를 이용하여 식을 만들어주었습니다.
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+
+</html>

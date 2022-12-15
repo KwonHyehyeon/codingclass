@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 데이터 저장하기</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: #000;
+        }
+
+        #canvas {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas id="canvas"></canvas>
+    <script src="three.min.js"></script>
+    <script>
+        console.log(THREE)
+
+        // 화면 설정
+        const scene = new THREE.Scene();
+
+        // 렌더러 설정
+        // antialias: true설정해주면 조금 더 화질이 나아짐
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        // 화면 해상도 설정
+        renderer.setPixelRatio(window.devicePixelRatio > 1 ? 2 : 1);
+        document.body.appendChild(renderer.domElement);
+        // 제일 좋은 해상도는 4이긴한데 눈으로 보면 다 비슷하니깐 1이상이면 2로!
+        // console.log(window.devicePixelRatio > 1 ? 2 : 1); 
+
+        // 3js 카메라 설정해주어야함
+        // 원근점 설정 중요PerspctiveCamera          
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
+        //x,y,z
+        camera.position.set(0, 0, 7);
+        // 객체를 만들기 위해 매쉬 설정(geometry + material로 설정)
+        const geometry = new THREE.TorusGeometry(2, .5, 16, 100);
+        // 표면 어떻게 처리할 것인지 설정
+        const material = new THREE.MeshLambertMaterial({ color: 0xff0000 })
+
+        // 두 개 합쳐주기 = "매쉬"라고 함
+        const mesh = new THREE.Mesh(geometry, material);
+        // 화면에 매쉬 만든 걸 추가해주기
+        scene.add(mesh);
+
+        // 조명 설정
+        const light = new THREE.DirectionalLight(0xffffff, 1.5);
+        light.position.y = 10;
+        scene.add(light);
+
+        const light2 = new THREE.DirectionalLight(0xffffff, .5);
+        light2.position.set(-10, -10, 10);
+        scene.add(light2);
+
+        // 업데이트 설정
+        function update() {
+            requestAnimationFrame(update);
+
+            mesh.rotation.x += .02;
+            mesh.rotation.y += .02;
+            mesh.rotation.z += .02;
+
+            // 랜더러 랜더시켜주기 1초에 60번
+            renderer.render(scene, camera);
+        }
+        update();
+
+        // 화면 사이즈 설정
+        function resize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            // 반응형
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+        window.addEventListener("resize", resize)
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알고리즘 문제풀기</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">🔥 Programmers Lv.1 : 3진법 뒤집기
+            </h2><br>
+            <p class="t_desc2">
+                🔍 문제 : " 자연수 n이 매개변수로 주어집니다. n을 3진법 상에서 앞뒤로 뒤집은 후, 이를 다시 10진법으로 표현한 수를 return 하도록 solution 함수를 완성해주세요.
+                "
+            </p>
+            <div class="t_desc2">
+                📎 조건 : <br>
+                ∙ n은 1 이상 100,000,000 이하인 자연수입니다.
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 My answer</h2>
+            <div class="t_code">
+                <pre><code>function solution(n) {
+    let answer = n.toString(3).split('').reverse().join('');
+    return parseInt(answer, 3);
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+                새로 알게된 내용<br>
+                01. Number.toString(n) -> 10진법 -> n진법으로 변환<br>
+                02. parseInt('10', 3); // 문자열 10을 3진수로 해석
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 Another ways</h2>
+            <div class="t_code">
+                <pre><code>class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        String str = "";
+        while(n != 0) {
+            str += n%3;
+            n = n / 3;
+        }
+        str = reverseStr(str);
+        for(int i = 0; i &lt; str.length(); i++) {
+            answer += Character.getNumericValue(str.charAt(i)) * Math.pow(3, i);
+        }
+        return answer;
+    }
+    public static String reverseStr(String s) {
+        return (new StringBuffer(s)).reverse().toString();
+      }
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+                : while문을 통해 10진수를 3진수로 바꿔준 뒤 String을 reverseStr함수를 통해 다시 뒤집어 준 후에, for문을 통해 다시 10진수로 바꿔줍니다.
+                : Math.pow(3,2) -> 3의 2제곱이 계산을 하게 됩니다.
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+
+</html>

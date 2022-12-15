@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알고리즘 문제풀기</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">🔥 Programmers Lv.1 : 세균 증식
+            </h2><br>
+            <p class="t_desc2">
+                🔍 문제 : " 어떤 세균은 1시간에 두배만큼 증식한다고 합니다. 처음 세균의 마리수 n과 경과한 시간 t가 매개변수로 주어질 때 t시간 후 세균의 수를 return하도록
+                solution 함수를 완성해주세요.
+                "
+            </p>
+            <div class="t_desc2">
+                📎 조건 : <br>
+                ∙ 1 ≤ n ≤ 10
+                <br>
+                ∙ 1 ≤ t ≤ 15
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 My answer</h2>
+            <div class="t_code">
+                <pre><code>const solution = (n, t) => new Array(t).fill(n).reduce((a,b) => a*2,n)
+</code></pre>
+            </div>
+            <div class="t_box">
+                : 1시간에 두 배만큼 증가시켜주기 위해서 reduce메서드로 식을 만들어주었습니다.
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 Another ways</h2>
+            <div class="t_code">
+                <pre><code>function solution(n, t) {
+    while (t-- > 0) n*=2;
+    return n;
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+                : 이렇게 쓰는 방법도 있네요!
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+
+</html>

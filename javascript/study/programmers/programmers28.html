@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알고리즘 문제풀기</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">🔥 Programmers Lv.1 : 약수의 개수와 덧셈
+            </h2><br>
+            <p class="t_desc2">
+                🔍 문제 : " 두 정수 left와 right가 매개변수로 주어집니다. left부터 right까지의 모든 수들 중에서, 약수의 개수가 짝수인 수는 더하고, 약수의 개수가 홀수인 수는 뺀
+                수를 return 하도록 solution 함수를 완성해주세요. "
+            </p>
+            <div class="t_desc2">
+                📎 조건 : <br>
+                ∙ 1 ≤ left ≤ right ≤ 1,000
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 My answer</h2>
+            <div class="t_code">
+                <pre><code>function solution(left, right) {
+    let count = 0;
+    for(let i = left; i&lt;=right; i++) {
+        let arr = [];
+        for(let j = 0; j &lt;= i; j++) {
+            if(i % j == 0) arr.push(j)
+        }
+        arr.length % 2 === 0 ? count += i : count -= i
+    }
+    return count
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+                : count 는 약수를 가지고 있는 수들의 합 혹은 차를 구해준 값입니다.<br>
+                : arr.length % 2 === 0 ? count += i : count -= i 식은 약수의 길이가 홀수일 때 짝수일 때에 따라 더해줄 것인지 빼줄 것인지를
+                결정짓는 식입니다.
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 Another ways</h2>
+            <div class="t_code">
+                <pre><code>function solution(left, right) {
+    var answer = 0;
+    for (let i = left; i &lt;= right; i++) {
+        if (Number.isInteger(Math.sqrt(i))) {
+            answer -= i;
+        } else {
+            answer += i;
+        }
+    }
+    return answer;
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+                : 제곱근이 정수면 약수의 개수가 홀수다. 를 이용한 식이라는데 천재아닌감
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+
+</html>

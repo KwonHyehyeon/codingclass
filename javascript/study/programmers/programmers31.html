@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알고리즘 문제풀기</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">🔥 Programmers Lv.1 : 부족한 금액 계산하기
+            </h2><br>
+            <p class="t_desc2">
+                🔍 문제 : " 새로 생긴 놀이기구는 인기가 매우 많아 줄이 끊이질 않습니다. 이 놀이기구의 원래 이용료는 price원 인데, 놀이기구를 N 번 째 이용한다면 원래 이용료의 N배를
+                받기로 하였습니다. 즉, 처음 이용료가 100이었다면 2번째에는 200, 3번째에는 300으로 요금이 인상됩니다.
+                놀이기구를 count번 타게 되면 현재 자신이 가지고 있는 금액에서 얼마가 모자라는지를 return 하도록 solution 함수를 완성하세요.
+                단, 금액이 부족하지 않으면 0을 return 하세요. "
+            </p>
+            <div class="t_desc2">
+                📎 조건 : <br>
+                ∙ 놀이기구의 이용료 price : 1 ≤ price ≤ 2,500, price는 자연수<br>
+                ∙ 처음 가지고 있던 금액 money : 1 ≤ money ≤ 1,000,000,000, money는 자연수<br>
+                ∙ 놀이기구의 이용 횟수 count : 1 ≤ count ≤ 2,500, count는 자연수
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 My answer</h2>
+            <div class="t_code">
+                <pre><code>function solution(price, money, count) {
+    let totalPrice = 0;
+    for(let i=1;i&lt;=count;i++){
+        totalPrice += price * i;
+    }
+    return money > totalPrice ? 0 : totalPrice-money
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+                01. 반복문을 count만큼 돌려 totalPrice에 price * i 값을 더합니다.<br>
+                02. 만약 money가 totalPrice보다 크면 0을 반환하고, 그렇지 않다면 totalPrice - money를 반환하도록 식을 만들어줍니다.
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 Another ways</h2>
+            <div class="t_code">
+                <pre><code>function solution(price, money, count) {
+    const tmp = price * count * (count + 1) / 2 - money;
+    return tmp > 0 ? tmp : 0;
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+                : 가우스 공식을 사용한 식입니다.<br>
+                : 삼각형 면적 구한다고 생각하면 된다고 하던데 어렵군요?
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+
+</html>

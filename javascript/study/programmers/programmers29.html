@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알고리즘 문제풀기</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">🔥 Programmers Lv.1 : 직사각형 별찍기
+            </h2><br>
+            <p class="t_desc2">
+                🔍 문제 : " 이 문제에는 표준 입력으로 두 개의 정수 n과 m이 주어집니다.
+                별(*) 문자를 이용해 가로의 길이가 n, 세로의 길이가 m인 직사각형 형태를 출력해보세요. "
+            </p>
+            <div class="t_desc2">
+                📎 조건 : <br>
+                ∙ n과 m은 각각 1000 이하인 자연수입니다.
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 My answer</h2>
+            <div class="t_code">
+                <pre><code>process.stdin.setEncoding('utf8');
+process.stdin.on('data', data => {
+    const n = data.split(" ");
+    const a = Number(n[0]), b = Number(n[1]);
+    const star = "*".repeat(a)
+    for(let i = 0; i &lt; b; i++){
+        console.log(star)
+    }
+});
+</code></pre>
+            </div>
+            <div class="t_box">
+                01. data를 함수로 받아온 후 공백을 기준으로 split메서드로 나누어줍니다.<br>
+                02. 문자열 data를 숫자형으로 변환해줍니다.<br>
+                03. repeat메서드를 통해 "*"문자열을 반복하여 붙여줍니다.<br>
+                04. for 반복문을 사용하여 b의 갯수만큼 star를 실행시켜주면 끄읕!
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 Another ways</h2>
+            <div class="t_code">
+                <pre><code>process.stdin.setEncoding('utf8');
+process.stdin.on('data', data => {
+    const n = data.split(" ");
+    const a = Number(n[0]), b = Number(n[1]);
+    console.log((('*').repeat(a)+`\n`).repeat(b))
+});
+</code></pre>
+            </div>
+            <div class="t_box">
+                : 애초에 repeat메서드를 두 번 쓰는 깔끔한 방법도 있군요?
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+
+</html>

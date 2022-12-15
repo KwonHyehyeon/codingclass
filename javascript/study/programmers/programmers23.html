@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알고리즘 문제풀기</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">🔥 Programmers Lv.1 : 행렬의 덧셈</h2><br>
+            <p class="t_desc2">
+                🔍 문제 : " 행렬의 덧셈은 행과 열의 크기가 같은 두 행렬의 같은 행, 같은 열의 값을 서로 더한 결과가 됩니다. 2개의 행렬 arr1과 arr2를 입력받아, 행렬 덧셈의 결과를
+                반환하는 함수, solution을 완성해주세요. "
+            </p>
+            <div class="t_desc2">
+                📎 조건 : <br>
+                ∙ 행렬 arr1, arr2의 행과 열의 길이는 500을 넘지 않습니다.
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 My answer</h2>
+            <div class="t_code">
+                <pre><code>function solution(arr1, arr2) {
+    let answer = [];
+    for (let i=0; i &lt; arr1.length; i++) {
+        let sum = [];
+        for(let j=0; j &lt; arr1[i].length; j++) {
+            sum.push(arr1[i][j] + arr2[i][j])
+        }
+        answer.push(sum)        
+    }
+    return answer;
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+                01. for문을 이용해서 i가 0부터 arr1의 길이만큼 반복하여 sum이라는 변수에 들어가도록 하였습니다. <br>
+                02. sum에는 arr1의 i번째 인덱스의 j번째 요소와 arr2의 i번째 인덱스의 j번째 요소를 합한 것을 넣어줍니다. <br>
+                03. 그 후 answer값에 넣어주면 됩니다.
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 Another ways</h2>
+            <div class="t_code">
+                <pre><code>function sumMatrix(A,B){
+    return A.map((a,i) => a.map((b, j) => b + B[i][j]));
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+                : map을 두 번 사용한 간결한 풀이법입니다.
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+
+</html>

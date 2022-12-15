@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알고리즘 문제풀기</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">🔥 Programmers Lv.1 : 영어가 싫어요
+            </h2><br>
+            <p class="t_desc2">
+                🔍 문제 : " 영어가 싫은 머쓱이는 영어로 표기되어있는 숫자를 수로 바꾸려고 합니다. 문자열 numbers가 매개변수로 주어질 때, numbers를 정수로 바꿔 return 하도록
+                solution 함수를 완성해 주세요. "
+            </p>
+            <div class="t_desc2">
+                📎 조건 : <br>
+                ∙ numbers는 소문자로만 구성되어 있습니다.
+                <br>
+                ∙ numbers는 "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" 들이 공백 없이 조합되어
+                있습니다.<br>
+                ∙ 1 ≤ numbers의 길이 ≤ 50<br>
+                ∙ "zero"는 numbers의 맨 앞에 올 수 없습니다.
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 My answer</h2>
+            <div class="t_code">
+                <pre><code>function solution(numbers) {
+    const english = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+    
+    for(let i = 0; i &lt; english.length; i++){
+      //split을 english[i] 기준으로 자르고 잘린곳에 i합하기
+        numbers = numbers.split(english[i]).join(i)
+    }
+    
+      //split은 문자열이라 Number로 형 변환
+    return Number(numbers)
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+                : 주석을 참고해주세요!
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 Another ways</h2>
+            <div class="t_code">
+                <pre><code>var solution=n=>Number(['zero','one','two','three','four','five','six','seven','eight','nine'].reduce((t,s,i)=>t.replaceAll(s,i),n))
+</code></pre>
+            </div>
+            <div class="t_box">
+                : 이렇게 reduce메서드와 replace메서드를 이용해서 한 줄로 쓰는 방법도 있군요!
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알고리즘 문제풀기</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">🔥 Programmers Lv.1 : 나이 출력
+            </h2><br>
+            <p class="t_desc2">
+                🔍 문제 : " 머쓱이는 40살인 선생님이 몇 년도에 태어났는지 궁금해졌습니다. 나이 age가 주어질 때, 2022년을 기준 출생 연도를 return 하는 solution 함수를
+                완성해주세요. "
+            </p>
+            <div class="t_desc2">
+                📎 조건 : <br>
+                ∙ 0 &lt; age ≤ 120 <br>
+                ∙ 나이는 태어난 연도에 1살이며 1년마다 1씩 증가합니다.
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 My answer</h2>
+            <div class="t_code">
+                <pre><code>function solution(age) {
+    return 2022 - age + 1;
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+                : 22년도에서 나이를 빼준 후 1을 더해줘야 몇 년도에 태어났는지 알 수 있습니다.
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 Another ways</h2>
+            <div class="t_code">
+                <pre><code>function solution(age) {
+    return new Date().getFullYear() - age + 1;
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+                : getFullYear 메서드를 이용해주는 방법도 있군요!
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+
+</html>

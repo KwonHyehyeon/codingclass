@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알고리즘 문제풀기</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+</head>
+
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">🔥 Programmers Lv.1 : 없는 숫자 더하기</h2><br>
+            <p class="t_desc2">
+                🔍 문제 : " 0부터 9까지의 숫자 중 일부가 들어있는 정수 배열 numbers가 매개변수로 주어집니다. numbers에서 찾을 수 없는 0부터 9까지의 숫자를 모두 찾아 더한 수를
+                return 하도록 solution 함수를 완성해주세요. "
+            </p>
+            <div class="t_desc2">
+                📎 조건 : <br>
+                ∙ 1 ≤ numbers의 길이 ≤ 9<br>
+                ∙ 0 ≤ numbers의 모든 원소 ≤ 9<br>
+                ∙ numbers의 모든 원소는 서로 다릅니다.
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 My answer</h2>
+            <div class="t_code">
+                <pre><code>function solution(numbers) {
+    let answer = 0;
+    for(let i=0; i&lt;10; i++){
+        if(!numbers.includes(i)) answer += i;
+    }
+    return answer;
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+                : 0부터 9까지 for문을 통해 돌렸을 때 numbers가 0부터 9까지 포함되지 않으면 answer에 더해주는 식을 만들었습니다.
+            </div>
+            <hr><br>
+            <h2 class="t_tit">👉🏻 Another ways</h2>
+            <div class="t_code">
+                <pre><code>function solution(numbers) {
+    return 45 - numbers.reduce((cur, acc) => cur + acc, 0);
+}
+</code></pre>
+            </div>
+            <div class="t_box">
+                : 총합에서 numbers의 합을 빼주면 되는 방식이 있었군요...? 놀람 그 잡채...
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:noeyheyh9357@gmail.com">noeyheyh9357@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+    </script>
+</body>
+
+</html>

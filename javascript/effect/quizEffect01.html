@@ -8,7 +8,7 @@
     <title>퀴즈 이펙트</title>
 
     <link rel="stylesheet" href="../assets/css/quiz.css">
-    
+
 
     <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
     <link href="https://webfontworld.github.io/Cafe24Dangdanghae/Cafe24Dangdanghae.css" rel="stylesheet">
@@ -76,34 +76,34 @@
 
         <div class="window__wrap">
             <div class="window__btn">소스 보기</div>
-                <div class="window__box">
-                    <div class="title-bar">
-                        <div class="minimize">
-                            <div class="symbol"></div>
-                            </div>
-                        <div class="maximize">
-                            <div class="symbol"></div>
-                        </div>
-                        <div class="close">
-                            <div class="symbol"></div>
-                        </div>
-                        </div>
-                        <div class="menu-bar">
+            <div class="window__box">
+                <div class="title-bar">
+                    <div class="minimize">
+                        <div class="symbol"></div>
+                    </div>
+                    <div class="maximize">
+                        <div class="symbol"></div>
+                    </div>
+                    <div class="close">
+                        <div class="symbol"></div>
+                    </div>
+                </div>
+                <div class="menu-bar">
+                    <div class="active">
+                        <em>javascript</em>
+                    </div>
+                    <div>
+                        <em>Html</em>
+                    </div>
+                    <div>
+                        <em>Css</em>
+                    </div>
+                </div>
+                <div class="content-container">
+                    <div class="content">
+                        <div class="main">
                             <div class="active">
-                                <em>javascript</em>
-                            </div>
-                            <div>
-                                <em>Html</em>
-                            </div>
-                            <div>
-                                <em>Css</em>
-                            </div>
-                        </div>
-                        <div class="content-container">
-                            <div class="content">
-                                <div class="main">
-                                    <div class="active">
-<pre><code class="language-js">//선택자
+                                <pre><code class="language-js">//선택자
 const quizType = document.querySelector(".quiz_type");                  //퀴즈 종류
 const quizNumber = document.querySelector(".quiz_question .number");   //퀴즈 번호
 const quizAsk = document.querySelector(".quiz_question .ask");          //퀴즈 질문
@@ -135,9 +135,9 @@ quizConfirm.addEventListener("click", function () {
     quizDog.classList.add("like")
 }); //addEventListener = 버튼을 클릭하면 사건이 일어나게 하는 것
 </code></pre>
-                                    </div>
-                                    <div>
-<pre><code class="language-html">&lt;main id="main"&gt;
+                            </div>
+                            <div>
+                                <pre><code class="language-html">&lt;main id="main"&gt;
     &lt;div class="quiz_wrap"&gt;
         &lt;div class="quiz"&gt;
             &lt;span class="quiz_type"&gt;&lt;/span&gt;
@@ -174,9 +174,9 @@ quizConfirm.addEventListener("click", function () {
     &lt;/div&gt;
 &lt;/main&gt;
 </code></pre>
-                                    </div>
-                                    <div>
-<pre><code class="language-css">* {
+                            </div>
+                            <div>
+                                <pre><code class="language-css">* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -615,26 +615,26 @@ body {
     100% {visibility: visible;}
 }
 </code></pre>
-                                </div>
-                                </div>
-                                <div class="scroll">
-                                    <div class="start"></div>
-                                    <div class="progress"></div>
-                                    <div class="end"></div>
-                                </div>
-                            </div>
-                            <div style="display: none;"class="scroll -row">
-                                <div class="start"></div>
-                                <div class="progress"></div>
-                                <div class="end"></div>
                             </div>
                         </div>
+                        <div class="scroll">
+                            <div class="start"></div>
+                            <div class="progress"></div>
+                            <div class="end"></div>
+                        </div>
+                    </div>
+                    <div style="display: none;" class="scroll -row">
+                        <div class="start"></div>
+                        <div class="progress"></div>
+                        <div class="end"></div>
                     </div>
                 </div>
+            </div>
+        </div>
         </div>
     </footer>
     <!-- footer -->
-    
+
     <script src="../assets/js/quiz_common.js"></script>
 
     <script>
