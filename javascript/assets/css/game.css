@@ -1,4 +1,5 @@
 @import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+
 .mouse__cursor {
     position: absolute;
     left: 0;
@@ -125,6 +126,7 @@
 .icon2 img {
     width: 100%;
 }
+
 .icon2 span {
     display: block;
     background: #000;
@@ -132,6 +134,7 @@
     padding: 2px;
     white-space: nowrap;
 }
+
 .icon2_off {
     position: absolute;
     left: 30px;
@@ -148,6 +151,7 @@
 .icon2_off img {
     width: 100%;
 }
+
 .icon2_off span {
     display: block;
     background: #000;
@@ -161,6 +165,7 @@
     left: 30px;
     top: 280px;
     width: 54px;
+    display: none;
 }
 
 .icon3:hover {
@@ -180,6 +185,7 @@
     padding: 2px;
     white-space: nowrap;
 }
+
 .icon3_off {
     position: absolute;
     left: 30px;
@@ -196,6 +202,7 @@
 .icon3_off img {
     width: 100%;
 }
+
 .icon3_off span {
     display: block;
     background: #000;
@@ -203,6 +210,7 @@
     padding: 2px;
     white-space: nowrap;
 }
+
 .icon4 {
     position: absolute;
     left: 30px;

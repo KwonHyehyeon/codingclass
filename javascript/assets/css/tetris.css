@@ -93,12 +93,6 @@
     display: block;
 }
 
-.tetris__restart {}
-
-.tetris__play {}
-
-.playground {}
-
 .playground>ul {
     border: 3px solid #fff;
 }
